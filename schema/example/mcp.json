@@ -1,0 +1,33 @@
+{
+  "mcpServers": {
+    "git": {
+      "type": "stdio",
+      "command": "git-mcp",
+      "args": ["--stdio"]
+    },
+    "docker": {
+      "type": "stdio",
+      "command": "docker-mcp",
+      "args": ["--stdio"]
+    },
+    "filesystem": {
+      "command": "filesystem-mcp",
+      "args": ["--stdio"]
+    },
+    "jest": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-jest"],
+      "env": {
+        "NODE_ENV": "test"
+      }
+    },
+    "coverage": {
+      "type": "http",
+      "url": "http://localhost:8080/coverage",
+      "headers": {
+        "Authorization": "Bearer test-token"
+      }
+    }
+  }
+}

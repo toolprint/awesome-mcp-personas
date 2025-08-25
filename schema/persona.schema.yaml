@@ -1,0 +1,144 @@
+# YAML Schema for Persona Definition
+# Based on PersonaConfig TypeScript interface
+$schema: "http://json-schema.org/draft-07/schema#"
+title: PersonaDefinition
+description: Schema for persona configuration files
+type: object
+required:
+  - name
+  - description
+properties:
+  name:
+    type: string
+    description: Persona name (hyphen-delimited lowercase, must match folder name)
+    pattern: "^[a-z0-9]+(-[a-z0-9]+)*$"
+    examples:
+      - "software-engineer"
+      - "data-scientist"
+      - "devops-engineer"
+  
+  description:
+    type: string
+    description: Human-readable description of the persona
+    minLength: 10
+    maxLength: 500
+    examples:
+      - "A comprehensive toolkit for modern web development"
+      - "Tools for data analysis and machine learning workflows"
+  
+  version:
+    type: string
+    description: Schema version for future compatibility
+    pattern: "^\\d+\\.\\d+(\\.\\d+)?$"
+    default: "1.0"
+    examples:
+      - "1.0"
+      - "1.1"
+      - "2.0.0"
+  
+  toolsets:
+    type: array
+    description: Array of toolset configurations
+    items:
+      type: object
+      required:
+        - name
+        - toolIds
+      properties:
+        name:
+          type: string
+          description: Toolset name (hyphen-delimited lowercase)
+          pattern: "^[a-z0-9]+(-[a-z0-9]+)*$"
+          examples:
+            - "development"
+            - "testing"
+            - "deployment"
+        
+        toolIds:
+          type: array
+          description: Array of tool IDs with MCP server prefix (e.g., "git.status", "docker.ps")
+          minItems: 1
+          items:
+            type: string
+            pattern: "^[a-z0-9-]+\\.[a-z0-9-]+$"
+            description: Tool ID in format 'server.tool'
+            examples:
+              - "git.status"
+              - "git.commit"
+              - "docker.ps"
+              - "filesystem.read"
+              - "npm.install"
+          uniqueItems: true
+      additionalProperties: false
+    minItems: 1
+    uniqueItems: true
+  
+  defaultToolset:
+    type: string
+    description: Default toolset name (must exist in toolsets array)
+    pattern: "^[a-z0-9]+(-[a-z0-9]+)*$"
+    examples:
+      - "development"
+      - "default"
+  
+  metadata:
+    type: object
+    description: Additional metadata
+    properties:
+      author:
+        type: string
+        description: Persona author
+        examples:
+          - "John Doe"
+          - "ACME Corporation"
+          - "Community Contributors"
+      
+      tags:
+        type: array
+        description: Categorization tags
+        items:
+          type: string
+          pattern: "^[a-z0-9]+(-[a-z0-9]+)*$"
+          examples:
+            - "development"
+            - "testing"
+            - "cloud"
+            - "security"
+            - "automation"
+        uniqueItems: true
+        maxItems: 10
+      
+      created:
+        type: string
+        description: Creation timestamp in ISO 8601 format
+        format: date-time
+        examples:
+          - "2024-01-01T00:00:00Z"
+          - "2024-03-15T14:30:00-05:00"
+      
+      lastModified:
+        type: string
+        description: Last modification timestamp in ISO 8601 format
+        format: date-time
+        examples:
+          - "2024-01-01T12:00:00Z"
+          - "2024-03-15T16:45:00-05:00"
+    
+    additionalProperties: false
+
+additionalProperties: false
+
+# Conditional validation
+allOf:
+  - if:
+      properties:
+        defaultToolset:
+          type: string
+    then:
+      properties:
+        toolsets:
+          contains:
+            properties:
+              name:
+                const: "$defaultToolset"
+      errorMessage: "defaultToolset must reference an existing toolset name"

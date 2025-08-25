@@ -1,0 +1,173 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MCPConfiguration",
+  "description": "Schema for MCP (Model Context Protocol) server configuration files",
+  "type": "object",
+  "required": [
+    "mcpServers"
+  ],
+  "properties": {
+    "mcpServers": {
+      "type": "object",
+      "description": "MCP server and extension configurations keyed by server name",
+      "patternProperties": {
+        "^[a-z0-9-]+$": {
+          "oneOf": [
+            {
+              "type": "object",
+              "title": "StdioServerConfig",
+              "description": "Standard I/O based MCP server configuration",
+              "required": [
+                "type",
+                "command"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "stdio",
+                  "description": "Transport type for stdio communication"
+                },
+                "command": {
+                  "type": "string",
+                  "description": "Command to execute the MCP server",
+                  "minLength": 1,
+                  "examples": [
+                    "git-mcp",
+                    "docker-mcp",
+                    "npx",
+                    "node",
+                    "python"
+                  ]
+                },
+                "args": {
+                  "type": "array",
+                  "description": "Command line arguments for the server",
+                  "items": {
+                    "type": "string"
+                  },
+                  "examples": [
+                    [
+                      "--stdio"
+                    ],
+                    [
+                      "-y",
+                      "@modelcontextprotocol/server-filesystem"
+                    ]
+                  ]
+                },
+                "env": {
+                  "type": "object",
+                  "description": "Environment variables to set for the server process",
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "examples": [
+                    {
+                      "API_KEY": "your-api-key",
+                      "DEBUG": "true"
+                    }
+                  ]
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "title": "HttpServerConfig",
+              "description": "HTTP-based MCP server configuration",
+              "required": [
+                "type",
+                "url"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "http",
+                  "description": "Transport type for HTTP communication"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "HTTP endpoint URL for the MCP server",
+                  "examples": [
+                    "http://localhost:3000",
+                    "https://api.example.com/mcp"
+                  ]
+                },
+                "headers": {
+                  "type": "object",
+                  "description": "HTTP headers to include in requests",
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "examples": [
+                    {
+                      "Authorization": "Bearer token",
+                      "Content-Type": "application/json"
+                    }
+                  ]
+                },
+                "env": {
+                  "type": "object",
+                  "description": "Environment variables to set for the server process",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "title": "SSEServerConfig",
+              "description": "Server-Sent Events based MCP server configuration",
+              "required": [
+                "type",
+                "url"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "sse",
+                  "description": "Transport type for SSE communication"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "SSE endpoint URL for the MCP server",
+                  "examples": [
+                    "http://localhost:3000/events",
+                    "https://api.example.com/sse"
+                  ]
+                },
+                "headers": {
+                  "type": "object",
+                  "description": "HTTP headers to include in the SSE connection",
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "examples": [
+                    {
+                      "Authorization": "Bearer token"
+                    }
+                  ]
+                },
+                "env": {
+                  "type": "object",
+                  "description": "Environment variables to set for the server process",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1
+    }
+  },
+  "additionalProperties": false
+}

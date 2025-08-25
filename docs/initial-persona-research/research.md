@@ -121,12 +121,12 @@ When validating tool names in a persona:
 
 ### Example: Slack MCP Server
 According to the [slack-mcp-server documentation](https://github.com/korotovsky/slack-mcp-server):
-- Available tools: `slack_list_channels`, `slack_post_message`, `slack_reply_message`, `slack_add_reaction`, `slack_get_users`, `slack_get_user_profile`
-- Note: Tool names use underscores, not dots, in the actual tool name portion
+- Available tools: `conversations_history`, `conversations_replies`, `conversations_add_message`, `conversations_search_messages`, `channels_list`
+- Note: Tool names follow Slack API conventions with `conversations_` and `channels_` prefixes
 
 ### Tool Naming Format
 The format is always: `{server_name_in_mcp_json}.{actual_tool_name_from_docs}`
-- Example: If server name in mcp.json is "slack" and tool is "slack_post_message", the toolId would be "slack.slack_post_message"
+- Example: If server name in mcp.json is "slack" and tool is "conversations_add_message", the toolId would be "slack.conversations_add_message"
 
 ### Common MCP Servers (always verify current tools)
 - **Git MCP** (`mcp-server-git`): Check GitHub for current tool list

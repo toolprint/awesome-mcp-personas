@@ -1,0 +1,55 @@
+name: qa-engineer-docs
+version: "1.0"
+description: >
+  Automates test execution with Playwright, captures results, and generates structured test reports.
+
+toolsets:
+  - name: browser-automation
+    description: >
+      Run automated browser actions using Playwright and capture results.
+      Examples: navigate to pages, interact with elements, take screenshots, evaluate JavaScript.
+    toolIds:
+      - playwright.navigate
+      - playwright.screenshot
+      - playwright.click
+      - playwright.fill
+      - playwright.evaluate
+      - playwright.wait
+    _meta:
+      tags:
+        categories: ["browser", "automation", "testing", "playwright"]
+
+  - name: test-reporting
+    description: >
+      Generate and manage test reports and documentation.
+      Examples: create test report files, write test results, save screenshots.
+    toolIds:
+      - filesystem.read_file
+      - filesystem.write_file
+      - filesystem.create_directory
+      - filesystem.list_directory
+      - filesystem.delete
+    _meta:
+      tags:
+        categories: ["reporting", "documentation", "filesystem"]
+
+  - name: test-research
+    description: >
+      Research testing best practices, frameworks, and solutions.
+      Examples: search for testing patterns, find documentation, research tools.
+    toolIds:
+      - brave-search.search
+    _meta:
+      tags:
+        categories: ["research", "documentation", "learning"]
+
+_meta:
+  definition_link: https://github.com/awesome-mcp-personas
+  tags:
+    categories:
+      - testing
+      - qa
+      - automation
+      - playwright
+      - reporting
+      - documentation

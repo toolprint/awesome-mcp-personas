@@ -32,19 +32,41 @@ Instead of manually configuring individual MCP servers and figuring out which to
 
 ## Installation
 
-### Quick Start
+### Option 1: Using hypertool-mcp (Recommended)
 
-1. Choose a persona from the list below
-2. Copy the persona's `mcp.json` configuration
-3. Add it to your Claude Desktop configuration
-4. (Optional) Customize the configuration for your specific needs
-
-### Using a Persona
-
-```bash
-# Example: Installing the Software Engineer persona
-cp personas/software-engineer/mcp.json ~/.config/claude/
+Install [hypertool-mcp](https://github.com/toolprint/hypertool-mcp) to use personas with full toolset support:
+1. Update your project's MCP configuration to use `hypertool-mcp`.
+```json
+{
+  "mcpServers": {
+    "hypertool": {
+      "command": "npx",
+      "args": ["-y", "@toolprint/hypertool-mcp", "--persona", "software-engineer"]
+    }
+  }
+}
 ```
+
+2. Hypertool will install the persona definition and you can update the servers using `npx -y @toolprint/hypertool --help`.
+
+More information on installing it for various apps such as `Cursor` can be found [**here**](https://github.com/toolprint/hypertool-mcp/tree/feat/persona-content-pack?tab=readme-ov-file#-quick-start).
+
+### Option 2: Manual MCP Configuration
+
+You can copy the `mcp.json` directly to your project:
+**Claude Code Example**
+```bash
+# Copy MCP server configuration
+cp personas/simpleton/mcp.json <your_project_path>/.mcp.json
+```
+
+**Cursor Example**
+```bash
+# Copy MCP server configuration
+cp personas/simpleton/mcp.json ~/.cursor/mcp.json
+```
+
+**Note**: This method only copies the MCP server configurations. You'll need to manually manage toolsets and tool organization defined in `persona.yaml`.
 
 ## Personas
 

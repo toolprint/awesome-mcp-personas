@@ -1,0 +1,53 @@
+name: trello-project-manager-assistant
+description: >
+  Manages Trello boards for planning, backlog curation, and stakeholder updates.
+
+toolsets:
+  - name: backlog-management
+    description: >
+      Organize and groom backlog by list; add/update cards and assign members.
+      Examples: get cards for a list, add new cards, update details, move between lists.
+    tools:
+      - name: trello.getCardsByList
+      - name: trello.addCard
+      - name: trello.updateCard
+      - name: trello.moveCard
+      - name: trello.changeCardMembers
+    _meta:
+      tags:
+        categories: ["backlog", "planning", "assignment"]
+
+  - name: board-operations-and-hygiene
+    description: >
+      Inspect lists, add or archive lists, and keep the board tidy.
+      Examples: list all lists for the board, add a new list for the sprint, archive done lists.
+    tools:
+      - name: trello.getLists
+      - name: trello.addList
+      - name: trello.archiveList
+    _meta:
+      tags:
+        categories: ["board-operations", "hygiene"]
+
+  - name: activity-digests
+    description: >
+      Pull recent activity for standups and stakeholder notes.
+      Examples: fetch recent board actions to summarize changes.
+    tools:
+      - name: trello.getRecentActivity
+      - name: trello.getMyCards
+    _meta:
+      tags:
+        categories: ["activity", "digests"]
+
+_meta:
+  definition_link: https://github.com/wshobson/agents
+  tags:
+    categories:
+      - backlog
+      - planning
+      - assignment
+      - board-operations
+      - hygiene
+      - activity
+      - digests

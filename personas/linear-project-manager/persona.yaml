@@ -1,0 +1,57 @@
+name: linear-project-manager-assistant
+description: >
+  Manages planning, triage, and reporting inside Linear using issue, project, team, and comment tools.
+
+toolsets:
+  - name: intake-triage-assignment
+    description: >
+      Create and classify issues, link to projects/teams, and assign owners with context.
+      Examples: create new bug, add description and priority, assign to team member, link to project.
+    tools:
+      - name: linear.create_issue
+      - name: linear.add_comment
+      - name: linear.list_members
+      - name: linear.list_projects
+      - name: linear.list_teams
+    _meta:
+      tags:
+        categories: ["intake", "triage", "assignment"]
+
+  - name: progress-queries-and-reports
+    description: >
+      Query issues, fetch details, and summarize project health.
+      Examples: list issues by status/assignee, get single issue details, show project scope for reporting.
+    tools:
+      - name: linear.list_issues
+      - name: linear.get_issue
+      - name: linear.list_projects
+      - name: linear.get_project
+    _meta:
+      tags:
+        categories: ["progress", "queries", "reporting"]
+
+  - name: roadmap-and-team-operations
+    description: >
+      Explore teams and projects, curate backlogs, and coordinate upcoming work.
+      Examples: list teams and key projects, review open issues per team, comment to nudge stakeholders.
+    tools:
+      - name: linear.list_teams
+      - name: linear.list_projects
+      - name: linear.list_issues
+      - name: linear.add_comment
+    _meta:
+      tags:
+        categories: ["roadmap", "team-operations"]
+
+_meta:
+  definition_link: https://github.com/wshobson/agents
+  tags:
+    categories:
+      - intake
+      - triage
+      - assignment
+      - progress
+      - queries
+      - reporting
+      - roadmap
+      - team-operations

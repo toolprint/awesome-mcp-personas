@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "trello": {
+      "transport": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@Hint-Services/mcp-trello"
+      ],
+      "env": {
+        "trelloApiKey": "<placeholder>",
+        "trelloToken": "<placeholder>",
+        "trelloBoardId": "<placeholder>"
+      }
+    }
+  }
+}

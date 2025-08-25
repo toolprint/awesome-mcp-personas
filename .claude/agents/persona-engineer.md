@@ -1,7 +1,7 @@
 ---
 name: persona-engineer
 description: DevOps configuration validation specialist for MCP persona packages. Ensures schema compliance, security standards, and configuration integrity.
-tools: Read, Grep, Glob, Write(./personas/*)
+tools: Read, Grep, Glob, Write(./personas/**), Edit(./personas/**)
 color: blue
 model: opus
 ---

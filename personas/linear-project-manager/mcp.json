@@ -5,10 +5,50 @@
       "command": "npx",
       "args": [
         "-y",
-        "github:tacticlaunch/mcp-linear"
+        "@modelcontextprotocol/server-linear"
       ],
       "env": {
-        "LINEAR_API_TOKEN": "<placeholder>"
+        "LINEAR_API_TOKEN": "${LINEAR_API_TOKEN}"
+      }
+    },
+    "slack": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-slack"
+      ],
+      "env": {
+        "SLACK_BOT_TOKEN": "${SLACK_BOT_TOKEN}",
+        "SLACK_TEAM_ID": "${SLACK_TEAM_ID}"
+      }
+    },
+    "github": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      }
+    },
+    "filesystem": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem"
+      ],
+      "config": {
+        "rootPath": "${PROJECT_ROOT:-./project-docs}",
+        "allowedPaths": [
+          "docs",
+          "notes",
+          "wiki",
+          "reports"
+        ]
       }
     }
   }

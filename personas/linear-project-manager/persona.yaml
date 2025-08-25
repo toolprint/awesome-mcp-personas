@@ -1,6 +1,7 @@
 name: linear-project-manager
 description: >
-  Manages planning, triage, and reporting inside Linear using issue, project, team, and comment tools.
+  Comprehensive project management with Linear, Slack, GitHub integration, and advanced documentation capabilities for full-lifecycle project coordination and team collaboration.
+version: "2.0"
 
 toolsets:
   - name: intake-triage-assignment
@@ -42,6 +43,65 @@ toolsets:
     _meta:
       tags:
         categories: ["roadmap", "team-operations"]
+  
+  - name: slack-communication
+    description: >
+      Send updates, notifications, and coordinate with team through Slack channels and DMs.
+      Examples: post sprint updates, notify about blockers, share project status, coordinate meetings.
+    toolIds:
+      - slack.send_message
+      - slack.list_channels
+      - slack.list_users
+      - slack.get_channel_history
+      - slack.create_channel
+      - slack.add_reaction
+    _meta:
+      tags:
+        categories: ["communication", "notifications", "collaboration"]
+  
+  - name: github-integration
+    description: >
+      Link code changes with Linear issues, track PR status, and manage technical debt.
+      Examples: create issues from PRs, link commits to Linear tickets, track deployment status.
+    toolIds:
+      - github.create_issue
+      - github.list_pull_requests
+      - github.get_pull_request
+      - github.create_pull_request_comment
+      - github.list_repositories
+      - github.get_repository
+    _meta:
+      tags:
+        categories: ["development", "version-control", "technical-tracking"]
+  
+  - name: document-management
+    description: >
+      Create and manage comprehensive project documentation including sprint reports, technical specs, and team wikis.
+      Examples: generate sprint retrospectives with metrics, create release documentation, maintain project knowledge base, draft stakeholder reports.
+    toolIds:
+      - filesystem.read
+      - filesystem.write
+      - filesystem.edit
+      - filesystem.list
+      - filesystem.create_directory
+    _meta:
+      tags:
+        categories: ["documentation", "knowledge-management", "resources", "reports"]
+  
+  - name: integrated-communication
+    description: >
+      Coordinate project updates across Slack and GitHub with documentation links and issue tracking.
+      Examples: post sprint summaries with Linear metrics to Slack, link GitHub PRs with documentation, create unified project status reports.
+    toolIds:
+      - slack.send_message
+      - slack.get_channel_history
+      - github.create_issue
+      - github.create_pull_request_comment
+      - filesystem.write
+      - linear.add_comment
+    _meta:
+      tags:
+        categories: ["communication", "collaboration", "integration", "reporting"]
 
 _meta:
   definition_link: https://github.com/wshobson/agents
@@ -55,3 +115,15 @@ _meta:
       - reporting
       - roadmap
       - team-operations
+      - communication
+      - notifications
+      - collaboration
+      - development
+      - version-control
+      - technical-tracking
+      - documentation
+      - knowledge-management
+      - resources
+      - reports
+      - integration
+      - reporting

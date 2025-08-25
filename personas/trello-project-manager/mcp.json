@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "trello": {
-      "transport": "stdio",
+      "type": "stdio",
       "command": "npx",
       "args": [
         "-y",

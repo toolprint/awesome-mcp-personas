@@ -8,11 +8,11 @@ toolsets:
       Organize and groom backlog by list; add/update cards and assign members.
       Examples: get cards for a list, add new cards, update details, move between lists.
     tools:
-      - name: trello.getCardsByList
-      - name: trello.addCard
-      - name: trello.updateCard
-      - name: trello.moveCard
-      - name: trello.changeCardMembers
+      - name: trello.get_cards_by_list
+      - name: trello.add_card
+      - name: trello.update_card
+      - name: trello.move_card
+      - name: trello.change_card_members
     _meta:
       tags:
         categories: ["backlog", "planning", "assignment"]
@@ -22,9 +22,9 @@ toolsets:
       Inspect lists, add or archive lists, and keep the board tidy.
       Examples: list all lists for the board, add a new list for the sprint, archive done lists.
     tools:
-      - name: trello.getLists
-      - name: trello.addList
-      - name: trello.archiveList
+      - name: trello.get_lists
+      - name: trello.add_list
+      - name: trello.archive_list
     _meta:
       tags:
         categories: ["board-operations", "hygiene"]
@@ -34,8 +34,8 @@ toolsets:
       Pull recent activity for standups and stakeholder notes.
       Examples: fetch recent board actions to summarize changes.
     tools:
-      - name: trello.getRecentActivity
-      - name: trello.getMyCards
+      - name: trello.get_recent_activity
+      - name: trello.get_my_cards
     _meta:
       tags:
         categories: ["activity", "digests"]

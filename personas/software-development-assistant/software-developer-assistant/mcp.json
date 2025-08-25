@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "git": {
+      "transport": "stdio",
+      "command": "uvx",
+      "args": [
+        "mcp-server-git"
+      ]
+    },
+    "slack": {
+      "transport": "http",
+      "url": "http://localhost:30000/mcp",
+      "command": "uvx",
+      "args": [
+        "slack-mcp-server-stateless",
+        "--port",
+        "30000"
+      ],
+      "env": {
+        "SLACK_BOT_TOKEN": "<placeholder>"
+      }
+    }
+  }
+}

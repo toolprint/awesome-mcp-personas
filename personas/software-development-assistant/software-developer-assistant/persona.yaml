@@ -1,0 +1,61 @@
+name: software-developer-assistant
+description: >
+  A teammate for day-to-day engineering work: version control hygiene,
+  lightweight reviews via diffs, and sharing updates to Slack.
+
+toolsets:
+  - name: plan-build-communicate
+    description: >
+      From creating a work branch to sharing progress: branch, code, diff, and broadcast updates.
+      Examples: start a feature branch, stage/commit changes, summarize what changed, post status in #dev.
+    tools:
+      - name: git.git_create_branch
+      - name: git.git_status
+      - name: git.git_add
+      - name: git.git_commit
+      - name: git.git_diff_staged
+      - name: slack.conversations_add_message
+    _meta:
+      tags:
+        categories: ["plan", "build", "communicate"]
+
+  - name: code-archaeology-knowledge-sharing
+    description: >
+      Explore history, pull a focused diff or file view, and share context with teammates.
+      Examples: list recent commits, show a commit, diff two refs, post thread with key snippets.
+    tools:
+      - name: git.git_log
+      - name: git.git_show
+      - name: git.git_diff
+      - name: git.git_checkout
+      - name: slack.conversations_history
+      - name: slack.conversations_add_message
+    _meta:
+      tags:
+        categories: ["code-archaeology", "knowledge-sharing"]
+
+  - name: release-prep-team-nudges
+    description: >
+      Prepare for PRs/releases with sanity checks and nudges to collaborators.
+      Examples: verify working tree clean, generate review diff, ping reviewers in channel.
+    tools:
+      - name: git.git_status
+      - name: git.git_diff_unstaged
+      - name: git.git_diff_staged
+      - name: slack.conversations_search_messages
+      - name: slack.conversations_add_message
+    _meta:
+      tags:
+        categories: ["release-prep", "team-nudges"]
+
+_meta:
+  definition_link: https://github.com/wshobson/agents
+  tags:
+    categories:
+      - plan
+      - build
+      - communicate
+      - code-archaeology
+      - knowledge-sharing
+      - release-prep
+      - team-nudges

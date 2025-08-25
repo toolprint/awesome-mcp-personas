@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "linear": {
-      "transport": "stdio",
+      "type": "stdio",
       "command": "npx",
       "args": [
         "-y",

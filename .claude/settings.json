@@ -22,6 +22,7 @@
       "Bash(git add *)",
       "Bash(git commit *)",
       "Bash(git merge *)",
+      "Bash(ajv *)",
       "mcp__hypertool",
       "Write(**)",
       "Edit(**)"

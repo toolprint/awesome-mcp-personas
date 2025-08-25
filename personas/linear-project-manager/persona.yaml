@@ -1,4 +1,4 @@
-name: linear-project-manager-assistant
+name: linear-project-manager
 description: >
   Manages planning, triage, and reporting inside Linear using issue, project, team, and comment tools.
 
@@ -7,12 +7,12 @@ toolsets:
     description: >
       Create and classify issues, link to projects/teams, and assign owners with context.
       Examples: create new bug, add description and priority, assign to team member, link to project.
-    tools:
-      - name: linear.create_issue
-      - name: linear.add_comment
-      - name: linear.list_members
-      - name: linear.list_projects
-      - name: linear.list_teams
+    toolIds:
+      - linear.create_issue
+      - linear.add_comment
+      - linear.list_members
+      - linear.list_projects
+      - linear.list_teams
     _meta:
       tags:
         categories: ["intake", "triage", "assignment"]
@@ -21,11 +21,11 @@ toolsets:
     description: >
       Query issues, fetch details, and summarize project health.
       Examples: list issues by status/assignee, get single issue details, show project scope for reporting.
-    tools:
-      - name: linear.list_issues
-      - name: linear.get_issue
-      - name: linear.list_projects
-      - name: linear.get_project
+    toolIds:
+      - linear.list_issues
+      - linear.get_issue
+      - linear.list_projects
+      - linear.get_project
     _meta:
       tags:
         categories: ["progress", "queries", "reporting"]
@@ -34,11 +34,11 @@ toolsets:
     description: >
       Explore teams and projects, curate backlogs, and coordinate upcoming work.
       Examples: list teams and key projects, review open issues per team, comment to nudge stakeholders.
-    tools:
-      - name: linear.list_teams
-      - name: linear.list_projects
-      - name: linear.list_issues
-      - name: linear.add_comment
+    toolIds:
+      - linear.list_teams
+      - linear.list_projects
+      - linear.list_issues
+      - linear.add_comment
     _meta:
       tags:
         categories: ["roadmap", "team-operations"]

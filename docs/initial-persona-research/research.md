@@ -108,24 +108,32 @@ that combine servers, tools, and best practices into a drop-in bundle.
 
 ---
 
-## 6. Verified Tool Inventories
+## 6. Tool Research Requirements
 
-### Git Tools
-- `git.git_add`, `git.git_status`, `git.git_diff_unstaged`, `git.git_diff_staged`
-- `git.git_diff`, `git.git_log`, `git.git_show`, `git.git_checkout`
-- `git.git_commit`, `git.git_create_branch`, `git.git_reset`, `git.git_init`
+**IMPORTANT**: Tool names must always be verified from the actual MCP server documentation. Do not rely on assumed or cached tool names.
 
-### Slack Tools
-- `slack.send_slack_message`, `slack.get_slack_channels`
-- `slack.get_slack_messages`, `slack.search_slack_messages`
-- `slack.reply_to_message`, `slack.add_reaction`
+### Research Process for Tools
+When validating tool names in a persona:
+1. Identify the MCP server package (e.g., `slack-mcp-server`)
+2. Look up the package documentation on GitHub, npm, or PyPI
+3. Find the actual tool names from the README or documentation
+4. Verify the tool naming format matches `{server_name}.{actual_tool_name}`
 
-### Jira Tools
-- Issue CRUD: `jira.create-issue`, `jira.update-issue`, `jira.get-issue`, `jira.delete-issue`
-- Search & Fields: `jira.search-issues`, `jira.get-fields`, `jira.diagnose-fields`
-- Comments/History: `jira.add-comment`, `jira.get-comments`, `jira.get-history`
-- Attachments: `jira.upload-attachment`, `jira.get-attachments`
-- Boards/Sprints: `jira.get-boards`, `jira.get-sprints`, `jira.move-issue-to-sprint`, `jira.create-sprint`
+### Example: Slack MCP Server
+According to the [slack-mcp-server documentation](https://github.com/korotovsky/slack-mcp-server):
+- Available tools: `slack_list_channels`, `slack_post_message`, `slack_reply_message`, `slack_add_reaction`, `slack_get_users`, `slack_get_user_profile`
+- Note: Tool names use underscores, not dots, in the actual tool name portion
+
+### Tool Naming Format
+The format is always: `{server_name_in_mcp_json}.{actual_tool_name_from_docs}`
+- Example: If server name in mcp.json is "slack" and tool is "slack_post_message", the toolId would be "slack.slack_post_message"
+
+### Common MCP Servers (always verify current tools)
+- **Git MCP** (`mcp-server-git`): Check GitHub for current tool list
+- **Slack MCP** (`slack-mcp-server`): Check GitHub for current tool list  
+- **Jira MCP**: Various implementations exist, verify specific package
+- **Linear MCP** (`@modelcontextprotocol/server-linear`): Check official docs
+- **Trello MCP** (`@modelcontextprotocol/server-trello`): Check official docs
 
 ---
 

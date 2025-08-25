@@ -8,13 +8,10 @@
       ]
     },
     "slack": {
-      "transport": "http",
-      "url": "http://localhost:30000/mcp",
+      "transport": "stdio",
       "command": "uvx",
       "args": [
-        "slack-mcp-server-stateless",
-        "--port",
-        "30000"
+        "slack-mcp-server"
       ],
       "env": {
         "SLACK_BOT_TOKEN": "<placeholder>"

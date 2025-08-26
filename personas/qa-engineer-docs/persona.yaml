@@ -24,10 +24,10 @@ toolsets:
       Generate and manage test reports and documentation.
       Examples: create test report files, write test results, save screenshots.
     toolIds:
-      - filesystem.read
-      - filesystem.write
+      - filesystem.read_text_file
+      - filesystem.write_file
       - filesystem.create_directory
-      - filesystem.list
+      - filesystem.list_directory
     _meta:
       tags:
         categories: ["reporting", "documentation", "filesystem"]

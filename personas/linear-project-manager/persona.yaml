@@ -79,9 +79,9 @@ toolsets:
       Create and manage comprehensive project documentation including sprint reports, technical specs, and team wikis.
       Examples: generate sprint retrospectives with metrics, create release documentation, maintain project knowledge base, draft stakeholder reports.
     toolIds:
-      - filesystem.read
-      - filesystem.write
-      - filesystem.list
+      - filesystem.read_text_file
+      - filesystem.write_file
+      - filesystem.list_directory
       - filesystem.create_directory
     _meta:
       tags:
@@ -96,7 +96,7 @@ toolsets:
       - slack.conversations_history
       - github.create_issue
       - github.create_pull_request_comment
-      - filesystem.write
+      - filesystem.write_file
       - linear.add_comment
     _meta:
       tags:

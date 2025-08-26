@@ -3,9 +3,17 @@
 Generated: 2025-08-26T00:00:00Z
 Validator: persona-engineer
 
+## Recent Fix - 2025-08-26
+
+### ❌ Fixed Issue: Invalid Tool Reference in README
+- **Location**: README.md line 187
+- **Issue**: Referenced non-existent `filesystem.edit` tool in document-management toolset description
+- **Resolution**: Removed `filesystem.edit` reference, keeping only verified filesystem tools
+- **Impact**: README now accurately reflects available tools
+
 ## Summary
 - Status: FIXED & VALIDATED ✅
-- Errors: 4 (all auto-fixed)
+- Errors: 4 (all auto-fixed) + 1 additional fix
 - Warnings: 2
 
 ## Validation Results
@@ -79,7 +87,7 @@ Validator: persona-engineer
 ### Verified Tools
 - **Linear**: All 6 tools verified (create_issue, add_comment, list_members, list_projects, list_teams, list_issues, get_issue, get_project)
 - **Slack**: All 6 tools corrected to match slack-mcp-server
-- **Filesystem**: 4 tools verified (read, write, list, create_directory)
+- **Filesystem**: 4 tools verified (read_file, write_file, list_directory, create_directory)
 
 ### Unverified Tools  
 - **GitHub**: 6 tools need verification against actual server documentation

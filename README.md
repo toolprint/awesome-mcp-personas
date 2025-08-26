@@ -92,6 +92,18 @@ Tailored for systems programming with Rust
 
 ### Data Science & Analytics
 
+#### 🗄️ [PostgreSQL Database Engineer](./personas/postgres-db-engineer/)
+Comprehensive database management and optimization tools for PostgreSQL/MySQL
+- **MCP Servers**: postgres, mysql, sqlite, filesystem, git, memory, time
+- **Key Features**: Database operations, schema management, performance tuning, version control
+- **Best For**: Database administration, query optimization, schema design, database migrations
+
+#### 🐘 [PostgreSQL DBA](./personas/postgresql-dba/)
+Production PostgreSQL database administrator with advanced monitoring and performance analysis
+- **MCP Servers**: postgres, postgres-ops, chart, vchart, filesystem, git, memory, time
+- **Key Features**: 30+ PostgreSQL tools, performance dashboards, production monitoring, compliance auditing
+- **Best For**: Enterprise PostgreSQL administration, production DBA workflows, performance optimization
+
 #### 📊 [Data Scientist](./personas/data-scientist/)
 Complete toolkit for data analysis and machine learning
 - **MCP Servers**: jupyter, pandas-helper, matplotlib, scikit-learn
@@ -115,8 +127,14 @@ Multi-cloud infrastructure management
 #### 🔧 [Site Reliability Engineer](./personas/sre/)
 Monitoring and reliability tools
 - **MCP Servers**: prometheus, grafana, pagerduty, logging
-- **Key Features**: Metrics collection, alerting, incident management
+- **Key Features**: Metrics collection, alerting, incident managementcc
 - **Best For**: System monitoring, incident response, reliability improvements
+
+#### 📊 [Grafana-focused SRE](./personas/grafana-sre/)
+Specialized SRE toolkit for Grafana-based monitoring and observability
+- **MCP Servers**: filesystem, git, prometheus, docker, postgresql, slack
+- **Key Features**: Dashboard management, alert configuration, incident response, monitoring-as-code
+- **Best For**: Grafana-centric monitoring, observability automation, SLI/SLO tracking
 
 ### Content & Documentation
 

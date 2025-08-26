@@ -1,0 +1,53 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem"],
+      "env": {
+        "FILESYSTEM_ALLOWED_DIRECTORIES": "/opt/grafana/dashboards,/etc/monitoring,/var/log,/etc/grafana,/var/lib/grafana"
+      }
+    },
+    "git": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["mcp-server-git"],
+      "env": {}
+    },
+    "prometheus": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/pab1it0/prometheus-mcp-server", "prometheus-mcp-server"],
+      "env": {
+        "PROMETHEUS_URL": "<prometheus-endpoint>"
+      }
+    },
+    "docker": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "docker-mcp"],
+      "env": {}
+    },
+    "postgres": {
+      "type": "stdio",
+      "command": "npm",
+      "args": ["exec", "--", "@ahmetkca/mcp-server-postgres"],
+      "env": {
+        "DATABASE_URL": "<database-connection-string>",
+        "POSTGRES_HOST": "<postgres-host>",
+        "POSTGRES_PORT": "<postgres-port>",
+        "POSTGRES_DB": "<postgres-database>",
+        "POSTGRES_USER": "<postgres-username>",
+        "POSTGRES_PASSWORD": "<postgres-password>"
+      }
+    },
+    "slack": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["slack-mcp-server"],
+      "env": {
+        "SLACK_BOT_TOKEN": "<slack-bot-token>"
+      }
+    }
+  }
+}

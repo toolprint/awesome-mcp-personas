@@ -44,7 +44,7 @@ what
 - **Environment**: None required
 - **Used in**:
   - [software-development-assistant](../personas/software-development-assistant/) - Version control workflows
-  - [simpleton](../personas/simpleton/) - Basic git operations
+  - [intern](../personas/intern/) - Basic git operations
   - [linear-project-manager](../personas/linear-project-manager/) - Code integration
 - **Common Tools**: `git_status`, `git_add`, `git_commit`, `git_diff`, `git_log`
 
@@ -78,7 +78,7 @@ what
 - **Package**: `npx -y @modelcontextprotocol/server-filesystem`
 - **Environment**: None required
 - **Used in**:
-  - [simpleton](../personas/simpleton/) - File operations
+  - [intern](../personas/intern/) - File operations
 - **Common Tools**: `read`, `write`, `list`, `create_directory`
 
 ### Fetch MCP Server
@@ -86,7 +86,7 @@ what
 - **Package**: `npx -y @modelcontextprotocol/server-fetch`
 - **Environment**: None required
 - **Used in**:
-  - [simpleton](../personas/simpleton/) - Web requests
+  - [intern](../personas/intern/) - Web requests
 - **Common Tools**: `fetch`, `get`
 
 ### Memory MCP Server
@@ -94,7 +94,7 @@ what
 - **Package**: `npx -y @modelcontextprotocol/server-memory`
 - **Environment**: None required
 - **Used in**:
-  - [simpleton](../personas/simpleton/) - Data persistence
+  - [intern](../personas/intern/) - Data persistence
 - **Common Tools**: `store`, `retrieve`, `search`
 
 ### Playwright MCP Server
@@ -120,7 +120,7 @@ what
 | Persona | Git | Slack | Linear | Trello | Filesystem | Fetch | Memory | Playwright | Docker |
 |---------|-----|-------|--------|--------|------------|-------|---------|------------|--------|
 | software-development-assistant | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| simpleton | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| intern | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ |
 | linear-project-manager | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | trello-project-manager | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | qa-engineer | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ |

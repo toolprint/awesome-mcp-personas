@@ -1,5 +1,5 @@
-name: simpleton
-description: A comprehensive getting-started persona with essential tools for basic development, file management, web requests, and data persistence
+name: intern
+description: Entry-level persona with essential tools for basic development, file management, web requests, and data persistence - perfect for learning the ropes
 version: "1.0"
 toolsets:
   - name: file-and-version-control

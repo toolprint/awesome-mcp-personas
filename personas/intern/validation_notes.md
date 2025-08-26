@@ -14,6 +14,13 @@ Validated by: persona-engineer
 - **Fix Applied**: Updated to use correct knowledge graph tools for intern learning use cases
 - **New Tools**: `memory.create_entities`, `memory.add_observations`, `memory.search_nodes`, `memory.read_graph`
 
+#### ❌ → ✅ Fixed: Incorrect Fetch Server Tool Names
+- **Issue**: Used non-existent fetch server tools: `fetch.get`, `fetch.post` 
+- **Root Cause**: Fetch server only provides web scraping functionality, not full HTTP client
+- **Research**: Verified actual tools from https://github.com/modelcontextprotocol/servers/blob/main/src/fetch/README.md
+- **Fix Applied**: Removed non-existent tools, updated use cases to focus on web content fetching
+- **Correct Tool**: Only `fetch.fetch` exists (fetches URLs and converts to markdown)
+
 #### ✅ Enhanced: Better Use Case Alignment  
 - **Improvement**: Renamed toolset from "data-persistence" to "knowledge-building"
 - **Rationale**: Knowledge graph better serves intern learning needs than simple caching
@@ -41,8 +48,8 @@ All tools verified against official MCP server documentation:
 **Filesystem Server Tools** (4 tools):
 - filesystem.read_text_file, filesystem.write_file, filesystem.list_directory, filesystem.create_directory
 
-**Fetch Server Tools** (3 tools):
-- fetch.fetch, fetch.get, fetch.post
+**Fetch Server Tools** (1 tool):
+- fetch.fetch
 
 **Memory Server Tools** (4 tools):
 - memory.create_entities, memory.add_observations, memory.search_nodes, memory.read_graph

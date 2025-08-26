@@ -19,12 +19,10 @@ toolsets:
   
   - name: research-and-learn
     description: >
-      Explore external APIs and documentation while building persistent knowledge about what you discover.
-      Examples: research API endpoints and store findings, fetch documentation and remember key insights, map external services to internal components.
+      Fetch web content and documentation while building persistent knowledge about what you discover.
+      Examples: fetch documentation pages and remember key insights, scrape web resources and store findings, research online content and map to project components.
     toolIds:
       - fetch.fetch
-      - fetch.get
-      - fetch.post
       - memory.create_entities
       - memory.add_observations
       - memory.search_nodes

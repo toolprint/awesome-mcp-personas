@@ -1,0 +1,77 @@
+name: mysql-dba
+description: Production MySQL Database Administrator focused on MySQL/MariaDB administration, web application database optimization, LAMP/LEMP stack integration, and high-traffic e-commerce database management with MySQL-specific performance tuning and replication tools
+version: "1.0"
+
+toolsets:
+  - name: production-admin
+    description: Core MySQL administration and monitoring for production environments
+    toolIds:
+      - mysql.query
+      - mysql.show_tables
+      - mysql.describe
+      - mysql.show_status
+      - mysql.show_grants
+      - filesystem.read_text_file
+      - filesystem.list_directory
+      - git.git_status
+      - git.git_commit
+      - memory.create_entities
+      - memory.search_nodes
+
+  - name: performance-tuning
+    description: MySQL query optimization and InnoDB performance analysis
+    toolIds:
+      - mysql.query
+      - mysql.explain
+      - mysql.show_status
+      - chart.create_line_chart
+      - chart.create_bar_chart
+      - vchart.create_performance_dashboard
+      - filesystem.read_text_file
+      - memory.add_observations
+      - time.get_current_time
+      - time.convert_timezone
+
+  - name: development-ops
+    description: Web development workflow and schema migration support
+    toolIds:
+      - mysql.query
+      - mysql.show_tables
+      - mysql.describe
+      - filesystem.read_text_file
+      - filesystem.write_file
+      - filesystem.create_directory
+      - git.git_status
+      - git.git_add
+      - git.git_commit
+      - git.git_diff
+      - memory.create_entities
+
+  - name: web-stack-integration
+    description: LAMP/LEMP stack optimization and e-commerce database management
+    toolIds:
+      - mysql.query
+      - mysql.show_status
+      - mysql.show_grants
+      - time.get_current_time
+      - time.convert_timezone
+      - time.format_time
+      - chart.create_time_series
+      - vchart.create_alert_dashboard
+      - filesystem.read_text_file
+      - memory.read_graph
+
+defaultToolset: production-admin
+
+metadata:
+  author: awesome-mcp-personas
+  tags:
+    - database
+    - mysql
+    - administration
+    - performance
+    - web-development
+    - lamp
+    - lemp
+  created: "2025-01-26T00:00:00Z"
+  lastModified: "2025-01-26T00:00:00Z"

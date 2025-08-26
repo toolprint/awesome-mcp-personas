@@ -1,0 +1,67 @@
+{
+  "mcpServers": {
+    "postgres": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@ahmetkca/mcp-server-postgres"],
+      "env": {
+        "POSTGRES_HOST": "<placeholder>",
+        "POSTGRES_PORT": "5432",
+        "POSTGRES_DATABASE": "<placeholder>",
+        "POSTGRES_USER": "<placeholder>",
+        "POSTGRES_PASSWORD": "<placeholder>",
+        "POSTGRES_SSL": "prefer"
+      }
+    },
+    "postgres-ops": {
+      "type": "stdio", 
+      "command": "uvx",
+      "args": ["git+https://github.com/call518/MCP-PostgreSQL-Ops"],
+      "env": {
+        "POSTGRES_HOST": "<placeholder>",
+        "POSTGRES_PORT": "5432",
+        "POSTGRES_DATABASE": "<placeholder>",
+        "POSTGRES_USER": "<placeholder>",
+        "POSTGRES_PASSWORD": "<placeholder>"
+      }
+    },
+    "chart": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@antvis/mcp-server-chart"],
+      "env": {}
+    },
+    "vchart": {
+      "type": "stdio", 
+      "command": "npx",
+      "args": ["-y", "@visactor/vchart-mcp-server"],
+      "env": {}
+    },
+    "filesystem": {
+      "type": "stdio",
+      "command": "npx", 
+      "args": ["-y", "@modelcontextprotocol/server-filesystem"],
+      "env": {
+        "ALLOWED_DIRS": "/usr/local/pgsql,/var/lib/postgresql,/etc/postgresql,/opt/postgresql"
+      }
+    },
+    "git": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@cyanheads/git-mcp-server"],
+      "env": {}
+    },
+    "memory": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "env": {}
+    },
+    "time": {
+      "type": "stdio",
+      "command": "npx", 
+      "args": ["-y", "@modelcontextprotocol/server-time"],
+      "env": {}
+    }
+  }
+}

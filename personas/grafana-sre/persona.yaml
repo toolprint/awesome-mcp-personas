@@ -1,0 +1,98 @@
+name: grafana-sre
+description: >
+  A specialized Site Reliability Engineer focused on monitoring, alerting, and observability 
+  using Grafana as the primary platform. Combines traditional SRE capabilities with deep 
+  Grafana integration for visualization, alerting, and dashboard management.
+version: "1.0.0"
+metadata:
+  author: awesome-mcp-personas
+  tags:
+    - sre
+    - monitoring
+    - grafana
+    - observability
+    - incident-response
+    - alerting
+    - infrastructure
+  created: "2024-08-26T00:00:00Z"
+  lastModified: "2024-08-26T00:00:00Z"
+
+toolsets:
+  - name: monitoring-dashboards
+    description: >
+      Core monitoring and dashboard creation workflows for Grafana-based observability.
+      Examples: create performance dashboards, manage data sources, build visualization panels, 
+      template dashboards for reusable patterns.
+    toolIds:
+      - filesystem.read_text_file
+      - filesystem.write_file
+      - filesystem.list_directory
+      - git.git_status
+      - git.git_add
+      - git.git_commit
+      - prometheus.execute_query
+      - prometheus.list_metrics
+
+  - name: alerting-management
+    description: >
+      Alert rule configuration, notification channel setup, and alert lifecycle management.
+      Examples: configure Grafana alert rules, set up PagerDuty integration, manage notification 
+      channels, test alert conditions to reduce false positives.
+    toolIds:
+      - filesystem.read_text_file
+      - filesystem.write_file
+      - prometheus.execute_query
+      - prometheus.get_targets
+      - slack.conversations_add_message
+      - slack.channels_list
+
+  - name: incident-response
+    description: >
+      Real-time incident investigation, metrics correlation, and post-incident analysis.
+      Examples: investigate system issues using dashboards, correlate metrics and logs across 
+      data sources, create incident snapshots, document root cause analysis.
+    toolIds:
+      - prometheus.execute_range_query
+      - prometheus.execute_query
+      - docker.get_container_logs
+      - docker.list_containers
+      - filesystem.read_text_file
+      - filesystem.write_file
+      - git.git_status
+      - git.git_log
+      - git.git_diff
+      - slack.conversations_add_message
+
+  - name: infrastructure-automation
+    description: >
+      System administration, monitoring infrastructure management, and automated remediation.
+      Examples: manage Grafana instance configuration, optimize query performance, implement 
+      backup procedures, scale monitoring infrastructure, automate service restarts.
+    toolIds:
+      - docker.start_container
+      - docker.stop_container
+      - docker.list_containers
+      - filesystem.read_text_file
+      - filesystem.write_file
+      - filesystem.list_directory
+      - filesystem.create_directory
+      - git.git_status
+      - git.git_diff
+      - git.git_commit
+      - postgres.execute_query
+      - postgres.list_tables
+
+  - name: collaboration-communication
+    description: >
+      Team communication, status updates, and incident coordination workflows.
+      Examples: send alert notifications to Slack, coordinate incident response, 
+      share dashboard snapshots, update team on system status during outages.
+    toolIds:
+      - slack.conversations_add_message
+      - slack.channels_list
+      - slack.users_list
+      - slack.reactions_add
+      - filesystem.write_file
+      - git.git_commit
+
+defaultToolset: monitoring-dashboards

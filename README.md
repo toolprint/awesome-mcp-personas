@@ -92,6 +92,24 @@ Tailored for systems programming with Rust
 
 ### Data Science & Analytics
 
+#### 🐘 [PostgreSQL DBA](./personas/postgresql-dba/)
+Production PostgreSQL database administration and performance optimization
+- **MCP Servers**: postgres, postgresql-ops, antv-chart, vchart, filesystem, git, memory, time
+- **Key Features**: Advanced PostgreSQL monitoring, query optimization, performance visualization, enterprise scaling
+- **Best For**: Production PostgreSQL administration, database performance tuning, enterprise PostgreSQL deployments
+
+#### 🐬 [MySQL DBA](./personas/mysql-dba/)
+Production MySQL database administration with web application focus
+- **MCP Servers**: mysql, antv-chart, vchart, filesystem, git, memory, time
+- **Key Features**: MySQL optimization, LAMP/LEMP stack integration, e-commerce database management, replication monitoring
+- **Best For**: Web application databases, MySQL administration, high-traffic MySQL environments
+
+#### 🪶 [SQLite Engineer](./personas/sqlite-engineer/)
+Local development and embedded systems database management
+- **MCP Servers**: sqlite, antv-chart, filesystem, git, memory, time
+- **Key Features**: Local database development, mobile app integration, embedded systems, rapid prototyping
+- **Best For**: Mobile applications, desktop software, embedded systems, data analysis prototyping
+
 #### 📊 [Data Scientist](./personas/data-scientist/)
 Complete toolkit for data analysis and machine learning
 - **MCP Servers**: jupyter, pandas-helper, matplotlib, scikit-learn
@@ -115,8 +133,14 @@ Multi-cloud infrastructure management
 #### 🔧 [Site Reliability Engineer](./personas/sre/)
 Monitoring and reliability tools
 - **MCP Servers**: prometheus, grafana, pagerduty, logging
-- **Key Features**: Metrics collection, alerting, incident management
+- **Key Features**: Metrics collection, alerting, incident managementcc
 - **Best For**: System monitoring, incident response, reliability improvements
+
+#### 📊 [Grafana-focused SRE](./personas/grafana-sre/)
+Specialized SRE toolkit for Grafana-based monitoring and observability
+- **MCP Servers**: filesystem, git, prometheus, docker, postgresql, slack
+- **Key Features**: Dashboard management, alert configuration, incident response, monitoring-as-code
+- **Best For**: Grafana-centric monitoring, observability automation, SLI/SLO tracking
 
 ### Content & Documentation
 

@@ -1,0 +1,49 @@
+{
+  "mcpServers": {
+    "sqlite": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["mcp-sqlite"],
+      "env": {
+        "SQLITE_DB_PATH": "<placeholder>"
+      }
+    },
+    "chart": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@antvis/mcp-server-chart"],
+      "env": {}
+    },
+    "filesystem": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem"],
+      "env": {
+        "ALLOWED_DIRECTORIES": "<placeholder>"
+      }
+    },
+    "git": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["@cyanheads/git-mcp-server"],
+      "env": {
+        "GIT_AUTHOR_NAME": "<placeholder>",
+        "GIT_AUTHOR_EMAIL": "<placeholder>"
+      }
+    },
+    "memory": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "env": {}
+    },
+    "time": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-time"],
+      "env": {
+        "DEFAULT_TIMEZONE": "<placeholder>"
+      }
+    }
+  }
+}

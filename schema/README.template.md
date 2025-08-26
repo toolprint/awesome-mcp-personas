@@ -9,15 +9,6 @@
 ## Prerequisites
 {{PREREQUISITES_LIST}}
 
-## Installation
-
-1. Set up your environment variables:
-   ```bash
-   {{ENVIRONMENT_VARIABLES}}
-   ```
-
-2. The MCP servers will be automatically installed when first used.
-
 ## MCP Servers
 
 {{#each MCP_SERVERS}}

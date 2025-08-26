@@ -7,7 +7,7 @@
 
 | Total Servers | Total Personas | Most Used Server |
 |---------------|----------------|------------------|
-| 33 | 13 | Git (9 personas) |
+| 33 | 14 | Git (10 personas) |
 
 ---
 
@@ -16,9 +16,9 @@
 ### High Usage (3+ personas)
 | Server | Package | Personas Count | Environment |
 |--------|---------|----------------|-------------|
-| **Git** | `uvx mcp-server-git` | 9 | None |
+| **Git** | `uvx mcp-server-git` | 10 | None |
 | **Slack** | `uvx slack-mcp-server` | 3 | `SLACK_BOT_TOKEN` |
-| **Filesystem** | `npx -y @modelcontextprotocol/server-filesystem` | 9 | None |
+| **Filesystem** | `npx -y @modelcontextprotocol/server-filesystem` | 10 | None |
 
 ### Medium Usage (2 personas)
 | Server | Package | Personas Count | Environment |
@@ -33,7 +33,7 @@
 | **GitHub** | `npx -y @modelcontextprotocol/server-github` | 1 | `GITHUB_PERSONAL_ACCESS_TOKEN` |
 | **Trello** | `npx -y @modelcontextprotocol/server-trello` | 1 | `TRELLO_API_KEY`, `TRELLO_TOKEN` |
 | **Fetch** | `npx -y @modelcontextprotocol/server-fetch` | 3 | None |
-| **Memory** | `npx -y @modelcontextprotocol/server-memory` | 6 | None |
+| **Memory** | `npx -y @modelcontextprotocol/server-memory` | 7 | None |
 | **Playwright** | `npx -y @modelcontextprotocol/server-playwright` | 2 | None |
 | **Code Checker** | `uvx mcp-code-checker` | 1 | None |
 | **Kubectl** | `uvx kubectl-mcp-tool` | 1 | `KUBECONFIG` |
@@ -41,10 +41,10 @@
 | **Prometheus** | `uvx --from git+https://github.com/pab1it0/prometheus-mcp-server prometheus-mcp-server` | 1 | `PROMETHEUS_URL` |
 | **PostgreSQL** | `npx -y @ahmetkca/mcp-server-postgres` | 3 | `POSTGRES_HOST`, `POSTGRES_PORT`, `POSTGRES_DATABASE`, `POSTGRES_USER`, `POSTGRES_PASSWORD` |
 | **MySQL** | `uvx mysql-mcp-server` | 2 | `MYSQL_*` |
-| **SQLite** | `uvx mcp-sqlite` | 1 | `SQLITE_DB_PATH` |
-| **Time** | `npx -y @modelcontextprotocol/server-time` | 5 | `DEFAULT_TIMEZONE` |
+| **SQLite** | `uvx mcp-sqlite` | 2 | `SQLITE_DB_PATH` |
+| **Time** | `npx -y @modelcontextprotocol/server-time` | 6 | `DEFAULT_TIMEZONE` |
 | **PostgreSQL Ops** | `uvx git+https://github.com/call518/MCP-PostgreSQL-Ops` | 1 | `POSTGRES_HOST`, `POSTGRES_PORT`, `POSTGRES_DATABASE`, `POSTGRES_USER`, `POSTGRES_PASSWORD` |
-| **Chart** | `npx -y @antvis/mcp-server-chart` | 2 | None |
+| **Chart** | `npx -y @antvis/mcp-server-chart` | 3 | None |
 | **VChart** | `npx -y @visactor/vchart-mcp-server` | 2 | None |
 | **AWS Core** | `uvx awslabs.core-mcp-server@latest` | 1 | `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION` |
 | **AWS API** | `uvx awslabs.aws-api-mcp-server@latest` | 1 | `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION` |
@@ -76,6 +76,7 @@
   - [aws-cloud-engineer](../personas/aws-cloud-engineer/) - AWS Infrastructure as Code and configuration management
   - [postgresql-dba](../personas/postgresql-dba/) - Database schema and configuration management
   - [mysql-dba](../personas/mysql-dba/) - MySQL schema and web application database management
+  - [sqlite-engineer](../personas/sqlite-engineer/) - Mobile and embedded database schema management and version control
 - **Common Tools**: `git_status`, `git_add`, `git_commit`, `git_diff`, `git_log`, `git_branch`
 
 ### Slack MCP Server  
@@ -126,6 +127,7 @@
   - [aws-cloud-engineer](../personas/aws-cloud-engineer/) - AWS configuration and CloudFormation template management
   - [postgresql-dba](../personas/postgresql-dba/) - PostgreSQL script and configuration management
   - [mysql-dba](../personas/mysql-dba/) - MySQL script and web application configuration management
+  - [sqlite-engineer](../personas/sqlite-engineer/) - SQLite database management, backup files, and project organization
 - **Common Tools**: `read_text_file`, `write_file`, `list_directory`, `create_directory`
 
 ### Fetch MCP Server
@@ -150,6 +152,7 @@
   - [postgres-db-engineer](../personas/postgres-db-engineer/) - Database documentation and schema relationships
   - [postgresql-dba](../personas/postgresql-dba/) - PostgreSQL schema relationships and operational documentation
   - [mysql-dba](../personas/mysql-dba/) - MySQL schema documentation and web application database knowledge
+  - [sqlite-engineer](../personas/sqlite-engineer/) - SQLite project documentation, schema relationships, and development insights
 - **Common Tools**: `create_entities`, `add_observations`, `search_nodes`, `read_graph`
 
 ### Playwright MCP Server
@@ -213,6 +216,7 @@
 - **Environment**: `SQLITE_DB_PATH`
 - **Used in**:
   - [postgres-db-engineer](../personas/postgres-db-engineer/) - Local SQLite database operations and testing
+  - [sqlite-engineer](../personas/sqlite-engineer/) - Mobile, desktop, and embedded SQLite development and deployment
 - **Common Tools**: `execute`, `list_tables`, `describe_table`, `analyze`, `pragma`
 
 ### Time MCP Server
@@ -224,6 +228,7 @@
   - [cloud-engineer](../personas/cloud-engineer/) - Deployment scheduling and incident coordination
   - [postgresql-dba](../personas/postgresql-dba/) - PostgreSQL timezone operations and performance tracking
   - [mysql-dba](../personas/mysql-dba/) - MySQL timezone handling for web applications and global e-commerce
+  - [sqlite-engineer](../personas/sqlite-engineer/) - SQLite timezone operations for mobile and embedded applications
 - **Common Tools**: `get_current_time`, `convert_timezone`, `format_time`, `calculate_duration`
 
 ### Kubectl MCP Server
@@ -265,6 +270,7 @@
 - **Used in**:
   - [postgresql-dba](../personas/postgresql-dba/) - Database performance visualization and monitoring charts
   - [mysql-dba](../personas/mysql-dba/) - MySQL performance metrics visualization and web application monitoring
+  - [sqlite-engineer](../personas/sqlite-engineer/) - SQLite data analysis visualization and performance monitoring for mobile/embedded systems
 - **Common Tools**: `create_line_chart`, `create_bar_chart`, `create_time_series`
 
 ### VChart MCP Server
@@ -295,6 +301,7 @@
 | mysql-dba | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ |
 | cloud-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
 | aws-cloud-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| sqlite-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
 
 ---
 

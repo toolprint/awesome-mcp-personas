@@ -1,0 +1,73 @@
+name: cloud-engineer
+description: A comprehensive MCP persona for cloud infrastructure management across AWS, Azure, and Google Cloud Platform. Provides tools for infrastructure-as-code, container orchestration, monitoring, and cloud resource management optimized for cloud engineering workflows.
+version: "1.0"
+
+toolsets:
+  - name: infrastructure-deployment
+    description: Infrastructure as Code deployment and version control operations for managing cloud resources and configuration files
+    toolIds:
+      - git.git_status
+      - git.git_diff
+      - git.git_commit
+      - git.git_add
+      - git.git_log
+      - git.git_branch
+      - filesystem.read_text_file
+      - filesystem.write_file
+      - filesystem.list_directory
+      - filesystem.create_directory
+      - aws-cloud-control.create_resource
+      - aws-cloud-control.get_resource
+      - aws-cloud-control.update_resource
+      - sequential-thinking.create_reasoning_session
+      - sequential-thinking.analyze_step_by_step
+
+  - name: container-operations
+    description: Comprehensive container and Kubernetes orchestration management including Docker operations and cluster management
+    toolIds:
+      - docker.create_container
+      - docker.list_containers
+      - docker.start_container
+      - docker.stop_container
+      - docker.get_container_logs
+      - docker.deploy_compose
+      - kubectl.get_pods
+      - kubectl.get_services
+      - kubectl.describe_resource
+      - kubectl.get_logs
+      - kubectl.scale_deployment
+      - kubectl.port_forward
+      - sequential-thinking.synthesize_solution
+
+  - name: monitoring-incident-response
+    description: End-to-end observability and incident management with metrics analysis and time-based coordination
+    toolIds:
+      - prometheus.execute_query
+      - prometheus.execute_range_query
+      - prometheus.list_metrics
+      - prometheus.get_targets
+      - prometheus.get_metric_metadata
+      - time.get_current_time
+      - time.convert_timezone
+      - time.format_time
+      - time.calculate_duration
+      - sequential-thinking.create_reasoning_session
+      - sequential-thinking.analyze_step_by_step
+
+defaultToolset: infrastructure-deployment
+
+metadata:
+  author: MCP Persona Registry
+  tags:
+    - cloud
+    - infrastructure
+    - devops
+    - containers
+    - kubernetes
+    - docker
+    - monitoring
+    - aws
+    - observability
+    - automation
+  created: "2025-08-26T00:00:00Z"
+  lastModified: "2025-08-26T00:00:00Z"

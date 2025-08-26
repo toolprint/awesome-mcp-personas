@@ -92,17 +92,23 @@ Tailored for systems programming with Rust
 
 ### Data Science & Analytics
 
-#### 🗄️ [PostgreSQL Database Engineer](./personas/postgres-db-engineer/)
-Comprehensive database management and optimization tools for PostgreSQL/MySQL
-- **MCP Servers**: postgres, mysql, sqlite, filesystem, git, memory, time
-- **Key Features**: Database operations, schema management, performance tuning, version control
-- **Best For**: Database administration, query optimization, schema design, database migrations
-
 #### 🐘 [PostgreSQL DBA](./personas/postgresql-dba/)
-Production PostgreSQL database administrator with advanced monitoring and performance analysis
-- **MCP Servers**: postgres, postgres-ops, chart, vchart, filesystem, git, memory, time
-- **Key Features**: 30+ PostgreSQL tools, performance dashboards, production monitoring, compliance auditing
-- **Best For**: Enterprise PostgreSQL administration, production DBA workflows, performance optimization
+Production PostgreSQL database administration and performance optimization
+- **MCP Servers**: postgres, postgresql-ops, antv-chart, vchart, filesystem, git, memory, time
+- **Key Features**: Advanced PostgreSQL monitoring, query optimization, performance visualization, enterprise scaling
+- **Best For**: Production PostgreSQL administration, database performance tuning, enterprise PostgreSQL deployments
+
+#### 🐬 [MySQL DBA](./personas/mysql-dba/)
+Production MySQL database administration with web application focus
+- **MCP Servers**: mysql, antv-chart, vchart, filesystem, git, memory, time
+- **Key Features**: MySQL optimization, LAMP/LEMP stack integration, e-commerce database management, replication monitoring
+- **Best For**: Web application databases, MySQL administration, high-traffic MySQL environments
+
+#### 🪶 [SQLite Engineer](./personas/sqlite-engineer/)
+Local development and embedded systems database management
+- **MCP Servers**: sqlite, antv-chart, filesystem, git, memory, time
+- **Key Features**: Local database development, mobile app integration, embedded systems, rapid prototyping
+- **Best For**: Mobile applications, desktop software, embedded systems, data analysis prototyping
 
 #### 📊 [Data Scientist](./personas/data-scientist/)
 Complete toolkit for data analysis and machine learning

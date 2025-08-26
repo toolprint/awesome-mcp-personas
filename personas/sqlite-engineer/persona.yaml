@@ -1,0 +1,56 @@
+name: sqlite-engineer
+description: SQLite Engineer specializing in local development, mobile applications, embedded systems, and lightweight database operations with comprehensive development support
+toolsets:
+  - name: local-development
+    description: SQLite development and rapid prototyping with file management and visualization
+    toolIds:
+      - sqlite.execute
+      - sqlite.list_tables
+      - sqlite.describe_table
+      - sqlite.analyze
+      - filesystem.read_text_file
+      - filesystem.write_file
+      - filesystem.list_directory
+      - chart.create_line_chart
+      - chart.create_bar_chart
+
+  - name: data-analysis
+    description: Data analysis and research workflows with SQLite visualization and time operations
+    toolIds:
+      - sqlite.execute
+      - sqlite.analyze
+      - sqlite.pragma
+      - chart.create_line_chart
+      - chart.create_time_series
+      - time.get_current_time
+      - time.format_time
+      - memory.create_entities
+      - memory.search_nodes
+
+  - name: application-integration
+    description: Mobile and desktop application database development with comprehensive project management
+    toolIds:
+      - sqlite.execute
+      - sqlite.list_tables
+      - sqlite.describe_table
+      - sqlite.pragma
+      - git.git_status
+      - git.git_add
+      - git.git_commit
+      - filesystem.create_directory
+      - filesystem.write_file
+      - time.convert_timezone
+
+  - name: embedded-systems
+    description: IoT and edge device database operations with resource optimization and backup strategies
+    toolIds:
+      - sqlite.execute
+      - sqlite.pragma
+      - sqlite.analyze
+      - filesystem.read_text_file
+      - filesystem.list_directory
+      - git.git_diff
+      - memory.add_observations
+      - time.calculate_duration
+
+defaultToolset: local-development

@@ -1,0 +1,169 @@
+{
+  "mcpServers": {
+    "aws": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["awslabs.core-mcp-server@latest"],
+      "env": {
+        "AWS_ACCESS_KEY_ID": "<placeholder>",
+        "AWS_SECRET_ACCESS_KEY": "<placeholder>",
+        "AWS_REGION": "<placeholder>",
+        "AWS_DEFAULT_REGION": "<placeholder>",
+        "AWS_PROFILE": "<placeholder>",
+        "AWS_SESSION_TOKEN": "<placeholder>"
+      }
+    },
+    "aws-api": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["awslabs.aws-api-mcp-server@latest"],
+      "env": {
+        "AWS_ACCESS_KEY_ID": "<placeholder>",
+        "AWS_SECRET_ACCESS_KEY": "<placeholder>",
+        "AWS_REGION": "<placeholder>",
+        "AWS_DEFAULT_REGION": "<placeholder>",
+        "AWS_PROFILE": "<placeholder>",
+        "AWS_SESSION_TOKEN": "<placeholder>"
+      }
+    },
+    "aws-documentation": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["awslabs.aws-documentation-mcp-server@latest"],
+      "env": {
+        "AWS_REGION": "<placeholder>"
+      }
+    },
+    "aws-cloudformation": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["awslabs.aws-cloudformation-mcp-server@latest"],
+      "env": {
+        "AWS_ACCESS_KEY_ID": "<placeholder>",
+        "AWS_SECRET_ACCESS_KEY": "<placeholder>",
+        "AWS_REGION": "<placeholder>",
+        "AWS_DEFAULT_REGION": "<placeholder>",
+        "AWS_PROFILE": "<placeholder>",
+        "AWS_SESSION_TOKEN": "<placeholder>"
+      }
+    },
+    "aws-cdk": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["awslabs.aws-cdk-mcp-server@latest"],
+      "env": {
+        "AWS_ACCESS_KEY_ID": "<placeholder>",
+        "AWS_SECRET_ACCESS_KEY": "<placeholder>",
+        "AWS_REGION": "<placeholder>",
+        "AWS_DEFAULT_REGION": "<placeholder>",
+        "AWS_PROFILE": "<placeholder>",
+        "AWS_SESSION_TOKEN": "<placeholder>",
+        "CDK_DEFAULT_ACCOUNT": "<placeholder>",
+        "CDK_DEFAULT_REGION": "<placeholder>"
+      }
+    },
+    "aws-eks": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["awslabs.aws-eks-mcp-server@latest"],
+      "env": {
+        "AWS_ACCESS_KEY_ID": "<placeholder>",
+        "AWS_SECRET_ACCESS_KEY": "<placeholder>",
+        "AWS_REGION": "<placeholder>",
+        "AWS_DEFAULT_REGION": "<placeholder>",
+        "AWS_PROFILE": "<placeholder>",
+        "AWS_SESSION_TOKEN": "<placeholder>",
+        "KUBECONFIG": "<placeholder>"
+      }
+    },
+    "aws-serverless": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["awslabs.aws-serverless-mcp-server@latest"],
+      "env": {
+        "AWS_ACCESS_KEY_ID": "<placeholder>",
+        "AWS_SECRET_ACCESS_KEY": "<placeholder>",
+        "AWS_REGION": "<placeholder>",
+        "AWS_DEFAULT_REGION": "<placeholder>",
+        "AWS_PROFILE": "<placeholder>",
+        "AWS_SESSION_TOKEN": "<placeholder>"
+      }
+    },
+    "aws-pricing": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["awslabs.aws-pricing-mcp-server@latest"],
+      "env": {
+        "AWS_REGION": "<placeholder>"
+      }
+    },
+    "filesystem": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem"],
+      "env": {
+        "FILESYSTEM_ROOT": "<placeholder>"
+      }
+    },
+    "git": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["mcp-server-git"],
+      "env": {
+        "GIT_REPO_PATH": "<placeholder>"
+      }
+    },
+    "docker": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "docker-mcp"],
+      "env": {
+        "DOCKER_HOST": "<placeholder>"
+      }
+    },
+    "postgres": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["exec", "--", "@ahmetkca/mcp-server-postgres"],
+      "env": {
+        "POSTGRES_HOST": "<placeholder>",
+        "POSTGRES_PORT": "<placeholder>",
+        "POSTGRES_DATABASE": "<placeholder>",
+        "POSTGRES_USER": "<placeholder>",
+        "POSTGRES_PASSWORD": "<placeholder>"
+      }
+    },
+    "dynamodb": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["dynamodb-toolbox-mcp-server"],
+      "env": {
+        "AWS_ACCESS_KEY_ID": "<placeholder>",
+        "AWS_SECRET_ACCESS_KEY": "<placeholder>",
+        "AWS_REGION": "<placeholder>",
+        "DYNAMODB_TABLE_NAME": "<placeholder>"
+      }
+    },
+    "sequential": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequentialthinking"]
+    },
+    "time": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-time"]
+    },
+    "pulumi": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["pulumi-mcp-server"],
+      "env": {
+        "PULUMI_ACCESS_TOKEN": "<placeholder>",
+        "AWS_ACCESS_KEY_ID": "<placeholder>",
+        "AWS_SECRET_ACCESS_KEY": "<placeholder>",
+        "AWS_REGION": "<placeholder>"
+      }
+    }
+  }
+}

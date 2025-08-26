@@ -1,0 +1,84 @@
+name: aws-cloud-engineer
+description: A specialized persona for Amazon Web Services (AWS) cloud infrastructure management, optimization, and operations. Provides comprehensive tools for AWS resource management, Infrastructure as Code, monitoring, and cloud-native architecture implementation using AWS best practices.
+version: "1.0"
+
+toolsets:
+  - name: infrastructure-management
+    description: Core AWS resource lifecycle management including infrastructure deployment, EC2 management, database provisioning, and storage configuration
+    toolIds:
+      - aws.list_services
+      - aws.get_service_info
+      - aws-api.describe_instances
+      - aws-api.create_instance
+      - aws-cloudformation.deploy_stack
+      - aws-cloudformation.validate_template
+      - aws-cdk.synthesize
+      - aws-cdk.deploy
+      - pulumi.stack_ls
+      - pulumi.up
+      - git.git_status
+      - git.git_commit
+      - filesystem.read_text_file
+      - filesystem.write_file
+
+  - name: container-serverless
+    description: AWS-native application deployment workflows including ECS/EKS cluster management, Lambda functions, and container registry operations
+    toolIds:
+      - docker.list_containers
+      - docker.start_container
+      - docker.stop_container
+      - docker.get_container_logs
+      - aws-eks.get_cluster
+      - aws-eks.list_services
+      - aws-eks.apply_manifest
+      - aws-serverless.deploy
+      - aws-serverless.invoke
+      - sequential.create_task
+      - sequential.run_task
+      - filesystem.read_text_file
+      - git.git_log
+
+  - name: database-operations
+    description: Database management for both relational (RDS) and NoSQL (DynamoDB) services with query optimization and schema management
+    toolIds:
+      - postgres.execute_query
+      - postgres.analyze_query
+      - postgres.list_tables
+      - postgres.get_schema
+      - dynamodb.query
+      - dynamodb.scan
+      - dynamodb.put_item
+      - sequential.create_task
+      - aws-api.describe_db_instances
+      - aws-pricing.get_ec2_pricing
+
+  - name: monitoring-optimization
+    description: AWS monitoring, cost analysis, and operational workflows including CloudWatch management, pricing analysis, and performance optimization
+    toolIds:
+      - time.get_current_time
+      - time.convert_timezone
+      - time.format_time
+      - time.calculate_duration
+      - aws-pricing.get_ec2_pricing
+      - aws-pricing.compare_instance_types
+      - sequential.create_task
+      - sequential.run_task
+      - aws-api.describe_instances
+      - aws-documentation.search
+      - filesystem.read_text_file
+
+defaultToolset: infrastructure-management
+
+metadata:
+  author: AWS Cloud Engineer Persona Maintainers
+  tags:
+    - aws
+    - cloud
+    - infrastructure
+    - devops
+    - containers
+    - serverless
+    - databases
+    - monitoring
+  created: "2024-08-26T00:00:00Z"
+  lastModified: "2024-08-26T00:00:00Z"

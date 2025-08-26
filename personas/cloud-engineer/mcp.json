@@ -1,0 +1,58 @@
+{
+  "mcpServers": {
+    "git": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["mcp-server-git"]
+    },
+    "filesystem": {
+      "type": "stdio", 
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem"]
+    },
+    "docker": {
+      "type": "stdio",
+      "command": "npx", 
+      "args": ["-y", "docker-mcp"]
+    },
+    "kubectl": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["kubectl-mcp-tool"],
+      "env": {
+        "KUBECONFIG": "<path_to_kubeconfig_file>"
+      }
+    },
+    "aws-cloud-control": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["aws-cloud-control-mcp"],
+      "env": {
+        "AWS_ACCESS_KEY_ID": "<your_aws_access_key_id>",
+        "AWS_SECRET_ACCESS_KEY": "<your_aws_secret_access_key>",
+        "AWS_DEFAULT_REGION": "<your_aws_region>"
+      }
+    },
+    "sequential-thinking": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequentialthinking"]
+    },
+    "prometheus": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/pab1it0/prometheus-mcp-server", "prometheus-mcp-server"],
+      "env": {
+        "PROMETHEUS_URL": "<prometheus_server_url>"
+      }
+    },
+    "time": {
+      "type": "stdio",
+      "command": "npx", 
+      "args": ["-y", "@modelcontextprotocol/server-time"],
+      "env": {
+        "DEFAULT_TIMEZONE": "<default_timezone>"
+      }
+    }
+  }
+}

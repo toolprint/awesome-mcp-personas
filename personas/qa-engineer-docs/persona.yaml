@@ -24,21 +24,20 @@ toolsets:
       Generate and manage test reports and documentation.
       Examples: create test report files, write test results, save screenshots.
     toolIds:
-      - filesystem.read_file
-      - filesystem.write_file
+      - filesystem.read
+      - filesystem.write
       - filesystem.create_directory
-      - filesystem.list_directory
-      - filesystem.delete
+      - filesystem.list
     _meta:
       tags:
         categories: ["reporting", "documentation", "filesystem"]
 
   - name: test-research
     description: >
-      Research testing best practices, frameworks, and solutions.
-      Examples: search for testing patterns, find documentation, research tools.
+      Fetch web content and documentation for research purposes.
+      Examples: fetch testing documentation, download resources, get web content.
     toolIds:
-      - brave-search.search
+      - fetch.fetch
     _meta:
       tags:
         categories: ["research", "documentation", "learning"]

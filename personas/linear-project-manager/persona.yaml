@@ -49,12 +49,12 @@ toolsets:
       Send updates, notifications, and coordinate with team through Slack channels and DMs.
       Examples: post sprint updates, notify about blockers, share project status, coordinate meetings.
     toolIds:
-      - slack.send_message
-      - slack.list_channels
-      - slack.list_users
-      - slack.get_channel_history
-      - slack.create_channel
-      - slack.add_reaction
+      - slack.conversations_add_message
+      - slack.channels_list
+      - slack.users_list
+      - slack.conversations_history
+      - slack.conversations_create
+      - slack.reactions_add
     _meta:
       tags:
         categories: ["communication", "notifications", "collaboration"]
@@ -81,7 +81,6 @@ toolsets:
     toolIds:
       - filesystem.read
       - filesystem.write
-      - filesystem.edit
       - filesystem.list
       - filesystem.create_directory
     _meta:
@@ -93,8 +92,8 @@ toolsets:
       Coordinate project updates across Slack and GitHub with documentation links and issue tracking.
       Examples: post sprint summaries with Linear metrics to Slack, link GitHub PRs with documentation, create unified project status reports.
     toolIds:
-      - slack.send_message
-      - slack.get_channel_history
+      - slack.conversations_add_message
+      - slack.conversations_history
       - github.create_issue
       - github.create_pull_request_comment
       - filesystem.write

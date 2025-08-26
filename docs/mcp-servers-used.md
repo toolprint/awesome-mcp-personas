@@ -1,13 +1,13 @@
 # MCP Servers in Active Use
 
 > Cross-reference of MCP servers currently used in personas
-> **Last Updated**: 2025-08-25
+> **Last Updated**: 2025-08-26
 
 ## Summary
 
 | Total Servers | Total Personas | Most Used Server |
 |---------------|----------------|------------------|
-| 8 | 5 | Git (3 personas) |
+| 9 | 6 | Git (3 personas) |
 
 ---
 what
@@ -17,22 +17,21 @@ what
 | Server | Package | Personas Count | Environment |
 |--------|---------|----------------|-------------|
 | **Git** | `uvx mcp-server-git` | 3 | None |
+| **Slack** | `uvx slack-mcp-server` | 3 | `SLACK_BOT_TOKEN` |
+| **Filesystem** | `npx -y @modelcontextprotocol/server-filesystem` | 3 | None |
 
 ### Medium Usage (2 personas)
-| Server | Package | Personas Count | Environment |
-|--------|---------|----------------|-------------|
-| **Slack** | `uvx slack-mcp-server` | 2 | `SLACK_BOT_TOKEN` |
 
 ### Low Usage (1 persona)
 | Server | Package | Personas Count | Environment |
 |--------|---------|----------------|-------------|
 | **Linear** | `npx -y @modelcontextprotocol/server-linear` | 1 | `LINEAR_API_KEY` |
+| **GitHub** | `npx -y @modelcontextprotocol/server-github` | 1 | `GITHUB_PERSONAL_ACCESS_TOKEN` |
 | **Trello** | `npx -y @modelcontextprotocol/server-trello` | 1 | `TRELLO_API_KEY`, `TRELLO_TOKEN` |
-| **Filesystem** | `npx -y @modelcontextprotocol/server-filesystem` | 1 | None |
-| **Fetch** | `npx -y @modelcontextprotocol/server-fetch` | 1 | None |
+| **Fetch** | `npx -y @modelcontextprotocol/server-fetch` | 2 | None |
 | **Memory** | `npx -y @modelcontextprotocol/server-memory` | 1 | None |
-| **Playwright** | `npx -y @modelcontextprotocol/server-playwright` | 1 | None |
-| **Docker** | `npx -y @modelcontextprotocol/server-docker` | 1 | None |
+| **Playwright** | `npx -y @modelcontextprotocol/server-playwright` | 2 | None |
+| **Docker** | `npx -y docker-mcp` | 1 | None |
 
 ---
 
@@ -55,7 +54,8 @@ what
 - **Used in**:
   - [software-development-assistant](../personas/software-development-assistant/) - Team communication
   - [qa-engineer](../personas/qa-engineer/) - Test reporting
-- **Common Tools**: `conversations_add_message`, `conversations_history`, `channels_list`
+  - [linear-project-manager](../personas/linear-project-manager/) - Project notifications and coordination
+- **Common Tools**: `conversations_add_message`, `conversations_history`, `channels_list`, `users_list`, `conversations_create`, `reactions_add`
 
 ### Linear MCP Server
 - **Source**: https://github.com/modelcontextprotocol/servers
@@ -64,6 +64,14 @@ what
 - **Used in**:
   - [linear-project-manager](../personas/linear-project-manager/) - Issue tracking
 - **Common Tools**: `list_teams`, `list_projects`, `create_issue`, `update_issue`
+
+### GitHub MCP Server
+- **Source**: https://github.com/github/github-mcp-server
+- **Package**: `npx -y @modelcontextprotocol/server-github`
+- **Environment**: `GITHUB_PERSONAL_ACCESS_TOKEN`
+- **Used in**:
+  - [linear-project-manager](../personas/linear-project-manager/) - Code integration
+- **Common Tools**: `create_issue`, `list_pull_requests`, `get_pull_request`, `create_pull_request_comment`, `list_repositories`, `get_repository`
 
 ### Trello MCP Server
 - **Source**: https://github.com/modelcontextprotocol/servers  
@@ -79,6 +87,8 @@ what
 - **Environment**: None required
 - **Used in**:
   - [intern](../personas/intern/) - File operations
+  - [qa-engineer-docs](../personas/qa-engineer-docs/) - Test report generation
+  - [linear-project-manager](../personas/linear-project-manager/) - Documentation management
 - **Common Tools**: `read`, `write`, `list`, `create_directory`
 
 ### Fetch MCP Server
@@ -87,7 +97,8 @@ what
 - **Environment**: None required
 - **Used in**:
   - [intern](../personas/intern/) - Web requests
-- **Common Tools**: `fetch`, `get`
+  - [qa-engineer-docs](../personas/qa-engineer-docs/) - Documentation research
+- **Common Tools**: `fetch`
 
 ### Memory MCP Server
 - **Source**: https://github.com/modelcontextprotocol/servers/tree/main/src/memory
@@ -103,11 +114,12 @@ what
 - **Environment**: None required
 - **Used in**:
   - [qa-engineer](../personas/qa-engineer/) - Browser automation
-- **Common Tools**: `navigate`, `click`, `fill`, `screenshot`
+  - [qa-engineer-docs](../personas/qa-engineer-docs/) - Test automation and documentation
+- **Common Tools**: `navigate`, `click`, `fill`, `screenshot`, `evaluate`, `wait`
 
 ### Docker MCP Server
-- **Source**: https://github.com/modelcontextprotocol/servers
-- **Package**: `npx -y @modelcontextprotocol/server-docker`
+- **Source**: https://github.com/QuantGeekDev/docker-mcp
+- **Package**: `npx -y docker-mcp`
 - **Environment**: None required
 - **Used in**:
   - [qa-engineer](../personas/qa-engineer/) - Container testing
@@ -117,13 +129,14 @@ what
 
 ## Cross-Reference Matrix
 
-| Persona | Git | Slack | Linear | Trello | Filesystem | Fetch | Memory | Playwright | Docker |
-|---------|-----|-------|--------|--------|------------|-------|---------|------------|--------|
-| software-development-assistant | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| intern | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ |
-| linear-project-manager | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| trello-project-manager | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| qa-engineer | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ |
+| Persona | Git | Slack | Linear | GitHub | Trello | Filesystem | Fetch | Memory | Playwright | Docker |
+|---------|-----|-------|--------|--------|--------|------------|-------|---------|------------|--------|
+| software-development-assistant | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| intern | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| linear-project-manager | ❌ | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| trello-project-manager | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| qa-engineer | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ |
+| qa-engineer-docs | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ✅ | ❌ |
 
 ---
 

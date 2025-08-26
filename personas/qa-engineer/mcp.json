@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "playwright": {
-      "transport": "stdio",
+      "type": "stdio",
       "command": "npx",
       "args": [
         "-y",
@@ -9,15 +9,15 @@
       ]
     },
     "docker": {
-      "transport": "stdio",
+      "type": "stdio",
       "command": "npx",
       "args": [
         "-y",
-        "@modelcontextprotocol/server-docker"
+        "docker-mcp"
       ]
     },
     "slack": {
-      "transport": "stdio",
+      "type": "stdio",
       "command": "uvx",
       "args": [
         "slack-mcp-server"

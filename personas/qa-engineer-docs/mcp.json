@@ -19,16 +19,13 @@
         "rootPath": "./test-reports"
       }
     },
-    "brave-search": {
+    "fetch": {
       "type": "stdio",
       "command": "npx",
       "args": [
         "-y",
-        "@modelcontextprotocol/server-brave-search"
-      ],
-      "env": {
-        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
-      }
+        "@modelcontextprotocol/server-fetch"
+      ]
     }
   }
 }

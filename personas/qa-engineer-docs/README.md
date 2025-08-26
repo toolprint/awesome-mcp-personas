@@ -1,12 +1,12 @@
 # QA Engineer Docs
 
 ## Overview
-The **QA Engineer Docs** persona automates testing workflows and generates structured test reports. It integrates **Playwright** for browser automation, **filesystem** operations for report generation, and **Brave Search** for researching testing best practices.
+The **QA Engineer Docs** persona automates testing workflows and generates structured test reports. It integrates **Playwright** for browser automation, **filesystem** operations for report generation, and **Fetch** for researching testing documentation and web content.
 
 ## Role & Responsibilities
 - Automate and run browser-based tests using Playwright
 - Generate structured test reports and documentation
-- Research testing frameworks, patterns, and best practices
+- Fetch and research testing documentation and web resources
 - Capture screenshots and evidence during test execution
 - Create organized test report directories
 
@@ -18,25 +18,24 @@ The **QA Engineer Docs** persona automates testing workflows and generates struc
 - **Example**: Navigate to login page, fill credentials, click submit, verify successful login
 
 ### 2. Test Reporting
-- **Tools**: `filesystem.read_file`, `filesystem.write_file`, `filesystem.create_directory`, `filesystem.list_directory`, `filesystem.delete`
+- **Tools**: `filesystem.read`, `filesystem.write`, `filesystem.create_directory`, `filesystem.list`
 - **Purpose**: Generate and manage test reports, save screenshots, create structured documentation
 - **Example**: Create test report directory, write HTML/Markdown reports, save screenshot evidence
 
 ### 3. Test Research
-- **Tools**: `brave-search.search`
-- **Purpose**: Research testing best practices, find documentation, discover testing patterns
-- **Example**: Search for Playwright best practices, find testing framework comparisons
+- **Tools**: `fetch.fetch`
+- **Purpose**: Fetch web content and documentation for research purposes
+- **Example**: Fetch testing documentation, download resources, get web content for analysis
 
 ## Installation
 
 1. Ensure you have Node.js installed for running MCP servers
 2. Place the persona files in the `personas/qa-engineer-docs` directory of your MCP-enabled agent
-3. Set the `BRAVE_API_KEY` environment variable for search functionality (optional)
-4. The filesystem server will create test reports in the `./test-reports` directory
+3. The filesystem server will create test reports in the `./test-reports` directory
 
 ## Configuration Files
 
-- **mcp.json**: Contains the MCP server configurations for Playwright, filesystem, and search
+- **mcp.json**: Contains the MCP server configurations for Playwright, filesystem, and fetch
 - **persona.yaml**: Defines the toolsets and capabilities of this persona
 
 ## Usage
@@ -45,7 +44,7 @@ After installation, the persona can:
 - Run automated browser tests with Playwright
 - Generate test reports in HTML or Markdown format
 - Organize test artifacts and screenshots
-- Research testing solutions and best practices
+- Fetch testing documentation and web resources
 
 ## Example Workflow
 
@@ -58,5 +57,4 @@ After installation, the persona can:
 ## Requirements
 
 - Node.js 16+ for MCP servers
-- Optional: Brave API key for search functionality
 - Write access to `./test-reports` directory

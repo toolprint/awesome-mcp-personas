@@ -8,19 +8,18 @@
         "@modelcontextprotocol/server-linear"
       ],
       "env": {
-        "LINEAR_API_TOKEN": "${LINEAR_API_TOKEN}"
+        "LINEAR_API_KEY": "<placeholder>"
       }
     },
     "slack": {
       "type": "stdio",
-      "command": "npx",
+      "command": "uvx",
       "args": [
-        "-y",
-        "@modelcontextprotocol/server-slack"
+        "slack-mcp-server"
       ],
       "env": {
-        "SLACK_BOT_TOKEN": "${SLACK_BOT_TOKEN}",
-        "SLACK_TEAM_ID": "${SLACK_TEAM_ID}"
+        "SLACK_BOT_TOKEN": "<placeholder>",
+        "SLACK_TEAM_ID": "<placeholder>"
       }
     },
     "github": {
@@ -31,7 +30,7 @@
         "@modelcontextprotocol/server-github"
       ],
       "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "<placeholder>"
       }
     },
     "filesystem": {
@@ -42,7 +41,7 @@
         "@modelcontextprotocol/server-filesystem"
       ],
       "config": {
-        "rootPath": "${PROJECT_ROOT:-./project-docs}",
+        "rootPath": "<placeholder>",
         "allowedPaths": [
           "docs",
           "notes",

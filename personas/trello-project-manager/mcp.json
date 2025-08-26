@@ -5,7 +5,7 @@
       "command": "npx",
       "args": [
         "-y",
-        "@Hint-Services/mcp-trello"
+        "@modelcontextprotocol/server-trello"
       ],
       "env": {
         "trelloApiKey": "<placeholder>",

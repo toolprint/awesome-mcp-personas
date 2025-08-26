@@ -53,55 +53,62 @@ Ask the user these questions to understand their persona requirements:
   - sse (Server-Sent Events)
   - Mixed (different servers use different transports)
 
-### 2. File Generation
+### 2. Initial README Generation
 
-Based on the user's answers, generate the following files:
+Based on user requirements, create a comprehensive README.md as the foundation:
 
-#### Directory Structure
+#### Step 2a: Generate Initial README
+Create directory and generate README.md using `/schema/README.template.md`:
 ```
 personas/[persona-name]/
-├── persona.yaml
-├── mcp.json
-└── README.md
+└── README.md (with persona requirements and use cases)
 ```
 
-#### persona.yaml
-Generate according to `/schema/persona.schema.yaml`:
-- Required: name, description
-- Generate toolsets based on Q5 response
-- Include toolIds in format "servername.toolname"
-- Set defaultToolset if multiple toolsets exist
-- Add metadata (author, tags, timestamps)
+**README Content:**
+- Persona name, description, and target audience from user input
+- Core capabilities and workflow requirements  
+- Placeholder sections for MCP servers (to be researched)
+- Example use cases and workflow descriptions
+- Prerequisites and setup structure
 
-#### mcp.json
-Generate according to `/schema/mcp.schema.json`:
-- Create mcpServers object with server configurations
-- Use appropriate transport type (stdio, http, sse)
-- Include command and args for stdio servers
-- Include url for http/sse servers
-- Add env variables if needed
+### 3. MCP Server Discovery
 
-#### README.md
-Generate documentation including:
-- Persona name and description
-- Target audience
-- Prerequisites
-- Installation instructions
-- List of included MCP servers
-- Available toolsets and their purposes
-- Example workflows
-- Troubleshooting tips
+Hand off to @mcp-researcher to find appropriate MCP servers:
 
-### 3. Validation & Auto-Fix
+#### Step 3a: Research Delegation
+**Delegate to @mcp-researcher** with these instructions:
+- **Input**: Read the generated README.md to understand persona requirements
+- **Task**: Research and identify 3-7 MCP servers that support the persona's use cases
+- **Research Focus**: Find servers for each core capability mentioned by user
+- **Validation**: Verify server existence and provide correct installation commands
+- **Output**: Update README.md with discovered servers and capabilities
 
-After generating files:
-1. **Hand off to @persona-engineer** for comprehensive validation and auto-fix
-2. The agent will:
-   - Validate against schemas (persona.schema.yaml, mcp.schema.json)
-   - Verify MCP server existence and tool names from primary sources
-   - Auto-fix any issues found
-   - Update docs/mcp-servers-used.md with new server usage
-   - Create validation_notes.md with results
+#### Step 3b: Expected Research Results
+The @mcp-researcher will enhance the README.md with:
+- Complete MCP server list with descriptions and sources
+- Verified installation commands for each server
+- Tool capabilities and integration examples
+- Workflow-to-server mappings
+
+### 4. Configuration Generation & Final Validation
+
+Hand off to @persona-engineer for implementation and validation:
+
+#### Step 4a: Implementation Delegation  
+**Delegate to @persona-engineer** with these instructions:
+- **Input**: Read the researched README.md with MCP server recommendations
+- **Generate**: Create persona.yaml with proper toolsets based on discovered servers
+- **Generate**: Create mcp.json with verified server configurations
+- **Validate**: Use WebFetch to verify all tool names from official documentation
+- **Auto-fix**: Correct any issues with server configs or tool references
+- **Document**: Create validation_notes.md and update docs/mcp-servers-used.md
+
+#### Step 4b: Final Deliverables
+The @persona-engineer will produce:
+- **persona.yaml**: Complete toolset definitions with verified tool IDs
+- **mcp.json**: Validated server configurations with correct packages
+- **Updated README.md**: Finalized documentation with accurate server information
+- **validation_notes.md**: Documentation of all validation and fixes applied
 
 ### 4. Integration with Workflow System
 

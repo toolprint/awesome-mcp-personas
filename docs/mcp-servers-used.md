@@ -7,18 +7,18 @@
 
 | Total Servers | Total Personas | Most Used Server |
 |---------------|----------------|------------------|
-| 9 | 6 | Git (3 personas) |
+| 12 | 8 | Git (5 personas) |
 
 ---
-what
+
 ## Active Servers by Usage
 
 ### High Usage (3+ personas)
 | Server | Package | Personas Count | Environment |
 |--------|---------|----------------|-------------|
-| **Git** | `uvx mcp-server-git` | 3 | None |
+| **Git** | `uvx mcp-server-git` | 5 | None |
 | **Slack** | `uvx slack-mcp-server` | 3 | `SLACK_BOT_TOKEN` |
-| **Filesystem** | `npx -y @modelcontextprotocol/server-filesystem` | 3 | None |
+| **Filesystem** | `npx -y @modelcontextprotocol/server-filesystem` | 4 | None |
 
 ### Medium Usage (2 personas)
 
@@ -28,10 +28,12 @@ what
 | **Linear** | `npx -y @modelcontextprotocol/server-linear` | 1 | `LINEAR_API_KEY` |
 | **GitHub** | `npx -y @modelcontextprotocol/server-github` | 1 | `GITHUB_PERSONAL_ACCESS_TOKEN` |
 | **Trello** | `npx -y @modelcontextprotocol/server-trello` | 1 | `TRELLO_API_KEY`, `TRELLO_TOKEN` |
-| **Fetch** | `npx -y @modelcontextprotocol/server-fetch` | 2 | None |
-| **Memory** | `npx -y @modelcontextprotocol/server-memory` | 1 | None |
+| **Fetch** | `npx -y @modelcontextprotocol/server-fetch` | 3 | None |
+| **Memory** | `npx -y @modelcontextprotocol/server-memory` | 3 | None |
 | **Playwright** | `npx -y @modelcontextprotocol/server-playwright` | 2 | None |
 | **Docker** | `npx -y docker-mcp` | 1 | None |
+| **Code Checker** | `uvx mcp-code-checker` | 1 | None |
+| **Sequential Thinking** | `npx -y @modelcontextprotocol/server-sequentialthinking` | 2 | None |
 
 ---
 
@@ -45,6 +47,8 @@ what
   - [software-development-assistant](../personas/software-development-assistant/) - Version control workflows
   - [intern](../personas/intern/) - Basic git operations
   - [linear-project-manager](../personas/linear-project-manager/) - Code integration
+  - [python-developer](../personas/python-developer/) - Python project version control
+  - [python-backend-engineer](../personas/python-backend-engineer/) - Backend development version control
 - **Common Tools**: `git_status`, `git_add`, `git_commit`, `git_diff`, `git_log`, `git_branch`
 
 ### Slack MCP Server  
@@ -89,6 +93,7 @@ what
   - [intern](../personas/intern/) - File operations
   - [qa-engineer-docs](../personas/qa-engineer-docs/) - Test report generation
   - [linear-project-manager](../personas/linear-project-manager/) - Documentation management
+  - [python-developer](../personas/python-developer/) - Python file management and project structure
 - **Common Tools**: `read_text_file`, `write_file`, `list_directory`, `create_directory`
 
 ### Fetch MCP Server
@@ -98,6 +103,7 @@ what
 - **Used in**:
   - [intern](../personas/intern/) - Web requests
   - [qa-engineer-docs](../personas/qa-engineer-docs/) - Documentation research
+  - [python-backend-engineer](../personas/python-backend-engineer/) - Python documentation and resource research
 - **Common Tools**: `fetch`
 
 ### Memory MCP Server
@@ -106,6 +112,8 @@ what
 - **Environment**: None required
 - **Used in**:
   - [intern](../personas/intern/) - Knowledge graph for learning and context building
+  - [python-developer](../personas/python-developer/) - Project knowledge and pattern storage
+  - [python-backend-engineer](../personas/python-backend-engineer/) - Project insights and architectural knowledge management
 - **Common Tools**: `create_entities`, `add_observations`, `search_nodes`, `read_graph`
 
 ### Playwright MCP Server
@@ -125,18 +133,39 @@ what
   - [qa-engineer](../personas/qa-engineer/) - Container testing
 - **Common Tools**: `list_containers`, `create_container`, `start_container`
 
+
+### Code Checker MCP Server
+- **Source**: https://github.com/MarcusJellinghaus/mcp-code-checker
+- **Package**: `uvx mcp-code-checker`
+- **Environment**: None required
+- **Used in**:
+  - [python-backend-engineer](../personas/python-backend-engineer/) - Python code quality analysis and testing
+- **Common Tools**: `run_pylint_check`, `run_pytest_check`, `run_all_checks`
+
+### Sequential Thinking MCP Server
+- **Source**: https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking
+- **Package**: `npx -y @modelcontextprotocol/server-sequentialthinking`
+- **Environment**: None required
+- **Used in**:
+  - [python-backend-engineer](../personas/python-backend-engineer/) - Complex problem decomposition and systematic analysis
+  - [intern](../personas/intern/) - Structured learning and problem-solving
+- **Common Tools**: `create_reasoning_session`, `analyze_step_by_step`, `synthesize_solution`
+
+
 ---
 
 ## Cross-Reference Matrix
 
-| Persona | Git | Slack | Linear | GitHub | Trello | Filesystem | Fetch | Memory | Playwright | Docker |
-|---------|-----|-------|--------|--------|--------|------------|-------|---------|------------|--------|
-| software-development-assistant | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| intern | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ |
-| linear-project-manager | ❌ | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ |
-| trello-project-manager | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| qa-engineer | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ |
-| qa-engineer-docs | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Persona | Git | Slack | Linear | GitHub | Trello | Filesystem | Fetch | Memory | Playwright | Docker | PRIMS | Code-Checker | Sequential | PostgreSQL |
+|---------|-----|-------|--------|--------|--------|------------|-------|---------|------------|--------|--------|-------------|------------|------------|
+| software-development-assistant | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| intern | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| linear-project-manager | ❌ | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| trello-project-manager | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| qa-engineer | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| qa-engineer-docs | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| python-developer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| python-backend-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ |
 
 ---
 

@@ -1,0 +1,64 @@
+name: python-backend-engineer
+description: A specialized Python backend engineering expert focused on Pythonic development practices, advanced DevX tooling, code generation, and architectural analysis. Provides sophisticated tooling for building, analyzing, and managing Python backend systems.
+version: "1.0"
+
+toolsets:
+  - name: code-analysis-quality
+    description: Python code analysis, quality assessment, and structured problem-solving for backend development
+    toolIds:
+      - code-checker.run_pylint_check
+      - code-checker.run_pytest_check
+      - code-checker.run_all_checks
+      - filesystem.read_text_file
+      - filesystem.write_file
+      - sequential-thinking.create_reasoning_session
+      - sequential-thinking.analyze_step_by_step
+
+  - name: python-devx-tools
+    description: Advanced Python development experience tools for version control, testing, and project management
+    toolIds:
+      - git.git_status
+      - git.git_diff
+      - git.git_log
+      - git.git_add
+      - git.git_commit
+      - memory.create_entities
+      - memory.add_observations
+      - sequential-thinking.synthesize_solution
+
+  - name: backend-development
+    description: Python backend development including file operations, research capabilities, and system integration
+    toolIds:
+      - filesystem.read_text_file
+      - filesystem.write_file
+      - filesystem.list_directory
+      - filesystem.create_directory
+      - fetch.fetch
+      - git.git_status
+      - git.git_diff
+
+  - name: quality-testing
+    description: Comprehensive quality assurance, testing, and performance analysis tools optimized for Python backend systems
+    toolIds:
+      - code-checker.run_pytest_check
+      - code-checker.run_pylint_check
+      - code-checker.run_all_checks
+      - memory.search_nodes
+      - memory.read_graph
+      - sequential-thinking.create_reasoning_session
+      - git.git_log
+
+defaultToolset: code-analysis-quality
+
+metadata:
+  author: Awesome MCP Personas
+  tags:
+    - python
+    - backend
+    - development
+    - code-quality
+    - testing
+    - memory
+    - devops
+  created: "2025-08-26T00:00:00Z"
+  lastModified: "2025-08-26T00:00:00Z"

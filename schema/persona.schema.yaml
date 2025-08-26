@@ -43,7 +43,9 @@ properties:
       type: object
       required:
         - name
-        - toolIds
+      oneOf:
+        - required: [toolIds]
+        - required: [tools]
       properties:
         name:
           type: string
@@ -54,21 +56,53 @@ properties:
             - "testing"
             - "deployment"
         
+        description:
+          type: string
+          description: Optional description of the toolset's purpose
+          minLength: 10
+          maxLength: 500
+        
         toolIds:
           type: array
           description: Array of tool IDs with MCP server prefix (e.g., "git.status", "docker.ps")
           minItems: 1
           items:
             type: string
-            pattern: "^[a-z0-9-]+\\.[a-z0-9-]+$"
-            description: Tool ID in format 'server.tool'
+            pattern: "^[a-z0-9-]+\\.[a-z0-9_-]+$"
+            description: Tool ID in format 'server.tool' (underscores allowed in tool name)
             examples:
               - "git.status"
               - "git.commit"
               - "docker.ps"
               - "filesystem.read"
               - "npm.install"
+              - "linear.create_issue"
+              - "linear.add_comment"
           uniqueItems: true
+        
+        tools:
+          type: array
+          description: Alternative format - array of tool objects with name property
+          minItems: 1
+          items:
+            type: object
+            required:
+              - name
+            properties:
+              name:
+                type: string
+                pattern: "^[a-z0-9-]+\\.[a-z0-9_-]+$"
+                description: Tool ID in format 'server.tool' (underscores allowed in tool name)
+                examples:
+                  - "linear.create_issue"
+                  - "linear.add_comment"
+            additionalProperties: true
+          uniqueItems: true
+        
+        _meta:
+          type: object
+          description: Optional metadata for the toolset
+          additionalProperties: true
       additionalProperties: false
     minItems: 1
     uniqueItems: true
@@ -125,6 +159,11 @@ properties:
           - "2024-03-15T16:45:00-05:00"
     
     additionalProperties: false
+  
+  _meta:
+    type: object
+    description: Optional top-level metadata for the persona
+    additionalProperties: true
 
 additionalProperties: false
 

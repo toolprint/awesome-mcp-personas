@@ -1,0 +1,54 @@
+{
+  "mcpServers": {
+    "linear": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-linear"
+      ],
+      "env": {
+        "LINEAR_API_KEY": "<placeholder>"
+      }
+    },
+    "slack": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "slack-mcp-server"
+      ],
+      "env": {
+        "SLACK_BOT_TOKEN": "<placeholder>",
+        "SLACK_TEAM_ID": "<placeholder>"
+      }
+    },
+    "github": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "<placeholder>"
+      }
+    },
+    "filesystem": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem"
+      ],
+      "config": {
+        "rootPath": "<placeholder>",
+        "allowedPaths": [
+          "docs",
+          "notes",
+          "wiki",
+          "reports"
+        ]
+      }
+    }
+  }
+}

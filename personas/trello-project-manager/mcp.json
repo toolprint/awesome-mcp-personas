@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "trello": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-trello"
+      ],
+      "env": {
+        "trelloApiKey": "<placeholder>",
+        "trelloToken": "<placeholder>",
+        "trelloBoardId": "<placeholder>"
+      }
+    }
+  }
+}

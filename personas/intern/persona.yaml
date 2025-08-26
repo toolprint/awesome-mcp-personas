@@ -1,0 +1,65 @@
+name: intern
+description: Entry-level persona with essential tools for basic development, file management, web requests, and data persistence - perfect for learning the ropes
+version: "1.0"
+toolsets:
+  - name: file-and-version-control
+    description: >
+      Basic file management and version control operations for everyday development tasks.
+      Examples: read project files, track changes, commit work, explore directory structure.
+    toolIds:
+      - filesystem.read
+      - filesystem.write
+      - filesystem.list
+      - filesystem.create_directory
+      - git.git_status
+      - git.git_add
+      - git.git_commit
+      - git.git_diff
+      - git.git_log
+  
+  - name: web-and-api
+    description: >
+      Tools for making HTTP requests and interacting with web APIs.
+      Examples: fetch data from APIs, download resources, check website status, debug webhooks.
+    toolIds:
+      - fetch.fetch
+      - fetch.get
+      - fetch.post
+      - memory.store
+      - memory.retrieve
+  
+  - name: data-persistence
+    description: >
+      Memory and storage tools for persisting data across sessions.
+      Examples: save configuration, store API responses, cache results, maintain context.
+    toolIds:
+      - memory.store
+      - memory.retrieve
+      - memory.list
+      - memory.delete
+      - filesystem.write
+      - filesystem.read
+  
+  - name: project-exploration
+    description: >
+      Tools for exploring and understanding project structure and history.
+      Examples: browse directories, read documentation, check git history, understand codebase layout.
+    toolIds:
+      - filesystem.list
+      - filesystem.read
+      - git.git_log
+      - git.git_status
+      - git.git_branch
+
+defaultToolset: file-and-version-control
+
+metadata:
+  author: Awesome MCP Personas Contributors
+  tags:
+    - getting-started
+    - basic
+    - essential
+    - beginner-friendly
+    - multipurpose
+  created: "2024-01-01T00:00:00Z"
+  lastModified: "2025-01-27T00:00:00Z"

@@ -1,0 +1,128 @@
+name: linear-project-manager
+description: >
+  Comprehensive project management with Linear, Slack, GitHub integration, and advanced documentation capabilities for full-lifecycle project coordination and team collaboration.
+version: "2.0"
+
+toolsets:
+  - name: intake-triage-assignment
+    description: >
+      Create and classify issues, link to projects/teams, and assign owners with context.
+      Examples: create new bug, add description and priority, assign to team member, link to project.
+    toolIds:
+      - linear.create_issue
+      - linear.add_comment
+      - linear.list_members
+      - linear.list_projects
+      - linear.list_teams
+    _meta:
+      tags:
+        categories: ["intake", "triage", "assignment"]
+
+  - name: progress-queries-and-reports
+    description: >
+      Query issues, fetch details, and summarize project health.
+      Examples: list issues by status/assignee, get single issue details, show project scope for reporting.
+    toolIds:
+      - linear.list_issues
+      - linear.get_issue
+      - linear.list_projects
+      - linear.get_project
+    _meta:
+      tags:
+        categories: ["progress", "queries", "reporting"]
+
+  - name: roadmap-and-team-operations
+    description: >
+      Explore teams and projects, curate backlogs, and coordinate upcoming work.
+      Examples: list teams and key projects, review open issues per team, comment to nudge stakeholders.
+    toolIds:
+      - linear.list_teams
+      - linear.list_projects
+      - linear.list_issues
+      - linear.add_comment
+    _meta:
+      tags:
+        categories: ["roadmap", "team-operations"]
+  
+  - name: slack-communication
+    description: >
+      Send updates, notifications, and coordinate with team through Slack channels and DMs.
+      Examples: post sprint updates, notify about blockers, share project status, coordinate meetings.
+    toolIds:
+      - slack.conversations_add_message
+      - slack.channels_list
+      - slack.users_list
+      - slack.conversations_history
+      - slack.conversations_create
+      - slack.reactions_add
+    _meta:
+      tags:
+        categories: ["communication", "notifications", "collaboration"]
+  
+  - name: github-integration
+    description: >
+      Link code changes with Linear issues, track PR status, and manage technical debt.
+      Examples: create issues from PRs, link commits to Linear tickets, track deployment status.
+    toolIds:
+      - github.create_issue
+      - github.list_pull_requests
+      - github.get_pull_request
+      - github.create_pull_request_comment
+      - github.list_repositories
+      - github.get_repository
+    _meta:
+      tags:
+        categories: ["development", "version-control", "technical-tracking"]
+  
+  - name: document-management
+    description: >
+      Create and manage comprehensive project documentation including sprint reports, technical specs, and team wikis.
+      Examples: generate sprint retrospectives with metrics, create release documentation, maintain project knowledge base, draft stakeholder reports.
+    toolIds:
+      - filesystem.read
+      - filesystem.write
+      - filesystem.list
+      - filesystem.create_directory
+    _meta:
+      tags:
+        categories: ["documentation", "knowledge-management", "resources", "reports"]
+  
+  - name: integrated-communication
+    description: >
+      Coordinate project updates across Slack and GitHub with documentation links and issue tracking.
+      Examples: post sprint summaries with Linear metrics to Slack, link GitHub PRs with documentation, create unified project status reports.
+    toolIds:
+      - slack.conversations_add_message
+      - slack.conversations_history
+      - github.create_issue
+      - github.create_pull_request_comment
+      - filesystem.write
+      - linear.add_comment
+    _meta:
+      tags:
+        categories: ["communication", "collaboration", "integration", "reporting"]
+
+_meta:
+  definition_link: https://github.com/wshobson/agents
+  tags:
+    categories:
+      - intake
+      - triage
+      - assignment
+      - progress
+      - queries
+      - reporting
+      - roadmap
+      - team-operations
+      - communication
+      - notifications
+      - collaboration
+      - development
+      - version-control
+      - technical-tracking
+      - documentation
+      - knowledge-management
+      - resources
+      - reports
+      - integration
+      - reporting

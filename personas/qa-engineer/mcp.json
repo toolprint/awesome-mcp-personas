@@ -1,0 +1,31 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-playwright"
+      ]
+    },
+    "docker": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "docker-mcp"
+      ]
+    },
+    "slack": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "slack-mcp-server"
+      ],
+      "env": {
+        "SLACK_BOT_TOKEN": "<placeholder>",
+        "SLACK_TEAM_ID": "<placeholder>"
+      }
+    }
+  }
+}

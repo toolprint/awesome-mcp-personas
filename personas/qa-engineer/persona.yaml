@@ -1,0 +1,61 @@
+name: qa-engineer-assistant
+description: >
+  Automates test execution, captures results, and reports regressions.
+  Supports browser-driven testing, containerized test runs, and Slack digests.
+
+toolsets:
+  - name: browser-regression-testing
+    description: >
+      Run automated browser actions and capture results.
+      Examples: open login page, enter credentials, click login, capture screenshot.
+    toolIds:
+      - playwright.navigate
+      - playwright.fill
+      - playwright.click
+      - playwright.screenshot
+      - playwright.evaluate
+    _meta:
+      tags:
+        categories: ["browser", "regression", "automation"]
+
+  - name: containerized-test-execution
+    description: >
+      Launch ephemeral containers to run test suites and fetch logs.
+      Examples: run container with Cypress, fetch logs, stop container after run.
+    toolIds:
+      - docker.list_containers
+      - docker.create_container
+      - docker.start_container
+      - docker.stop_container
+      - docker.get_container_logs
+      - docker.remove_container
+    _meta:
+      tags:
+        categories: ["docker", "container", "execution"]
+
+  - name: reporting-and-team-updates
+    description: >
+      Share test results and regression digests in Slack.
+      Examples: post summary of failed tests, share screenshots, alert on regressions.
+    toolIds:
+      - slack.channels_list
+      - slack.conversations_add_message
+      - slack.conversations_history
+      - slack.conversations_replies
+    _meta:
+      tags:
+        categories: ["reporting", "team-updates", "regressions"]
+
+_meta:
+  definition_link: https://github.com/wshobson/agents
+  tags:
+    categories:
+      - browser
+      - regression
+      - automation
+      - docker
+      - container
+      - execution
+      - reporting
+      - team-updates
+      - regressions

@@ -1,14 +1,4 @@
 {
   "mcpServers": {
-    "hypertool": {
-      "type": "stdio",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@toolprint/hypertool-mcp@latest",
-        "--persona",
-        "simpleton"
-      ]
-    }
   }
 }

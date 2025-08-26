@@ -1,0 +1,41 @@
+name: software-development-assistant
+description: >
+  A teammate for day-to-day engineering work: version control hygiene,
+  lightweight reviews via diffs, and sharing updates to Slack.
+author: awesome-mcp-personas
+version: "1.0.0"
+
+toolsets:
+  - name: plan-build-communicate
+    description: >
+      From creating a work branch to sharing progress: branch, code, diff, and broadcast updates.
+      Examples: start a feature branch, stage/commit changes, summarize what changed, post status in #dev.
+    toolIds:
+      - git.git_branch
+      - git.git_status
+      - git.git_add
+      - git.git_commit
+      - git.git_diff
+      - slack.conversations_add_message
+
+  - name: code-archaeology-knowledge-sharing
+    description: >
+      Explore history, pull a focused diff or file view, and share context with teammates.
+      Examples: list recent commits, show a commit, diff two refs, post thread with key snippets.
+    toolIds:
+      - git.git_log
+      - git.git_diff
+      - slack.channels_list
+      - slack.conversations_add_message
+
+  - name: release-prep-team-nudges
+    description: >
+      Prepare for PRs/releases with sanity checks and nudges to collaborators.
+      Examples: verify working tree clean, generate review diff, ping reviewers in channel.
+    toolIds:
+      - git.git_status
+      - git.git_diff
+      - slack.channels_list
+      - slack.conversations_add_message
+
+defaultToolset: plan-build-communicate

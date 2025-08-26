@@ -40,7 +40,7 @@ Ask the user these questions to understand their persona requirements:
 
 **Q4: MCP Servers**
 - Do you have specific MCP servers in mind? (If yes, list them)
-- Should I suggest appropriate MCP servers based on your requirements?
+- Should I research and suggest appropriate MCP servers based on your requirements? (Uses @mcp-researcher agent)
 
 **Q5: Toolsets Organization**
 - Do you want multiple toolsets for different workflows? (e.g., "development", "testing", "deployment")
@@ -92,26 +92,33 @@ Generate documentation including:
 - Example workflows
 - Troubleshooting tips
 
-### 3. Validation
+### 3. Validation & Auto-Fix
 
 After generating files:
-1. Validate persona.yaml against `/schema/persona.schema.yaml`
-2. Validate mcp.json against `/schema/mcp.schema.json`
-3. Ensure all tool IDs in persona.yaml have corresponding servers in mcp.json
-4. Check that directory name matches persona name
+1. **Hand off to @persona-engineer** for comprehensive validation and auto-fix
+2. The agent will:
+   - Validate against schemas (persona.schema.yaml, mcp.schema.json)
+   - Verify MCP server existence and tool names from primary sources
+   - Auto-fix any issues found
+   - Update docs/mcp-servers-used.md with new server usage
+   - Create validation_notes.md with results
 
-### 4. Schema References
+### 4. Integration with Workflow System
 
-**Critical Schema Files to Reference:**
-- `/schema/persona.schema.yaml` - Defines persona.yaml structure
-- `/schema/mcp.schema.json` - Defines mcp.json structure
-- `/schema/example/` - Example configurations for reference
+This command leverages the full persona workflow:
 
-**Key Schema Constraints:**
-- Persona name: lowercase, hyphen-delimited (pattern: `^[a-z0-9]+(-[a-z0-9]+)*$`)
-- Tool IDs: format `servername.toolname` (pattern: `^[a-z0-9-]+\.[a-z0-9-]+$`)
-- MCP server types: "stdio", "http", "sse", or omit for default stdio
-- Server names must match tool ID prefixes
+**Agent Integration:**
+- **@mcp-researcher**: Discovers and validates MCP servers based on requirements
+- **@persona-engineer**: Validates final configuration and applies auto-fixes
+
+**Documentation Updates:**
+- **docs/mcp-servers-used.md**: Automatically updated with new server usage
+- **docs/mcp-servers.md**: Reference for server availability and installation
+- **docs/future-roadmap.md**: Context for persona development priorities
+
+**Schema References:**
+- `/schema/persona.schema.yaml` - Persona configuration structure
+- `/schema/mcp.schema.json` - MCP server configuration structure
 
 ## Example Interaction
 

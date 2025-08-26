@@ -12,11 +12,8 @@
         "-y",
         "@modelcontextprotocol/server-filesystem"
       ],
-      "config": {
-        "rootPath": "${PROJECT_ROOT:-.}",
-        "allowedPaths": [
-          "."
-        ]
+      "env": {
+        "ROOT_PATH": "${PROJECT_ROOT:-.}"
       }
     },
     "fetch": {

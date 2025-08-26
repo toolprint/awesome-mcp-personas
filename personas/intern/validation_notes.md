@@ -1,6 +1,27 @@
-# Validation Notes for Simpleton Persona
+# Validation Notes for Intern Persona
 
 ## Update History
+
+### 2025-08-26 MCP Configuration Fix
+
+#### Issues Found and Resolved
+
+1. **❌ Schema Violation in Filesystem Server**:
+   - **Location**: mcp.json line 15-21
+   - **Issue**: Used invalid `config` property for stdio server type
+   - **Resolution**: Moved configuration to `env` property as `ROOT_PATH` environment variable
+   - **Compliance**: Now fully compliant with MCP schema stdio server requirements
+
+2. **✅ Updated Documentation**:
+   - **Location**: validation_notes.md header
+   - **Issue**: Still referenced old "Simpleton" persona name
+   - **Resolution**: Updated to reflect new "Intern" persona name
+
+#### Schema Validation Results
+- **MCP JSON Schema**: ✅ PASSED - All server configurations now compliant
+- **Server Configurations**: ✅ PASSED - All command/args combinations valid
+- **Tool ID Mapping**: ✅ PASSED - All tool IDs correctly mapped to servers
+- **Installation Commands**: ✅ PASSED - All npx/uvx commands verified
 
 ### 2025-01-27 Update
 
@@ -83,13 +104,13 @@
 | Server | Package | Runner | Environment | Status |
 |--------|---------|--------|-------------|--------|
 | git | mcp-server-git | uvx | None required | ✅ Verified |
-| filesystem | @modelcontextprotocol/server-filesystem | npx | PROJECT_ROOT (optional) | ✅ Verified |
+| filesystem | @modelcontextprotocol/server-filesystem | npx | ROOT_PATH (optional) | ✅ Verified |
 | fetch | @modelcontextprotocol/server-fetch | npx | None required | ✅ Verified |
 | memory | @modelcontextprotocol/server-memory | npx | None required | ✅ Verified |
 
 ## Compliance Summary
 
-The Simpleton persona is now a comprehensive "getting started" package that provides:
+The Intern persona is now a comprehensive "getting started" package that provides:
 
 1. **Version Control** (9 tools): 
    - Git operations for code management

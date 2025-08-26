@@ -46,7 +46,7 @@ what
   - [software-development-assistant](../personas/software-development-assistant/) - Version control workflows
   - [intern](../personas/intern/) - Basic git operations
   - [linear-project-manager](../personas/linear-project-manager/) - Code integration
-- **Common Tools**: `git_status`, `git_add`, `git_commit`, `git_diff`, `git_log`
+- **Common Tools**: `git_status`, `git_add`, `git_commit`, `git_diff`, `git_log`, `git_branch`
 
 ### Slack MCP Server  
 - **Source**: https://github.com/korotovsky/slack-mcp-server

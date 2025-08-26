@@ -11,12 +11,12 @@ toolsets:
       From creating a work branch to sharing progress: branch, code, diff, and broadcast updates.
       Examples: start a feature branch, stage/commit changes, summarize what changed, post status in #dev.
     toolIds:
-      - git.git_create_branch
+      - git.git_branch
       - git.git_status
       - git.git_add
       - git.git_commit
-      - git.git_diff_staged
-      - slack.slack_post_message
+      - git.git_diff
+      - slack.conversations_add_message
 
   - name: code-archaeology-knowledge-sharing
     description: >
@@ -24,11 +24,9 @@ toolsets:
       Examples: list recent commits, show a commit, diff two refs, post thread with key snippets.
     toolIds:
       - git.git_log
-      - git.git_show
       - git.git_diff
-      - git.git_checkout
-      - slack.slack_list_channels
-      - slack.slack_post_message
+      - slack.channels_list
+      - slack.conversations_add_message
 
   - name: release-prep-team-nudges
     description: >
@@ -36,9 +34,8 @@ toolsets:
       Examples: verify working tree clean, generate review diff, ping reviewers in channel.
     toolIds:
       - git.git_status
-      - git.git_diff_unstaged
-      - git.git_diff_staged
-      - slack.slack_list_channels
-      - slack.slack_post_message
+      - git.git_diff
+      - slack.channels_list
+      - slack.conversations_add_message
 
 defaultToolset: plan-build-communicate

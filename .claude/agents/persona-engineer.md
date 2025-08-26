@@ -92,12 +92,31 @@ When validating MCP servers and tools, you must:
 
 ### 2. Verify Tool Names
 - **CRITICAL**: You MUST fetch and read the actual MCP server documentation
-- Use WebFetch to get the server's GitHub README or official docs
-- NEVER rely on cached tool names or examples - they may be incorrect
+- **NEVER USE CACHED INFORMATION**: Always use WebFetch to get fresh documentation
+- **IGNORE VALIDATION NOTES**: Do not rely on existing validation_notes.md or tools.md files for tool names
+- **IGNORE STALE REFERENCES**: Previous validation results may contain incorrect tool names
+- Use WebFetch to get the server's GitHub README or official docs directly from source
 - Tool naming follows: `{server_name}.{actual_tool_name}`
-- Example: slack-mcp-server uses `conversations_add_message`, NOT `slack_post_message`
+- Example: @modelcontextprotocol/server-filesystem uses `read_text_file`, NOT `read_file`
 
-### 3. Common MCP Server Sources
+### 3. Anti-Hallucination Protocol
+**CRITICAL**: To prevent tool name hallucination and stale reference problems:
+
+1. **MANDATORY WebFetch**: Every tool validation MUST use WebFetch to fetch official documentation
+2. **IGNORE ALL CACHED DATA**: 
+   - Do NOT rely on existing validation_notes.md files
+   - Do NOT trust tools.md files (may contain stale references)
+   - Do NOT use previously "validated" tool names without fresh verification
+3. **Source of Truth**: Only trust official GitHub repositories and published documentation
+4. **Document Source**: Always cite the exact URL where tool names were verified
+5. **Cross-validate**: When possible, verify tool names across multiple official sources
+
+**Examples of Required WebFetch URLs**:
+- Filesystem: https://github.com/modelcontextprotocol/servers/blob/main/src/filesystem/README.md#tools
+- Git: https://github.com/korotovsky/slack-mcp-server#tools
+- Slack: https://github.com/korotovsky/slack-mcp-server#tools
+
+### 4. Common MCP Server Sources
 - Official MCP servers: `@modelcontextprotocol/*`
 - Community registries: GitHub repos like awesome-mcp-servers
 - Company-maintained servers: Stripe, Cloudflare, etc.

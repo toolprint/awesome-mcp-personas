@@ -66,9 +66,9 @@ In-memory key-value storage for session persistence:
 Essential tools for file management and version control.
 
 **Tools:**
-- `filesystem.read` - Read file contents
-- `filesystem.write` - Write to files
-- `filesystem.list` - List directory contents
+- `filesystem.read_file` - Read file contents
+- `filesystem.write_file` - Write to files
+- `filesystem.list_directory` - List directory contents
 - `filesystem.create_directory` - Create directories
 - `git.git_status` - Check repository status
 - `git.git_add` - Stage files for commit
@@ -106,8 +106,8 @@ Memory and file-based data storage.
 - `memory.retrieve` - Retrieve stored data
 - `memory.list` - List all stored keys
 - `memory.delete` - Delete stored data
-- `filesystem.write` - Persist to files
-- `filesystem.read` - Load from files
+- `filesystem.write_file` - Persist to files
+- `filesystem.read_file` - Load from files
 
 **Common Workflows:**
 - Save configuration data
@@ -119,8 +119,8 @@ Memory and file-based data storage.
 Tools for understanding project structure and history.
 
 **Tools:**
-- `filesystem.list` - Browse directories
-- `filesystem.read` - Read documentation
+- `filesystem.list_directory` - Browse directories
+- `filesystem.read_file` - Read documentation
 - `git.git_log` - View project history
 - `git.git_status` - Check current state
 - `git.git_branch` - View branches
@@ -199,7 +199,7 @@ To customize the persona:
 
 4. **Memory storage lost**
    - Memory storage is session-based
-   - Use filesystem.write to persist data permanently
+   - Use filesystem.write_file to persist data permanently
 
 ## Best Practices
 
@@ -207,7 +207,7 @@ To customize the persona:
 2. **Combine Tools**: Use multiple servers together for complex workflows
 3. **Cache Wisely**: Use memory storage for temporary data, filesystem for permanent
 4. **Version Control**: Always use git tools to track your changes
-5. **Explore Safely**: Use filesystem.list before reading/writing files
+5. **Explore Safely**: Use filesystem.list_directory before reading/writing files
 
 ## Contributing
 

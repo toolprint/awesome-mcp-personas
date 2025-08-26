@@ -7,9 +7,9 @@ toolsets:
       Basic file management and version control operations for everyday development tasks.
       Examples: read project files, track changes, commit work, explore directory structure.
     toolIds:
-      - filesystem.read
-      - filesystem.write
-      - filesystem.list
+      - filesystem.read_text_file
+      - filesystem.write_file
+      - filesystem.list_directory
       - filesystem.create_directory
       - git.git_status
       - git.git_add
@@ -17,39 +17,44 @@ toolsets:
       - git.git_diff
       - git.git_log
   
-  - name: web-and-api
+  - name: research-and-learn
     description: >
-      Tools for making HTTP requests and interacting with web APIs.
-      Examples: fetch data from APIs, download resources, check website status, debug webhooks.
+      Explore external APIs and documentation while building persistent knowledge about what you discover.
+      Examples: research API endpoints and store findings, fetch documentation and remember key insights, map external services to internal components.
     toolIds:
       - fetch.fetch
       - fetch.get
       - fetch.post
-      - memory.store
-      - memory.retrieve
+      - memory.create_entities
+      - memory.add_observations
+      - memory.search_nodes
   
-  - name: data-persistence
+  - name: codebase-discovery
     description: >
-      Memory and storage tools for persisting data across sessions.
-      Examples: save configuration, store API responses, cache results, maintain context.
+      Explore project structure and build persistent understanding of how components relate to each other.
+      Examples: browse directories and remember architecture, read code files and map relationships, track git history and connect code to people.
     toolIds:
-      - memory.store
-      - memory.retrieve
-      - memory.list
-      - memory.delete
-      - filesystem.write
-      - filesystem.read
-  
-  - name: project-exploration
-    description: >
-      Tools for exploring and understanding project structure and history.
-      Examples: browse directories, read documentation, check git history, understand codebase layout.
-    toolIds:
-      - filesystem.list
-      - filesystem.read
+      - filesystem.list_directory
+      - filesystem.read_text_file
       - git.git_log
-      - git.git_status
+      - git.git_status  
       - git.git_branch
+      - memory.create_entities
+      - memory.add_observations
+      - memory.search_nodes
+  
+  - name: context-building
+    description: >
+      Build comprehensive project knowledge by combining file analysis, git investigation, and persistent knowledge storage.
+      Examples: analyze project files and store component info, track team contributions and map responsibilities, build searchable project knowledge base.
+    toolIds:
+      - filesystem.read_text_file
+      - filesystem.write_file
+      - git.git_log
+      - git.git_diff
+      - memory.create_entities
+      - memory.add_observations
+      - memory.read_graph
 
 defaultToolset: file-and-version-control
 

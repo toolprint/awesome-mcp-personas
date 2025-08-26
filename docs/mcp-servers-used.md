@@ -89,7 +89,7 @@ what
   - [intern](../personas/intern/) - File operations
   - [qa-engineer-docs](../personas/qa-engineer-docs/) - Test report generation
   - [linear-project-manager](../personas/linear-project-manager/) - Documentation management
-- **Common Tools**: `read`, `write`, `list`, `create_directory`
+- **Common Tools**: `read_text_file`, `write_file`, `list_directory`, `create_directory`
 
 ### Fetch MCP Server
 - **Source**: https://github.com/modelcontextprotocol/servers/tree/main/src/fetch
@@ -105,8 +105,8 @@ what
 - **Package**: `npx -y @modelcontextprotocol/server-memory`
 - **Environment**: None required
 - **Used in**:
-  - [intern](../personas/intern/) - Data persistence
-- **Common Tools**: `store`, `retrieve`, `search`
+  - [intern](../personas/intern/) - Knowledge graph for learning and context building
+- **Common Tools**: `create_entities`, `add_observations`, `search_nodes`, `read_graph`
 
 ### Playwright MCP Server
 - **Source**: https://github.com/modelcontextprotocol/servers

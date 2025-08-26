@@ -182,10 +182,9 @@ Tools for tracking time, analyzing velocity, and measuring productivity.
 Tools for creating and managing project documentation.
 
 **Tools:**
-- `filesystem.read` - Read existing documentation
-- `filesystem.write` - Create new documents
-- `filesystem.edit` - Update documentation
-- `filesystem.list` - Browse document structure
+- `filesystem.read_file` - Read existing documentation
+- `filesystem.write_file` - Create new documents
+- `filesystem.list_directory` - Browse document structure
 - `filesystem.create_directory` - Organize documentation
 
 **Common Workflows:**

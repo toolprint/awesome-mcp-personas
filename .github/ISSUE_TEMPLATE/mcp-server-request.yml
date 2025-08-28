@@ -1,0 +1,129 @@
+name: 🔌 MCP Server Request
+description: Request addition of a new MCP server to be used in personas
+title: "[MCP SERVER] "
+labels: ["mcp-server", "enhancement"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggest a new MCP server that could be useful across multiple personas or for specific use cases.
+
+  - type: input
+    id: server-name
+    attributes:
+      label: MCP Server Name
+      description: What is the name of the MCP server?
+      placeholder: "e.g., @modelcontextprotocol/server-kubernetes"
+    validations:
+      required: true
+
+  - type: input
+    id: server-repository
+    attributes:
+      label: Repository/Package URL
+      description: Where can we find this MCP server?
+      placeholder: "https://github.com/modelcontextprotocol/servers/tree/main/src/kubernetes or https://www.npmjs.com/package/@modelcontextprotocol/server-kubernetes"
+    validations:
+      required: true
+
+  - type: textarea
+    id: server-description
+    attributes:
+      label: Server Description
+      description: What does this MCP server do?
+      placeholder: "e.g., Provides tools for managing Kubernetes clusters, deployments, and resources"
+    validations:
+      required: true
+
+  - type: textarea
+    id: key-tools
+    attributes:
+      label: Key Tools/Capabilities
+      description: What are the main tools or capabilities this server provides?
+      placeholder: |
+        Example:
+        - kubectl_apply: Apply Kubernetes manifests
+        - kubectl_get: Get resource information
+        - kubectl_logs: Retrieve pod logs
+        - kubectl_describe: Describe resources
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: applicable-personas
+    attributes:
+      label: Applicable Personas
+      description: Which existing personas could benefit from this server?
+      options:
+        - label: python-developer
+        - label: python-backend-engineer
+        - label: claude-code-assistant
+        - label: software-development-assistant
+        - label: intern
+        - label: postgresql-dba
+        - label: mysql-dba
+        - label: sqlite-engineer
+        - label: aws-cloud-engineer
+        - label: cloud-engineer
+        - label: grafana-sre
+        - label: qa-engineer-docs
+        - label: linear-project-manager
+        - label: trello-project-manager
+        - label: qa-engineer
+        - label: Would enable new personas
+
+  - type: textarea
+    id: use-cases
+    attributes:
+      label: Primary Use Cases
+      description: What workflows would this server enable?
+      placeholder: |
+        Example:
+        - Deploying applications to Kubernetes
+        - Monitoring cluster health
+        - Managing microservices
+        - Debugging pod issues
+    validations:
+      required: true
+
+  - type: dropdown
+    id: server-maturity
+    attributes:
+      label: Server Maturity
+      description: How mature/stable is this MCP server?
+      options:
+        - Official MCP server (maintained by MCP team)
+        - Well-established community server
+        - Newer community server
+        - Experimental/beta server
+        - Unknown
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: Verification
+      options:
+        - label: I have tested this MCP server and it works
+        - label: I have reviewed the documentation
+        - label: I have confirmed it's actively maintained
+        - label: I checked it's not already included in existing personas
+
+  - type: textarea
+    id: installation-notes
+    attributes:
+      label: Installation/Configuration Notes
+      description: Any special requirements or configuration needed?
+      placeholder: "e.g., Requires kubectl to be installed and configured, needs KUBECONFIG environment variable"
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information
+    validations:
+      required: false

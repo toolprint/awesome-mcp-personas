@@ -1,0 +1,82 @@
+name: ❓ Question
+description: Ask a question about personas or MCP servers
+title: "[QUESTION] "
+labels: ["question"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have a question about using personas or MCP servers? We're here to help!
+        
+        💡 **Tip**: Check our [documentation](https://github.com/onegrep/awesome-mcp-personas) and [existing discussions](https://github.com/onegrep/awesome-mcp-personas/discussions) first.
+
+  - type: dropdown
+    id: question-type
+    attributes:
+      label: Question Type
+      description: What kind of question is this?
+      options:
+        - How to use a specific persona
+        - How to install/configure personas
+        - How to create custom personas
+        - Understanding MCP servers
+        - Troubleshooting help
+        - Best practices
+        - Integration with applications
+        - General concept questions
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question
+      description: What would you like to know?
+      placeholder: "e.g., How do I use the PostgreSQL DBA persona with my existing database? What's the difference between manual installation and hypertool-mcp?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Provide any relevant context that might help us answer your question
+      placeholder: |
+        Example:
+        - I'm using Claude Code with the python-developer persona
+        - I'm trying to set up database connections
+        - I'm new to MCP and personas
+    validations:
+      required: false
+
+  - type: dropdown
+    id: experience-level
+    attributes:
+      label: Experience Level
+      description: How familiar are you with MCP and personas?
+      options:
+        - New to MCP and personas
+        - Some experience with MCP
+        - Experienced with MCP, new to personas
+        - Experienced with both
+    validations:
+      required: false
+
+  - type: textarea
+    id: what-tried
+    attributes:
+      label: What Have You Tried?
+      description: What steps have you already taken to solve this?
+      placeholder: "e.g., I tried following the installation guide but got stuck at step 3"
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information
+      description: Any other details that might be helpful
+    validations:
+      required: false

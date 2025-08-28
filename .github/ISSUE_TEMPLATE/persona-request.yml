@@ -1,0 +1,114 @@
+name: 🆕 New Persona Request
+description: Request a new persona configuration for a specific role or use case
+title: "[PERSONA REQUEST] "
+labels: ["persona-request", "enhancement"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for requesting a new persona! Please provide as much detail as possible to help us understand your needs.
+
+  - type: input
+    id: persona-name
+    attributes:
+      label: Persona Name
+      description: What would you like to call this persona?
+      placeholder: "e.g., Go Developer, React Native Engineer, DevOps Engineer"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Which category best fits this persona?
+      options:
+        - Software Engineering
+        - Data Science & Analytics
+        - DevOps & Infrastructure
+        - Content & Documentation
+        - Security & Compliance
+        - Research & Analysis
+        - Project Management
+        - Quality Assurance
+        - Other (specify in description)
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe what this persona should do and who would use it
+      placeholder: |
+        Example: "A persona for Go backend developers working with microservices, focusing on API development, testing, and deployment automation."
+    validations:
+      required: true
+
+  - type: textarea
+    id: target-audience
+    attributes:
+      label: Target Audience
+      description: Who would benefit from this persona?
+      placeholder: |
+        Example: 
+        - Go backend developers
+        - Microservices architects
+        - API developers
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested-tools
+    attributes:
+      label: Suggested MCP Servers and Tools
+      description: What MCP servers or tools do you think should be included?
+      placeholder: |
+        Example:
+        - filesystem (file management)
+        - git (version control)  
+        - docker (containerization)
+        - kubernetes (orchestration)
+    validations:
+      required: false
+
+  - type: textarea
+    id: use-cases
+    attributes:
+      label: Key Use Cases
+      description: What are the main workflows this persona should support?
+      placeholder: |
+        Example:
+        - Building REST APIs
+        - Writing unit and integration tests
+        - Container deployment
+        - Performance optimization
+    validations:
+      required: true
+
+  - type: textarea
+    id: similar-personas
+    attributes:
+      label: Similar Existing Personas
+      description: Are there any existing personas that are similar but not quite right?
+      placeholder: "e.g., The Python Backend Engineer is close but lacks Go-specific tooling"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      options:
+        - label: I would be willing to help create this persona configuration
+        - label: I have experience with the tools/technologies involved
+        - label: I can provide testing and feedback once created
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other information that might be helpful
+    validations:
+      required: false

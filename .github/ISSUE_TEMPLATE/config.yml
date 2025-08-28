@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 GitHub Discussions
+    url: https://github.com/toolprint/awesome-mcp-personas/discussions
+    about: Ask questions and discuss ideas with the community
+  - name: 📚 Documentation
+    url: https://github.com/toolprint/awesome-mcp-personas#readme
+    about: Read the full documentation and getting started guide
+  - name: 🔧 Hypertool MCP
+    url: https://github.com/toolprint/hypertool-mcp
+    about: Learn about the recommended installation method

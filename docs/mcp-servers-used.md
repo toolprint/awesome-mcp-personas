@@ -7,7 +7,7 @@
 
 | Total Servers | Total Personas | Most Used Server |
 |---------------|----------------|------------------|
-| 33 | 14 | Git (10 personas) |
+| 38 | 15 | Git (11 personas) |
 
 ---
 
@@ -16,7 +16,7 @@
 ### High Usage (3+ personas)
 | Server | Package | Personas Count | Environment |
 |--------|---------|----------------|-------------|
-| **Git** | `uvx mcp-server-git` | 10 | None |
+| **Git** | `uvx mcp-server-git` | 11 | None |
 | **Slack** | `uvx slack-mcp-server` | 3 | `SLACK_BOT_TOKEN` |
 | **Filesystem** | `npx -y @modelcontextprotocol/server-filesystem` | 10 | None |
 
@@ -56,6 +56,13 @@
 | **AWS Pricing** | `uvx awslabs.aws-pricing-mcp-server@latest` | 1 | `AWS_REGION` |
 | **DynamoDB Toolbox** | `npx dynamodb-toolbox-mcp-server` | 1 | `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`, `DYNAMODB_TABLE_NAME` |
 | **Pulumi** | `uvx pulumi-mcp-server` | 1 | `PULUMI_ACCESS_TOKEN`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION` |
+| **Everything** | `npx -y @modelcontextprotocol/server-everything` | 1 | None |
+| **Context7** | SSE: https://mcp.context7.com/sse | 1 | None |
+| **Task Master** | `npx -y --package=task-master-ai task-master-ai` | 1 | None |
+| **MCPing** | `npx -y @toolprint/mcping-mcp@latest` | 1 | None |
+| **Playwright (Claude)** | `npx @playwright/mcp@latest` | 1 | None |
+| **Markitdown** | `npx -y markitdown-mcp` | 1 | `WORKDIR` |
+| **Exa** | `npx -y mcp-remote` | 1 | `EXA_API_KEY` |
 
 ---
 
@@ -77,6 +84,7 @@
   - [postgresql-dba](../personas/postgresql-dba/) - Database schema and configuration management
   - [mysql-dba](../personas/mysql-dba/) - MySQL schema and web application database management
   - [sqlite-engineer](../personas/sqlite-engineer/) - Mobile and embedded database schema management and version control
+  - [claude-code-assistant](../personas/claude-code-assistant/) - Intelligent development companion with comprehensive workflow automation
 - **Common Tools**: `git_status`, `git_add`, `git_commit`, `git_diff`, `git_log`, `git_branch`
 
 ### Slack MCP Server  

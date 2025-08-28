@@ -1,0 +1,88 @@
+name: claude-code-assistant
+description: "An intelligent development companion that combines visual context, automated workflows, and comprehensive tooling for enhanced Claude Code development productivity."
+version: "1.0.0"
+
+toolsets:
+  - name: development
+    description: "Core development operations and code management"
+    toolIds:
+      # Everything server - Universal development toolkit
+      - "everything.read_file"
+      - "everything.write_file"
+      - "everything.list_files"
+      - "everything.run_command"
+      
+      # Git server - Version control operations  
+      - "git.git_status"
+      - "git.git_log"
+      - "git.git_diff"
+      - "git.git_add"
+      - "git.git_commit"
+      - "git.git_branch"
+
+  - name: visual-context
+    description: "Visual development context and browser automation"
+    toolIds:
+      # Playwright server - Browser automation and screenshots
+      - "playwright.screenshot"
+      - "playwright.navigate"
+      - "playwright.evaluate"
+      - "playwright.click"
+
+  - name: workflow-orchestration
+    description: "Task management and workflow automation"
+    toolIds:
+      # Task-master server - Project planning and orchestration
+      - "task-master.create_task"
+      - "task-master.update_task"
+      - "task-master.list_tasks"
+      - "task-master.complete_task"
+      
+      # MCPing server - Notification and alerts
+      - "mcping.send_notification"
+      - "mcping.get_status"
+
+  - name: intelligence-analysis
+    description: "Structured thinking and pattern analysis"
+    toolIds:
+      # Sequential-thinking server - Structured reasoning
+      - "sequential-thinking.think"
+      
+      # Context7 server - Documentation and pattern lookup  
+      - "context7.resolve-library-id"
+      - "context7.get-library-docs"
+
+  - name: deployment-operations
+    description: "Container management and deployment workflows"
+    toolIds:
+      # Docker server - Container operations
+      - "docker.build_image"
+      - "docker.run_container"
+      - "docker.list_containers"
+      - "docker.list_images"
+      - "docker.get_logs"
+      - "docker.exec_command"
+
+  - name: research-documentation
+    description: "Advanced search and document processing"
+    toolIds:
+      # Exa server - Advanced search capabilities
+      - "exa.search"
+      
+      # Markitdown server - Document processing
+      - "markitdown.convert"
+
+defaultToolset: development
+
+metadata:
+  author: "Claude Code Assistant Community"
+  tags:
+    - "development"
+    - "automation" 
+    - "visual-analysis"
+    - "workflow"
+    - "containers"
+    - "testing"
+    - "documentation"
+  created: "2024-01-01T00:00:00Z"
+  lastModified: "2024-01-01T00:00:00Z"

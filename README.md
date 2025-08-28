@@ -1,183 +1,210 @@
-# Awesome MCP Personas [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+<div align="center">
 
-> A curated collection of persona-based MCP (Model Context Protocol) server configurations and toolsets for Claude
+# 🎭 Awesome MCP Personas
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-## What is this?
+### 🚀 Stop juggling individual MCP servers — Get a complete AI toolkit for your role in seconds
 
-Awesome MCP Personas provides pre-configured collections of MCP servers and tools organized by professional personas and use cases. Think of each persona as an installable package that bundles together the most effective MCP servers and tools for specific roles - like having a specialized Claude subagent with the perfect toolkit for your needs.
+<img src="https://img.shields.io/github/stars/toolprint/awesome-mcp-personas?style=social" alt="GitHub Stars">
+<img src="https://img.shields.io/github/forks/toolprint/awesome-mcp-personas?style=social" alt="GitHub Forks">
+<img src="https://img.shields.io/github/issues/toolprint/awesome-mcp-personas" alt="GitHub Issues">
+<img src="https://img.shields.io/github/license/toolprint/awesome-mcp-personas" alt="License">
 
-Whether you're a software engineer, data scientist, DevOps engineer, or content creator, you can find (or contribute) a persona configuration that includes all the MCP servers and tools optimized for your workflow.
+</div>
 
-## Why Personas?
+---
 
-Instead of manually configuring individual MCP servers and figuring out which tools work well together, personas provide:
-- **Pre-configured toolsets** optimized for specific roles and workflows
-- **Best practice combinations** of MCP servers that complement each other
-- **Quick setup** with tested configurations
-- **Community-driven improvements** from professionals in each field
+## 🤔 What's an MCP Persona?
 
-## Table of Contents
+If you've been **manually copying `mcp.json` files** and wondering which MCP servers work well together, **personas solve that problem**. 
 
-- [Installation](#installation)
-- [Personas](#personas)
-  - [Software Engineering](#software-engineering)
-  - [Data Science & Analytics](#data-science--analytics)
-  - [DevOps & Infrastructure](#devops--infrastructure)
-  - [Content & Documentation](#content--documentation)
-  - [Security & Compliance](#security--compliance)
-  - [Research & Analysis](#research--analysis)
-- [Creating a Persona](#creating-a-persona)
-- [Contributing](#contributing)
-- [Resources](#resources)
+Instead of this tedious process:
+```diff
+- ❌ Research 50+ individual MCP servers
+- ❌ Test which ones work together
+- ❌ Configure each server individually  
+- ❌ Debug compatibility issues
+- ❌ Repeat for every new project
+```
 
-## Installation
+**Get this instant setup:**
+```diff
++ ✅ Install one persona = get 5-15 perfectly configured MCP servers
++ ✅ Professional-grade toolkits tested by experts in each field
++ ✅ Zero compatibility issues, zero debugging
++ ✅ Works immediately in Claude Code, Cursor, Continue, etc.
+```
 
-### Option 1: Using hypertool-mcp (Recommended)
+### 🎯 Real Examples
 
-Install [hypertool-mcp](https://github.com/toolprint/hypertool-mcp) to use personas with full toolset support:
-1. Update your project's MCP configuration to use `hypertool-mcp`.
+| Your Role | Old Way (Hours) | Persona Way (Seconds) |
+|-----------|-----------------|----------------------|
+| **Python Developer** | Research filesystem + git + code-checker + sequential-thinking + memory + fetch servers individually | `"persona": "python-backend-engineer"` ✨ |
+| **DevOps Engineer** | Configure AWS CLI + CloudFormation + EKS + Docker + Postgres + DynamoDB separately | `"persona": "aws-cloud-engineer"` ✨ |
+| **Database Admin** | Set up Postgres + monitoring + charting + git + memory + time servers | `"persona": "postgresql-dba"` ✨ |
+
+## ⚡ Two Ways to Get Started
+
+### 🏃‍♂️ **Quick Start: Copy & Paste (30 seconds)**
+
+**Step 1:** Pick any persona from our catalog below (e.g., `intern` for beginners)  
+**Step 2:** Copy the `mcp.json` from `personas/intern/mcp.json` to your project  
+**Step 3:** Replace `<placeholder>` values with your actual paths/credentials
+
+```bash
+# Example: Copy intern persona
+cp personas/intern/mcp.json ~/.cursor/mcp.json
+```
+
+> ⚠️ **Note**: This gives you the MCP servers only. For full persona features (toolsets, workflows, etc.), use the hypertool method below.
+
+### 🚀 **Full Features: Hypertool Setup (2 minutes)**
+
+Get access to **complete persona features** including organized toolsets, workflows, and advanced configurations:
+
+```bash
+# Step 1: Clone this repository
+git clone https://github.com/toolprint/awesome-mcp-personas.git
+
+# Step 2: Install hypertool globally
+npm install -g @toolprint/hypertool-mcp@latest
+
+# Step 3: Add a persona (example: intern)
+hypertool-mcp persona add ./awesome-mcp-personas/personas/intern
+
+# Step 4: Update your mcp.json
+```
+
+Then add this to your `mcp.json`:
 ```json
 {
   "mcpServers": {
     "hypertool": {
       "command": "npx",
-      "args": ["-y", "@toolprint/hypertool-mcp", "--persona", "software-engineer"]
+      "args": ["-y", "@toolprint/hypertool-mcp", "--persona", "intern"]
     }
   }
 }
 ```
 
-2. Hypertool will install the persona definition and you can update the servers using `npx -y @toolprint/hypertool --help`.
+> ✨ **Hypertool Benefits**: Organized toolsets, compound workflows, persona updates, and professional-grade configurations tested by domain experts.
 
-More information on installing it for various apps such as `Cursor` can be found [**here**](https://github.com/toolprint/hypertool-mcp/tree/feat/persona-content-pack?tab=readme-ov-file#-quick-start).
+## 🛠️ Application-Specific Installation
 
-### Option 2: Manual MCP Configuration
-
-You can copy the `mcp.json` directly to your project:
-**Claude Code Example**
+### Claude Code
 ```bash
-# Copy MCP server configuration
-cp personas/simpleton/mcp.json <your_project_path>/.mcp.json
+cp personas/intern/mcp.json <your_project_path>/.mcp.json
 ```
 
-**Cursor Example**
+### Cursor
 ```bash
-# Copy MCP server configuration
-cp personas/simpleton/mcp.json ~/.cursor/mcp.json
+cp personas/intern/mcp.json ~/.cursor/mcp.json
 ```
 
-**Note**: This method only copies the MCP server configurations. You'll need to manually manage toolsets and tool organization defined in `persona.yaml`.
+### Continue (VS Code)
+```bash
+cp personas/intern/mcp.json ~/.continue/mcp.json
+```
 
-## Personas
+> **📍 Quick Reference**: Replace `intern` with any persona name from the catalog below
 
-### Software Engineering
+## 📋 Table of Contents
 
-#### 🛠️ [Full-Stack Developer](./personas/fullstack-developer/)
-A comprehensive toolkit for modern web development
-- **MCP Servers**: filesystem, git, github, npm, typescript-analyzer
-- **Key Features**: Code navigation, version control, package management, type checking
-- **Best For**: Web applications, API development, frontend/backend integration
+- [⚡ Two Ways to Get Started](#-two-ways-to-get-started)
+- [🛠️ Application-Specific Installation](#️-application-specific-installation)
+- [👥 Personas](#-personas)
+  - [💻 Software Engineering](#-software-engineering)  
+  - [📊 Data Science & Analytics](#-data-science--analytics)
+  - [☁️ DevOps & Infrastructure](#️-devops--infrastructure)
+  - [✍️ Content & Documentation](#️-content--documentation)
+  - [🛡️ Security & Compliance](#️-security--compliance)
+  - [🔬 Research & Analysis](#-research--analysis)
+  - [📋 Project Management](#-project-management)
+  - [🧪 Quality Assurance](#-quality-assurance)
+- [📝 Creating a Persona](#-creating-a-persona)
+- [🤝 Contributing](#-contributing)
+- [📚 Resources](#-resources)
 
-#### 🐍 [Python Developer](./personas/python-developer/)
-Optimized for Python development and data engineering
-- **MCP Servers**: filesystem, git, python-executor, pytest, pip
-- **Key Features**: Python execution, testing, package management, virtual environments
-- **Best For**: Python applications, scripts, data processing
 
-#### 🦀 [Rust Developer](./personas/rust-developer/)
-Tailored for systems programming with Rust
-- **MCP Servers**: filesystem, git, cargo, rust-analyzer
-- **Key Features**: Cargo integration, memory safety checks, performance profiling
-- **Best For**: Systems programming, performance-critical applications
+## 👥 Personas
 
-### Data Science & Analytics
+### 🏷️ Legend
 
-#### 🐘 [PostgreSQL DBA](./personas/postgresql-dba/)
-Production PostgreSQL database administration and performance optimization
-- **MCP Servers**: postgres, postgresql-ops, antv-chart, vchart, filesystem, git, memory, time
-- **Key Features**: Advanced PostgreSQL monitoring, query optimization, performance visualization, enterprise scaling
-- **Best For**: Production PostgreSQL administration, database performance tuning, enterprise PostgreSQL deployments
+| Emoji | Meaning | Description |
+|-------|---------|-------------|
+| 🔐 | **Secrets Required** | Requires API keys, credentials, or sensitive configuration |
+| 🌐 | **Remote Services** | Uses external APIs, cloud services, or remote connections |
+| 💻 | **Local Only** | Runs entirely locally without external dependencies |
+| ⚙️ | **Configuration** | Requires environment variables or configuration setup |
+| 🚀 | **Zero Setup** | Works immediately without any configuration |
+| 📦 | **External Dependencies** | Requires additional tools or services to be installed |
+| 🏢 | **Enterprise** | Designed for production/enterprise environments |
 
-#### 🐬 [MySQL DBA](./personas/mysql-dba/)
-Production MySQL database administration with web application focus
-- **MCP Servers**: mysql, antv-chart, vchart, filesystem, git, memory, time
-- **Key Features**: MySQL optimization, LAMP/LEMP stack integration, e-commerce database management, replication monitoring
-- **Best For**: Web application databases, MySQL administration, high-traffic MySQL environments
+## 👥 Personas
 
-#### 🪶 [SQLite Engineer](./personas/sqlite-engineer/)
-Local development and embedded systems database management
-- **MCP Servers**: sqlite, antv-chart, filesystem, git, memory, time
-- **Key Features**: Local database development, mobile app integration, embedded systems, rapid prototyping
-- **Best For**: Mobile applications, desktop software, embedded systems, data analysis prototyping
+### 💻 Software Engineering
 
-#### 📊 [Data Scientist](./personas/data-scientist/)
-Complete toolkit for data analysis and machine learning
-- **MCP Servers**: jupyter, pandas-helper, matplotlib, scikit-learn
-- **Key Features**: Notebook execution, data visualization, ML model training
-- **Best For**: Data analysis, machine learning, statistical modeling
+| Persona | Labels | Description | MCP Servers | Best For |
+|---------|---------|-------------|------------|----------|
+| 🐍 [**Python Developer**](./personas/python-developer/) | 💻🚀 | Optimized for Python development and data engineering | filesystem, git, python-executor, pytest, pip | Python applications, scripts, data processing |
+| 🚀 [**Python Backend Engineer**](./personas/python-backend-engineer/) | 💻🚀 | Python-focused backend development with code analysis and testing | filesystem, code-checker, sequential-thinking, git, memory, fetch | Python web applications, API development, backend services |
+| 🤖 [**Claude Code Assistant**](./personas/claude-code-assistant/) | 💻🚀 | AI-powered coding assistant for Claude Code users | filesystem, git, sequential-thinking, memory, fetch, time | AI-assisted development, code review, intelligent project guidance |
+| 💼 [**Software Development Assistant**](./personas/software-development-assistant/) | 💻🚀 | General-purpose software development toolkit | filesystem, git, sequential-thinking, memory, time | General software development, cross-language projects, development workflow automation |
+| 🎓 [**Intern**](./personas/intern/) | 💻🚀 | Learning-focused development environment for beginners | filesystem, git, sequential-thinking, memory, time | Learning programming, educational projects, skill development |
 
-#### 📈 [Business Analyst](./personas/business-analyst/)
-Tools for business intelligence and reporting
-- **MCP Servers**: sql-query, excel-handler, powerbi-connector
-- **Key Features**: Database queries, spreadsheet manipulation, BI integration
-- **Best For**: Business reporting, data extraction, dashboard creation
+### 📊 Data Science & Analytics  
 
-### DevOps & Infrastructure
+| Persona | Labels | Description | MCP Servers | Best For |
+|---------|---------|-------------|------------|----------|
+| 🐘 [**PostgreSQL DBA**](./personas/postgresql-dba/) | 🔐⚙️🏢 | Production PostgreSQL database administration and performance optimization | postgres, postgresql-ops, antv-chart, vchart, filesystem, git, memory, time | Production PostgreSQL administration, database performance tuning, enterprise deployments |
+| 🐬 [**MySQL DBA**](./personas/mysql-dba/) | 🔐⚙️🏢 | Production MySQL database administration with web application focus | mysql, antv-chart, vchart, filesystem, git, memory, time | Web application databases, MySQL administration, high-traffic MySQL environments |
+| 🪶 [**SQLite Engineer**](./personas/sqlite-engineer/) | ⚙️💻 | Local development and embedded systems database management | sqlite, antv-chart, filesystem, git, memory, time | Mobile applications, desktop software, embedded systems, data analysis prototyping |
 
-#### ☁️ [Cloud Engineer](./personas/cloud-engineer/)
-Multi-cloud infrastructure management
-- **MCP Servers**: aws-cli, terraform, kubernetes, docker
-- **Key Features**: Cloud resource management, IaC, container orchestration
-- **Best For**: Cloud deployments, infrastructure automation
+### ☁️ DevOps & Infrastructure
 
-#### 🔧 [Site Reliability Engineer](./personas/sre/)
-Monitoring and reliability tools
-- **MCP Servers**: prometheus, grafana, pagerduty, logging
-- **Key Features**: Metrics collection, alerting, incident managementcc
-- **Best For**: System monitoring, incident response, reliability improvements
+| Persona | Labels | Description | MCP Servers | Best For |
+|---------|---------|-------------|------------|----------|
+| ☁️ [**AWS Cloud Engineer**](./personas/aws-cloud-engineer/) | 🔐🌐⚙️🏢 | Comprehensive AWS ecosystem management and automation | aws-cli, aws-api, aws-documentation, aws-cloudformation, aws-cdk, aws-eks, aws-serverless, aws-pricing, filesystem, git, docker, postgres, dynamodb, sequential, time, pulumi | AWS infrastructure management, cloud architecture, enterprise AWS deployments |
+| 🌐 [**Cloud Engineer**](./personas/cloud-engineer/) | ⚙️📦 | Multi-cloud infrastructure management and DevOps automation | terraform, kubernetes, docker, filesystem | Cloud-agnostic infrastructure, DevOps workflows, container management |
+| 📊 [**Grafana SRE**](./personas/grafana-sre/) | 🔐⚙️🏢 | Specialized SRE toolkit for Grafana-based monitoring and observability | filesystem, git, prometheus, docker, postgresql, slack | Grafana-centric monitoring, observability automation, SLI/SLO tracking |
 
-#### 📊 [Grafana-focused SRE](./personas/grafana-sre/)
-Specialized SRE toolkit for Grafana-based monitoring and observability
-- **MCP Servers**: filesystem, git, prometheus, docker, postgresql, slack
-- **Key Features**: Dashboard management, alert configuration, incident response, monitoring-as-code
-- **Best For**: Grafana-centric monitoring, observability automation, SLI/SLO tracking
+### ✍️ Content & Documentation
 
-### Content & Documentation
+| Persona | Labels | Description | MCP Servers | Best For |
+|---------|---------|-------------|------------|----------|
+| 📝 [**QA Engineer - Documentation**](./personas/qa-engineer-docs/) | 💻🚀 | Quality assurance focused on documentation and content validation | filesystem, git, sequential-thinking, memory, time | Documentation quality control, content validation, technical writing QA |
 
-#### ✍️ [Technical Writer](./personas/technical-writer/)
-Documentation and content creation tools
-- **MCP Servers**: markdown-editor, grammar-check, diagram-generator
-- **Key Features**: Documentation generation, grammar checking, diagram creation
-- **Best For**: API documentation, user guides, technical articles
+### 🛡️ Security & Compliance
 
-#### 🎨 [Content Creator](./personas/content-creator/)
-Multimedia content production
-- **MCP Servers**: image-editor, video-tools, social-media
-- **Key Features**: Image manipulation, video editing, social media posting
-- **Best For**: Blog posts, social media content, multimedia production
+| Persona | Labels | Description | MCP Servers | Best For |
+|---------|---------|-------------|------------|----------|
+| *Coming Soon* | | | | |
 
-### Security & Compliance
+### 🔬 Research & Analysis
 
-#### 🔒 [Security Engineer](./personas/security-engineer/)
-Security assessment and hardening tools
-- **MCP Servers**: vulnerability-scanner, secrets-detector, compliance-checker
-- **Key Features**: Security scanning, secret detection, compliance validation
-- **Best For**: Security audits, vulnerability assessment, compliance checks
+| Persona | Labels | Description | MCP Servers | Best For |
+|---------|---------|-------------|------------|----------|
+| *Coming Soon* | | | | |
 
-### Research & Analysis
+### 📋 Project Management
 
-#### 🔬 [Research Analyst](./personas/research-analyst/)
-Information gathering and analysis tools
-- **MCP Servers**: web-scraper, citation-manager, data-extractor
-- **Key Features**: Web scraping, reference management, data extraction
-- **Best For**: Market research, academic research, competitive analysis
+| Persona | Labels | Description | MCP Servers | Best For |
+|---------|---------|-------------|------------|----------|
+| 📋 [**Linear Project Manager**](./personas/linear-project-manager/) | 🔐🌐⚙️ | Project management integration with Linear issue tracking | linear, filesystem, git, memory, time | Agile project management, Linear-based workflows, development team coordination |
+| 🎯 [**Trello Project Manager**](./personas/trello-project-manager/) | 🔐🌐⚙️ | Kanban-style project management with Trello integration | trello, filesystem, git, memory, time | Visual project management, kanban methodology, team collaboration |
 
-## Creating a Persona
+### 🧪 Quality Assurance
+
+| Persona | Labels | Description | MCP Servers | Best For |
+|---------|---------|-------------|------------|----------|
+| 🔍 [**QA Engineer**](./personas/qa-engineer/) | 💻🚀 | Comprehensive quality assurance and testing workflows | filesystem, git, sequential-thinking, memory, time | Software testing, quality assurance, test case management |
+
+## 📝 Creating a Persona
 
 ### Quick Start with Claude Code
 
 If you're using Claude Code, simply run:
-```
+```bash
 /new-persona
 ```
 Claude will guide you through creating a properly formatted persona with all required files.
@@ -187,7 +214,7 @@ Claude will guide you through creating a properly formatted persona with all req
 Each persona consists of:
 
 1. **persona.yaml** - The persona definition with toolsets and metadata
-2. **mcp.json** - The MCP server configuration file
+2. **mcp.json** - The MCP server configuration file  
 3. **README.md** - Documentation describing the persona's purpose and usage
 
 ### Persona Structure
@@ -197,53 +224,69 @@ personas/
 ├── your-persona-name/
 │   ├── persona.yaml      # Persona definition (required)
 │   ├── mcp.json          # MCP server configuration (required)
-│   └── README.md         # Persona documentation (recommended)
+│   ├── README.md         # Persona documentation (recommended)
+│   ├── tools.md          # Tool reference guide (optional)
+│   └── validation_notes.md # Configuration notes (optional)
 ```
 
 ### Example Configuration
 
-See the [schema/example/](./schema/example/) directory for complete examples of:
-- `persona.yaml` - Persona definition with toolsets
-- `mcp.json` - MCP server configurations
+See existing personas for complete examples:
+- [`python-developer`](./personas/python-developer/) - Simple persona with core tools
+- [`postgresql-dba`](./personas/postgresql-dba/) - Complex persona with specialized toolsets
+- [`claude-code-assistant`](./personas/claude-code-assistant/) - AI-assisted development persona
 
-For detailed schema documentation, refer to the [schema/README.md](./schema/README.md).
-
-## Contributing
+## 🤝 Contributing
 
 We welcome contributions! Here's how you can help:
 
-1. **Add a new persona**: Create a new persona configuration for your profession or use case
-2. **Improve existing personas**: Enhance configurations with better tool combinations
-3. **Share workflows**: Add example workflows and best practices
-4. **Fix issues**: Help maintain and update existing personas
-
-Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
+### Ways to Contribute
+- 🆕 **Add a new persona**: Create configurations for your profession or use case
+- 🔧 **Improve existing personas**: Enhance configurations with better tool combinations  
+- 📚 **Share workflows**: Add example workflows and best practices
+- 🐛 **Fix issues**: Help maintain and update existing personas
+- 📖 **Improve documentation**: Enhance README files and guides
 
 ### Submission Guidelines
-
 - Ensure your persona has a clear, specific use case
-- Test the configuration before submitting
+- Test the configuration before submitting  
 - Include comprehensive documentation
 - Follow the established directory structure
 - Add your persona to the appropriate category in this README
 
-## Resources
+Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
+
+## 📚 Resources
 
 ### Related Projects
 - [Awesome MCP Servers](https://github.com/punkpeye/awesome-mcp-servers) - Comprehensive list of MCP servers
-- [Awesome Claude Code Agents](https://github.com/hesreallyhim/awesome-claude-code-agents) - Collection of Claude Code agents
-- [MCP Documentation](https://modelcontextprotocol.io/) - Official MCP documentation
+- [Model Context Protocol](https://modelcontextprotocol.io/) - Official MCP documentation
+- [Hypertool MCP](https://github.com/toolprint/hypertool-mcp) - Persona installation tool
 
 ### Community
-- [Discord Server](#) - Join our community discussions
-- [GitHub Discussions](https://github.com/yourusername/awesome-mcp-personas/discussions) - Ask questions and share ideas
+- [GitHub Issues](https://github.com/toolprint/awesome-mcp-personas/issues) - Report bugs or request features
+- [GitHub Discussions](https://github.com/toolprint/awesome-mcp-personas/discussions) - Ask questions and share ideas
 
-## License
+## 📊 Statistics
 
-[![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
-
-To the extent possible under law, the contributors have waived all copyright and related or neighboring rights to this work.
+![GitHub stars](https://img.shields.io/github/stars/toolprint/awesome-mcp-personas?style=social)
+![GitHub forks](https://img.shields.io/github/forks/toolprint/awesome-mcp-personas?style=social)
+![Total Personas](https://img.shields.io/badge/Total%20Personas-14-blue)
+![MCP Servers](https://img.shields.io/badge/MCP%20Servers-33%2B-green)
 
 ---
 
-*Last updated: 2025-08-25*
+<div align="center">
+  <p><em>"Built by developers who got tired of watching AI pick the wrong tools 🎯"</em></p>
+  
+  <img src="https://raw.githubusercontent.com/toolprint/hypertool-mcp/main/assets/toolprint-logo.png" alt="Toolprint Logo" width="120">
+  
+  <p><strong>Built with ❤️ by <a href="https://github.com/toolprint">Toolprint</a></strong><br>
+  © 2025 OneGrep, Inc.</p>
+</div>
+
+## License
+
+[![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

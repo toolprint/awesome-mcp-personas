@@ -151,6 +151,7 @@ cp personas/intern/mcp.json ~/.continue/mcp.json
 | 🤖 [**Claude Code Assistant**](./personas/claude-code-assistant/) | 💻🚀 | AI-powered coding assistant for Claude Code users | filesystem, git, sequential-thinking, memory, fetch, time | AI-assisted development, code review, intelligent project guidance |
 | 💼 [**Software Development Assistant**](./personas/software-development-assistant/) | 💻🚀 | General-purpose software development toolkit | filesystem, git, sequential-thinking, memory, time | General software development, cross-language projects, development workflow automation |
 | 🎓 [**Intern**](./personas/intern/) | 💻🚀 | Learning-focused development environment for beginners | filesystem, git, sequential-thinking, memory, time | Learning programming, educational projects, skill development |
+| 🎨 [**Web UI Engineer Assistant**](./personas/web-ui-engineer-assistant/) | 🔐⚙️ | Frontend development automation for prototyping, scaffolding, and UI validation | playwright, shadcn-ui, exa-search | Rapid prototyping, component scaffolding, UI testing, design system integration |
 
 ### 📊 Data Science & Analytics  
 
@@ -204,10 +205,16 @@ cp personas/intern/mcp.json ~/.continue/mcp.json
 ### Quick Start with Claude Code
 
 If you're using Claude Code, simply run:
-```bash
+```
 /new-persona
 ```
 Claude will guide you through creating a properly formatted persona with all required files.
+
+After creating your persona, run:
+```
+/sync-personas
+```
+This will automatically add your new persona to the README with proper categorization and emoji labeling.
 
 ### Manual Creation
 
@@ -271,7 +278,7 @@ Please see our [GitHub Issues](https://github.com/toolprint/awesome-mcp-personas
 
 ![GitHub stars](https://img.shields.io/github/stars/toolprint/awesome-mcp-personas?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/toolprint/awesome-mcp-personas?style=social)
-![Total Personas](https://img.shields.io/badge/Total%20Personas-14-blue)
+![Total Personas](https://img.shields.io/badge/Total%20Personas-15-blue)
 ![MCP Servers](https://img.shields.io/badge/MCP%20Servers-33%2B-green)
 
 ---

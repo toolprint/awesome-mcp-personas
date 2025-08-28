@@ -1,13 +1,13 @@
 # MCP Servers in Active Use
 
 > Cross-reference of MCP servers currently used in personas
-> **Last Updated**: 2025-08-26
+> **Last Updated**: 2024-08-28
 
 ## Summary
 
 | Total Servers | Total Personas | Most Used Server |
 |---------------|----------------|------------------|
-| 38 | 15 | Git (11 personas) |
+| 40 | 16 | Git (11 personas) |
 
 ---
 
@@ -60,9 +60,10 @@
 | **Context7** | SSE: https://mcp.context7.com/sse | 1 | None |
 | **Task Master** | `npx -y --package=task-master-ai task-master-ai` | 1 | None |
 | **MCPing** | `npx -y @toolprint/mcping-mcp@latest` | 1 | None |
-| **Playwright (Claude)** | `npx @playwright/mcp@latest` | 1 | None |
+| **Playwright (Claude)** | `npx @playwright/mcp@latest` | 2 | None |
 | **Markitdown** | `npx -y markitdown-mcp` | 1 | `WORKDIR` |
-| **Exa** | `npx -y mcp-remote` | 1 | `EXA_API_KEY` |
+| **ShadCN UI** | `npx -y @jpisnice/shadcn-ui-mcp-server` | 1 | `GITHUB_API_KEY` |
+| **Exa Search** | `npx -y exa-mcp-server` | 1 | `EXA_API_KEY` |
 
 ---
 
@@ -171,6 +172,31 @@
   - [qa-engineer](../personas/qa-engineer/) - Browser automation
   - [qa-engineer-docs](../personas/qa-engineer-docs/) - Test automation and documentation
 - **Common Tools**: `navigate`, `click`, `fill`, `screenshot`, `evaluate`, `wait`
+
+### Playwright (Claude) MCP Server
+- **Source**: https://github.com/microsoft/playwright
+- **Package**: `npx @playwright/mcp@latest`
+- **Environment**: Optional configuration with `PLAYWRIGHT_HEADLESS`, `PLAYWRIGHT_BROWSER`
+- **Used in**:
+  - [claude-code-assistant](../personas/claude-code-assistant/) - Comprehensive browser automation and testing
+  - [web-ui-engineer-assistant](../personas/web-ui-engineer-assistant/) - Frontend UI testing, visual validation, and cross-browser compatibility
+- **Common Tools**: `browser_navigate`, `browser_click`, `browser_type`, `browser_take_screenshot`, `browser_snapshot`, `browser_console_messages`, `browser_network_requests`, `browser_fill_form`, `browser_file_upload`, `browser_handle_dialog`
+
+### ShadCN UI MCP Server
+- **Source**: https://github.com/jpisnice/shadcn-ui-mcp-server
+- **Package**: `npx -y @jpisnice/shadcn-ui-mcp-server`
+- **Environment**: Optional `GITHUB_API_KEY` for increased rate limits
+- **Used in**:
+  - [web-ui-engineer-assistant](../personas/web-ui-engineer-assistant/) - Component scaffolding, design system access, and multi-framework UI development
+- **Common Tools**: `get_component_source`, `list_components`, `get_component_demo`, `browse_blocks`
+
+### Exa Search MCP Server
+- **Source**: https://github.com/exa-ai/exa-mcp-server
+- **Package**: `npx -y exa-mcp-server`
+- **Environment**: `EXA_API_KEY`
+- **Used in**:
+  - [web-ui-engineer-assistant](../personas/web-ui-engineer-assistant/) - AI-powered research for design patterns, best practices, and component documentation
+- **Common Tools**: `web_search_exa`, `company_research`, `deep_researcher_start`, `deep_researcher_check`, `linkedin_search`
 
 ### Docker MCP Server
 - **Source**: https://github.com/QuantGeekDev/docker-mcp
@@ -294,22 +320,23 @@
 
 ## Cross-Reference Matrix
 
-| Persona | Git | Slack | Linear | GitHub | Trello | Filesystem | Fetch | Memory | Playwright | Docker | Code-Checker | Sequential | PostgreSQL | MySQL | SQLite | Time | Kubectl | AWS | Prometheus | PG-Ops | Chart | VChart |
-|---------|-----|-------|--------|--------|--------|------------|-------|---------|------------|--------|-------------|------------|------------|-------|---------|------|---------|-----|------------|--------|-------|-------|
-| software-development-assistant | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| intern | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| linear-project-manager | ❌ | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| trello-project-manager | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| qa-engineer | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| qa-engineer-docs | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| python-developer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| python-backend-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| postgres-db-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| postgresql-dba | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
-| mysql-dba | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ |
-| cloud-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
-| aws-cloud-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| sqlite-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
+| Persona | Git | Slack | Linear | GitHub | Trello | Filesystem | Fetch | Memory | Playwright | Docker | Code-Checker | Sequential | PostgreSQL | MySQL | SQLite | Time | Kubectl | AWS | Prometheus | PG-Ops | Chart | VChart | Playwright-Claude | ShadCN | Exa |
+|---------|-----|-------|--------|--------|--------|------------|-------|---------|------------|--------|-------------|------------|------------|-------|---------|------|---------|-----|------------|--------|-------|-------|------------------|--------|-----|
+| software-development-assistant | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| intern | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| linear-project-manager | ❌ | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| trello-project-manager | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| qa-engineer | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| qa-engineer-docs | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| python-developer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| python-backend-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| postgres-db-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| postgresql-dba | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| mysql-dba | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| cloud-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| aws-cloud-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| sqlite-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| web-ui-engineer-assistant | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 
 ---
 

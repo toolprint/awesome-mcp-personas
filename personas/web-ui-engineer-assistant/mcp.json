@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"],
+      "env": {
+        "PLAYWRIGHT_HEADLESS": "<placeholder>",
+        "PLAYWRIGHT_BROWSER": "<placeholder>"
+      }
+    },
+    "shadcn-ui": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@jpisnice/shadcn-ui-mcp-server"],
+      "env": {
+        "GITHUB_API_KEY": "<placeholder>"
+      }
+    },
+    "exa-search": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "exa-mcp-server", "--tools=web_search_exa,company_research,deep_researcher_start,deep_researcher_check"],
+      "env": {
+        "EXA_API_KEY": "<placeholder>"
+      }
+    }
+  }
+}

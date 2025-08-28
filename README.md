@@ -146,7 +146,7 @@ cp personas/intern/mcp.json ~/.continue/mcp.json
 
 | Persona | Labels | Description | MCP Servers | Best For |
 |---------|---------|-------------|------------|----------|
-| 🐍 [**Python Developer**](./personas/python-developer/) | 💻🚀 | Optimized for Python development and data engineering | filesystem, git, python-executor, pytest, pip | Python applications, scripts, data processing |
+| 🐍 **Python Developer** | 💻🚀 | Optimized for Python development and data engineering | filesystem, git, python-executor, pytest, pip | Python applications, scripts, data processing |
 | 🚀 [**Python Backend Engineer**](./personas/python-backend-engineer/) | 💻🚀 | Python-focused backend development with code analysis and testing | filesystem, code-checker, sequential-thinking, git, memory, fetch | Python web applications, API development, backend services |
 | 🤖 [**Claude Code Assistant**](./personas/claude-code-assistant/) | 💻🚀 | AI-powered coding assistant for Claude Code users | filesystem, git, sequential-thinking, memory, fetch, time | AI-assisted development, code review, intelligent project guidance |
 | 💼 [**Software Development Assistant**](./personas/software-development-assistant/) | 💻🚀 | General-purpose software development toolkit | filesystem, git, sequential-thinking, memory, time | General software development, cross-language projects, development workflow automation |
@@ -232,7 +232,7 @@ personas/
 ### Example Configuration
 
 See existing personas for complete examples:
-- [`python-developer`](./personas/python-developer/) - Simple persona with core tools
+- [`python-backend-engineer`](./personas/python-backend-engineer/) - Python-focused backend development with code analysis
 - [`postgresql-dba`](./personas/postgresql-dba/) - Complex persona with specialized toolsets
 - [`claude-code-assistant`](./personas/claude-code-assistant/) - AI-assisted development persona
 
@@ -254,7 +254,7 @@ We welcome contributions! Here's how you can help:
 - Follow the established directory structure
 - Add your persona to the appropriate category in this README
 
-Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
+Please see our [GitHub Issues](https://github.com/toolprint/awesome-mcp-personas/issues) for bug reports and [GitHub Discussions](https://github.com/toolprint/awesome-mcp-personas/discussions) for questions.
 
 ## 📚 Resources
 

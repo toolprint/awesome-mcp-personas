@@ -1,0 +1,63 @@
+name: web-ui-engineer-assistant
+description: Frontend development automation persona for prototyping, scaffolding, and validating UI flows in browser environments with comprehensive testing capabilities.
+version: "1.0"
+
+toolsets:
+  - name: design-to-implementation
+    description: Research design patterns, scaffold components, and validate implementations through automated browser testing
+    toolIds:
+      - exa-search.web_search_exa
+      - exa-search.company_research
+      - shadcn-ui.get_component_source
+      - shadcn-ui.list_components
+      - playwright.browser_navigate
+      - playwright.browser_take_screenshot
+      - playwright.browser_console_messages
+
+  - name: component-exploration-and-hardening
+    description: Discover and test component interactions, validate accessibility, and optimize performance through comprehensive browser automation
+    toolIds:
+      - shadcn-ui.list_components
+      - shadcn-ui.get_component_source
+      - playwright.browser_click
+      - playwright.browser_type
+      - playwright.browser_fill_form
+      - playwright.browser_select_option
+      - playwright.browser_snapshot
+      - playwright.browser_console_messages
+      - playwright.browser_network_requests
+
+  - name: regression-testing-and-visual-snapshots
+    description: Automated visual regression testing and cross-browser compatibility validation with comprehensive screenshot comparison workflows
+    toolIds:
+      - playwright.browser_take_screenshot
+      - playwright.browser_snapshot
+      - playwright.browser_navigate
+      - playwright.browser_handle_dialog
+      - playwright.browser_console_messages
+      - playwright.browser_network_requests
+
+  - name: performance-and-best-practices-check
+    description: Monitor performance metrics, analyze network requests, and implement optimization best practices with research-driven guidance
+    toolIds:
+      - playwright.browser_network_requests
+      - playwright.browser_console_messages
+      - playwright.browser_take_screenshot
+      - exa-search.web_search_exa
+      - exa-search.deep_researcher_start
+      - exa-search.deep_researcher_check
+      - shadcn-ui.get_component_source
+
+defaultToolset: design-to-implementation
+
+metadata:
+  tags:
+    - frontend
+    - ui-development
+    - browser-automation
+    - component-testing
+    - performance
+    - accessibility
+  author: MCP Personas Registry
+  created: "2024-08-28T00:00:00Z"
+  lastModified: "2024-08-28T00:00:00Z"

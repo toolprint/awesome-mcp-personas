@@ -1,0 +1,128 @@
+name: 🐛 Bug Report
+description: Report a bug or issue with an existing persona
+title: "[BUG] "
+labels: ["bug"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please provide details so we can reproduce and fix the issue.
+
+  - type: dropdown
+    id: persona
+    attributes:
+      label: Affected Persona
+      description: Which persona is experiencing the issue?
+      options:
+        - python-developer
+        - python-backend-engineer
+        - claude-code-assistant
+        - software-development-assistant
+        - intern
+        - postgresql-dba
+        - mysql-dba
+        - sqlite-engineer
+        - aws-cloud-engineer
+        - cloud-engineer
+        - grafana-sre
+        - qa-engineer-docs
+        - linear-project-manager
+        - trello-project-manager
+        - qa-engineer
+        - Other (specify in description)
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug Description
+      description: A clear description of what the bug is
+      placeholder: "e.g., The PostgreSQL DBA persona fails to load with error 'server not found'"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Steps to reproduce the behavior
+      placeholder: |
+        1. Install the persona using hypertool-mcp
+        2. Try to use the postgres tool
+        3. See error message
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What you expected to happen
+      placeholder: "The PostgreSQL tools should load and be available for use"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happened
+      placeholder: "Error message appears and tools are not available"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: installation-method
+    attributes:
+      label: Installation Method
+      description: How did you install the persona?
+      options:
+        - hypertool-mcp (recommended)
+        - Manual copy of mcp.json
+        - Other (specify in additional context)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: client-application
+    attributes:
+      label: Client Application
+      description: Which application are you using?
+      options:
+        - Claude Code
+        - Cursor
+        - Continue (VS Code)
+        - Other (specify in additional context)
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment Information
+      description: Information about your environment
+      placeholder: |
+        - OS: macOS 14.0
+        - Node.js version: 18.17.0
+        - Application version: 1.2.3
+    validations:
+      required: false
+
+  - type: textarea
+    id: error-logs
+    attributes:
+      label: Error Messages/Logs
+      description: Any error messages or relevant log output
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other context about the problem
+    validations:
+      required: false

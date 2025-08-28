@@ -1,0 +1,135 @@
+name: 🔧 Persona Improvement
+description: Suggest improvements to an existing persona
+title: "[IMPROVEMENT] "
+labels: ["enhancement", "persona-improvement"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an improvement! Your feedback helps make personas better for everyone.
+
+  - type: dropdown
+    id: persona
+    attributes:
+      label: Persona to Improve
+      description: Which persona would you like to improve?
+      options:
+        - python-developer
+        - python-backend-engineer
+        - claude-code-assistant
+        - software-development-assistant
+        - intern
+        - postgresql-dba
+        - mysql-dba
+        - sqlite-engineer
+        - aws-cloud-engineer
+        - cloud-engineer
+        - grafana-sre
+        - qa-engineer-docs
+        - linear-project-manager
+        - trello-project-manager
+        - qa-engineer
+        - Multiple personas
+        - Other (specify in description)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: improvement-type
+    attributes:
+      label: Type of Improvement
+      description: What kind of improvement are you suggesting?
+      options:
+        - Add new MCP servers/tools
+        - Remove ineffective tools
+        - Update configuration settings
+        - Improve documentation
+        - Fix tool integration
+        - Enhance workflows
+        - Update dependencies
+        - Other (specify in description)
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-problem
+    attributes:
+      label: Current Problem
+      description: What issue or limitation does this improvement address?
+      placeholder: "e.g., The Python Developer persona lacks database connectivity tools for web development projects"
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: What specific changes would you like to see?
+      placeholder: |
+        Example:
+        - Add postgresql MCP server for database management
+        - Include sqlite server for local development
+        - Update persona.yaml to include database toolset
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-benefits
+    attributes:
+      label: Expected Benefits
+      description: How would this improvement help users?
+      placeholder: |
+        Example:
+        - Enable full-stack Python development
+        - Improve workflow for database-driven applications
+        - Reduce need for external database tools
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority Level
+      description: How important is this improvement?
+      options:
+        - High - Critical for persona functionality
+        - Medium - Would significantly improve workflow
+        - Low - Nice to have enhancement
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternative-solutions
+    attributes:
+      label: Alternative Solutions
+      description: Are there other ways to solve this problem?
+      placeholder: "e.g., Could use manual database tools, but integrated solution would be better"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: research-done
+    attributes:
+      label: Research Done
+      options:
+        - label: I have checked if similar functionality exists in other personas
+        - label: I have verified the suggested MCP servers/tools are available
+        - label: I have tested the current persona and can confirm the limitation
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: contribution-offer
+    attributes:
+      label: Contribution
+      options:
+        - label: I would be willing to help implement this improvement
+        - label: I can provide testing and feedback
+        - label: I have domain expertise in this area

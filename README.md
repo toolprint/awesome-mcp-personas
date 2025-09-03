@@ -33,7 +33,7 @@ Instead of this tedious process:
 **Get this instant setup:**
 ```diff
 + ✅ Install one persona = get 5-15 perfectly configured MCP servers
-+ ✅ Professional-grade toolkits tested by experts in each field
++ ✅ Community-created toolkits using validated MCP servers from established registries
 + ✅ Zero compatibility issues, zero debugging
 + ✅ Works immediately in Claude Code, Cursor, Continue, etc.
 ```
@@ -90,7 +90,7 @@ Then add this to your `mcp.json`:
 }
 ```
 
-> ✨ **Hypertool Benefits**: Organized toolsets, compound workflows, persona updates, and professional-grade configurations tested by domain experts.
+> ✨ **Hypertool Benefits**: Organized toolsets, compound workflows, persona updates, and community-contributed configurations using MCP servers from established registries.
 
 ## 🛠️ Application-Specific Installation
 
@@ -260,19 +260,27 @@ We welcome contributions! Here's how you can help:
 
 ### Submission Guidelines
 - Ensure your persona has a clear, specific use case
+- Use only validated MCP servers from established registries (see Resources section)
 - Test the configuration before submitting  
 - Include comprehensive documentation
 - Follow the established directory structure
 - Add your persona to the appropriate category in this README
+- Community review helps ensure quality and compatibility
 
 Please see our [GitHub Issues](https://github.com/toolprint/awesome-mcp-personas/issues) for bug reports and [GitHub Discussions](https://github.com/toolprint/awesome-mcp-personas/discussions) for questions.
 
 ## 📚 Resources
 
+### MCP Server Registries
+All personas in this repository are community-created with best effort made to ensure that only validated MCP servers from the following established registries are used:
+
+- [Awesome MCP Servers](https://github.com/punkpeye/awesome-mcp-servers) - Comprehensive community-maintained list of MCP servers
+- [Model Context Protocol](https://modelcontextprotocol.io/) - Official MCP documentation and server registry
+- [Smithery Registry](https://smithery.ai/servers) - Curated registry of MCP servers
+- [NPM Registry](https://www.npmjs.com/search?q=mcp%20server) - Published MCP server packages
+
 ### Related Projects
-- [Awesome MCP Servers](https://github.com/punkpeye/awesome-mcp-servers) - Comprehensive list of MCP servers
-- [Model Context Protocol](https://modelcontextprotocol.io/) - Official MCP documentation
-- [Hypertool MCP](https://github.com/toolprint/hypertool-mcp) - Persona installation tool
+- [Hypertool MCP](https://github.com/toolprint/hypertool-mcp) - Persona installation and management tool
 
 ### Community
 - [GitHub Issues](https://github.com/toolprint/awesome-mcp-personas/issues) - Report bugs or request features

@@ -94,8 +94,8 @@ Then add this to your `mcp.json`:
 {
   "mcpServers": {
     "hypertool": {
-      "command": "npx",
-      "args": ["-y", "@toolprint/hypertool-mcp", "--persona", "intern"]
+      "command": "mcp",
+      "args": ["run", "npx", "-y", "@toolprint/hypertool-mcp@latest", "--persona", "intern"]
     }
   }
 }

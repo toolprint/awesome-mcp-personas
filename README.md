@@ -168,6 +168,7 @@ cp personas/intern/mcp.json ~/.continue/mcp.json
 | ☁️ [**AWS Cloud Engineer**](./personas/aws-cloud-engineer/) | 🔐🌐⚙️🏢 | Comprehensive AWS ecosystem management and automation | aws-cli, aws-api, aws-documentation, aws-cloudformation, aws-cdk, aws-eks, aws-serverless, aws-pricing, filesystem, git, docker, postgres, dynamodb, sequential, time, pulumi | AWS infrastructure management, cloud architecture, enterprise AWS deployments |
 | 🌐 [**Cloud Engineer**](./personas/cloud-engineer/) | ⚙️📦 | Multi-cloud infrastructure management and DevOps automation | terraform, kubernetes, docker, filesystem | Cloud-agnostic infrastructure, DevOps workflows, container management |
 | 📊 [**Grafana SRE**](./personas/grafana-sre/) | 🔐⚙️🏢 | Specialized SRE toolkit for Grafana-based monitoring and observability | filesystem, git, prometheus, docker, postgresql, slack | Grafana-centric monitoring, observability automation, SLI/SLO tracking |
+| 🚀 [**DevOps Engineer Assistant**](./personas/devops-engineer-assistant/) | 🔐🌐⚙️ | Infrastructure automation specialist for safe deployments and incident mitigation | docker, cloudflare, tavily | Deployment automation, incident response, infrastructure management, operational excellence |
 
 ### ✍️ Content & Documentation
 
@@ -278,7 +279,7 @@ Please see our [GitHub Issues](https://github.com/toolprint/awesome-mcp-personas
 
 ![GitHub stars](https://img.shields.io/github/stars/toolprint/awesome-mcp-personas?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/toolprint/awesome-mcp-personas?style=social)
-![Total Personas](https://img.shields.io/badge/Total%20Personas-15-blue)
+![Total Personas](https://img.shields.io/badge/Total%20Personas-16-blue)
 ![MCP Servers](https://img.shields.io/badge/MCP%20Servers-33%2B-green)
 
 ---

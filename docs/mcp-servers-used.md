@@ -7,7 +7,7 @@
 
 | Total Servers | Total Personas | Most Used Server |
 |---------------|----------------|------------------|
-| 40 | 16 | Git (11 personas) |
+| 42 | 17 | Git (11 personas) |
 
 ---
 
@@ -24,7 +24,7 @@
 | Server | Package | Personas Count | Environment |
 |--------|---------|----------------|-------------|
 | **Sequential Thinking** | `npx -y @modelcontextprotocol/server-sequentialthinking` | 4 | None |
-| **Docker** | `npx -y docker-mcp` | 3 | None |
+| **Docker** | `npx -y docker-mcp` | 4 | None |
 
 ### Low Usage (1 persona)
 | Server | Package | Personas Count | Environment |
@@ -64,6 +64,8 @@
 | **Markitdown** | `npx -y markitdown-mcp` | 1 | `WORKDIR` |
 | **ShadCN UI** | `npx -y @jpisnice/shadcn-ui-mcp-server` | 1 | `GITHUB_API_KEY` |
 | **Exa Search** | `npx -y exa-mcp-server` | 1 | `EXA_API_KEY` |
+| **Cloudflare** | `npx -y @cloudflare/mcp-server` | 1 | `CLOUDFLARE_API_TOKEN` |
+| **Tavily Search** | `npx -y tavily-mcp@latest` | 1 | `TAVILY_API_KEY` |
 
 ---
 
@@ -198,6 +200,22 @@
   - [web-ui-engineer-assistant](../personas/web-ui-engineer-assistant/) - AI-powered research for design patterns, best practices, and component documentation
 - **Common Tools**: `web_search_exa`, `company_research`, `deep_researcher_start`, `deep_researcher_check`, `linkedin_search`
 
+### Cloudflare MCP Server
+- **Source**: https://github.com/cloudflare/mcp-server
+- **Package**: `npx -y @cloudflare/mcp-server`
+- **Environment**: `CLOUDFLARE_API_TOKEN`
+- **Used in**:
+  - [devops-engineer-assistant](../personas/devops-engineer-assistant/) - CDN management, DNS configuration, Workers deployment, traffic routing, security policy management, and audit logging
+- **Common Tools**: `deploy_worker`, `list_workers`, `get_dns_records`, `update_dns_record`, `get_audit_logs`, `get_analytics_dashboard`, `list_casb_findings`
+
+### Tavily Search MCP Server
+- **Source**: https://tavily.com
+- **Package**: `npx -y tavily-mcp@latest`
+- **Environment**: `TAVILY_API_KEY`
+- **Used in**:
+  - [devops-engineer-assistant](../personas/devops-engineer-assistant/) - AI-powered web search for DevOps best practices, runbook research, compliance standards, and incident response documentation
+- **Common Tools**: `search`, `get_search_context`, `extract`, `qna_search`
+
 ### Docker MCP Server
 - **Source**: https://github.com/QuantGeekDev/docker-mcp
 - **Package**: `npx -y docker-mcp`
@@ -205,7 +223,9 @@
 - **Used in**:
   - [qa-engineer](../personas/qa-engineer/) - Container testing
   - [cloud-engineer](../personas/cloud-engineer/) - Container management and orchestration
-- **Common Tools**: `list_containers`, `create_container`, `start_container`, `stop_container`, `get_container_logs`, `deploy_compose`
+  - [aws-cloud-engineer](../personas/aws-cloud-engineer/) - AWS containerized deployment workflows
+  - [devops-engineer-assistant](../personas/devops-engineer-assistant/) - DevOps automation, deployment strategies, and incident response
+- **Common Tools**: `list_containers`, `create_container`, `start_container`, `stop_container`, `get_container_logs`, `deploy_compose`, `build_image`, `run_container`, `exec_command`
 
 
 ### Code Checker MCP Server
@@ -320,23 +340,24 @@
 
 ## Cross-Reference Matrix
 
-| Persona | Git | Slack | Linear | GitHub | Trello | Filesystem | Fetch | Memory | Playwright | Docker | Code-Checker | Sequential | PostgreSQL | MySQL | SQLite | Time | Kubectl | AWS | Prometheus | PG-Ops | Chart | VChart | Playwright-Claude | ShadCN | Exa |
-|---------|-----|-------|--------|--------|--------|------------|-------|---------|------------|--------|-------------|------------|------------|-------|---------|------|---------|-----|------------|--------|-------|-------|------------------|--------|-----|
-| software-development-assistant | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| intern | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| linear-project-manager | ❌ | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| trello-project-manager | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| qa-engineer | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| qa-engineer-docs | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| python-developer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| python-backend-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| postgres-db-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| postgresql-dba | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
-| mysql-dba | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
-| cloud-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| aws-cloud-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| sqlite-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ |
-| web-ui-engineer-assistant | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Persona | Git | Slack | Linear | GitHub | Trello | Filesystem | Fetch | Memory | Playwright | Docker | Code-Checker | Sequential | PostgreSQL | MySQL | SQLite | Time | Kubectl | AWS | Prometheus | PG-Ops | Chart | VChart | Playwright-Claude | ShadCN | Exa | Cloudflare | Tavily |
+|---------|-----|-------|--------|--------|--------|------------|-------|---------|------------|--------|-------------|------------|------------|-------|---------|------|---------|-----|------------|--------|-------|-------|------------------|--------|-----|------------|-------|
+| software-development-assistant | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| intern | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| linear-project-manager | ❌ | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| trello-project-manager | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| qa-engineer | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| qa-engineer-docs | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| python-developer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| python-backend-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| postgres-db-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| postgresql-dba | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| mysql-dba | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| cloud-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| aws-cloud-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| sqlite-engineer | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| web-ui-engineer-assistant | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| devops-engineer-assistant | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ |
 
 ---
 

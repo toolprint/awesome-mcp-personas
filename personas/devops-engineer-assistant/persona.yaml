@@ -1,0 +1,98 @@
+name: devops-engineer-assistant
+description: Infrastructure automation specialist focused on safe deployments, incident mitigation, and operational excellence through containerized infrastructure management
+version: "1.0"
+
+toolsets:
+  - name: env-provisioning-and-drift-checks
+    description: >
+      Infrastructure provisioning, configuration management, and drift detection workflows.
+      Handles environment setup, resource provisioning, configuration validation, 
+      compliance checks, and automated drift remediation for maintaining consistent 
+      infrastructure state across deployment environments.
+    toolIds:
+      # Docker server - Container and service management
+      - docker.create_container
+      - docker.list_containers
+      - docker.start_container
+      - docker.stop_container
+      - docker.get_container_logs
+      # Search server - Research best practices and documentation
+      - tavily.search
+      - tavily.get_search_context
+      # Manual Git operations documented for version control
+      # Note: Git operations handled via CLI due to archived mcp-server-git
+
+  - name: blue-green-or-canary-deploys
+    description: >
+      Safe deployment strategies including blue-green, canary releases, and rolling updates.
+      Orchestrates multi-environment deployments with health checks, traffic management,
+      rollback capabilities, and progressive rollout strategies to minimize deployment risk 
+      and ensure zero-downtime deployments.
+    toolIds:
+      # Docker server - Multi-version container deployments
+      - docker.build_image
+      - docker.run_container
+      - docker.list_images
+      - docker.exec_command
+      # Cloudflare server - Traffic routing and CDN management
+      - cloudflare.deploy_worker
+      - cloudflare.list_workers
+      - cloudflare.get_dns_records
+      - cloudflare.update_dns_record
+      # Search server - Deployment best practices validation
+      - tavily.search
+      - tavily.extract
+
+  - name: incident-mitigation-playbooks
+    description: >
+      Automated incident response workflows with runbook execution and log analysis.
+      Provides systematic incident detection, automated remediation steps, log correlation,
+      performance monitoring, and post-incident analysis to minimize service disruption 
+      and implement preventive measures.
+    toolIds:
+      # Docker server - Service diagnostics and remediation
+      - docker.list_containers
+      - docker.get_container_logs
+      - docker.start_container
+      - docker.stop_container
+      - docker.exec_command
+      # Cloudflare server - Edge monitoring and diagnostics
+      - cloudflare.get_audit_logs
+      - cloudflare.get_analytics_dashboard
+      - cloudflare.list_workers
+      # Search server - Incident runbooks and procedures
+      - tavily.search
+      - tavily.get_search_context
+
+  - name: secrets-and-config-hygiene  
+    description: >
+      Security-focused configuration management and secrets handling workflows.
+      Implements secure configuration validation, secrets rotation, access control auditing,
+      compliance monitoring, and automated security policy enforcement to maintain 
+      infrastructure security posture and regulatory compliance.
+    toolIds:
+      # Docker server - Container security and configuration
+      - docker.list_containers
+      - docker.exec_command
+      - docker.build_image
+      # Cloudflare server - Security policy and access management  
+      - cloudflare.get_audit_logs
+      - cloudflare.list_casb_findings
+      # Search server - Security best practices and compliance standards
+      - tavily.search
+      - tavily.extract
+
+defaultToolset: env-provisioning-and-drift-checks
+
+metadata:
+  author: persona-engineer
+  tags:
+    - devops
+    - infrastructure
+    - deployment
+    - containers
+    - security
+    - automation
+    - incident-response
+  created: "2025-08-28T00:00:00Z"
+  lastModified: "2025-08-28T00:00:00Z"

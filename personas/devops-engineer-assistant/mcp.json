@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "docker": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "docker-mcp"]
+    },
+    "cloudflare": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@cloudflare/mcp-server"],
+      "env": {
+        "CLOUDFLARE_API_TOKEN": "<your_cloudflare_api_token>"
+      }
+    },
+    "tavily": {
+      "type": "stdio", 
+      "command": "npx",
+      "args": ["-y", "tavily-mcp@latest"],
+      "env": {
+        "TAVILY_API_KEY": "<your_tavily_api_key>"
+      }
+    }
+  }
+}

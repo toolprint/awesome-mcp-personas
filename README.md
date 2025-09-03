@@ -137,31 +137,10 @@ Standard MCP:                         With Hypertool:
                                      "testing" → 4 tools
 ```
 
-## 🛠️ Application-Specific Installation
-
-### Claude Code
-```bash
-# Copy to your project folder
-cp personas/intern/mcp.json ./.mcp.json
-```
-
-### Cursor
-```bash
-cp personas/intern/mcp.json ~/.cursor/mcp.json
-```
-
-### Continue (VS Code)
-```bash
-cp personas/intern/mcp.json ~/.continue/mcp.json
-```
-
-> **📍 Quick Reference**: Replace `intern` with any persona name from the catalog below
-
 ## 📋 Table of Contents
 
 - [⚡ Two Ways to Get Started](#-two-ways-to-get-started)
-- [🛠️ Application-Specific Installation](#️-application-specific-installation)
-- [👥 Personas](#-personas)
+- [👥 Personas Catalog](#-personas-catalog)
   - [💻 Software Engineering](#-software-engineering)  
   - [📊 Data Science & Analytics](#-data-science--analytics)
   - [☁️ DevOps & Infrastructure](#️-devops--infrastructure)

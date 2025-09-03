@@ -50,16 +50,25 @@ Instead of this tedious process:
 
 ### 🏃‍♂️ **Quick Start: Copy & Paste (30 seconds)**
 
-**Step 1:** Pick any persona from our catalog below (e.g., `intern` for beginners)  
-**Step 2:** Copy the `mcp.json` from `personas/intern/mcp.json` to your project  
-**Step 3:** Replace `<placeholder>` values with your actual paths/credentials
+Pick a persona from the [catalog below](#-personas-catalog) or browse the [`personas/`](personas/) directory. Start with [`intern`](personas/intern/) if you're new!
 
+#### 🤖 **Claude Code**
 ```bash
-# Example: Copy intern persona
+cp personas/intern/mcp.json ~/.config/claude-code/mcp.json
+```
+
+#### ⚡ **Cursor**
+```bash
 cp personas/intern/mcp.json ~/.cursor/mcp.json
 ```
 
-> ⚠️ **Note**: This gives you the MCP servers only. For full persona features (toolsets, workflows, etc.), use the hypertool method below.
+#### 🔧 **Other Applications**
+```bash
+# Copy to your application's mcp.json location
+cp personas/intern/mcp.json <your-app-config-path>/mcp.json
+```
+
+> ⚠️ **Note**: Replace any `<placeholder>` values with your actual credentials.
 
 ### 🚀 **Full Features: Hypertool Setup (2 minutes)**
 
@@ -129,7 +138,7 @@ cp personas/intern/mcp.json ~/.continue/mcp.json
 - [📚 Resources](#-resources)
 
 
-## 👥 Personas
+## 👥 Personas Catalog
 
 ### 🏷️ Legend
 
@@ -142,8 +151,6 @@ cp personas/intern/mcp.json ~/.continue/mcp.json
 | 🚀 | **Zero Setup** | Works immediately without any configuration |
 | 📦 | **External Dependencies** | Requires additional tools or services to be installed |
 | 🏢 | **Enterprise** | Designed for production/enterprise environments |
-
-## 👥 Personas
 
 ### 💻 Software Engineering
 

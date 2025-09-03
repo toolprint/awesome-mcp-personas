@@ -5,10 +5,13 @@
 
 ### 🚀 Stop juggling individual MCP servers — Get a complete AI toolkit for your role in seconds
 
-<img src="https://img.shields.io/github/stars/toolprint/awesome-mcp-personas?style=social" alt="GitHub Stars">
-<img src="https://img.shields.io/github/forks/toolprint/awesome-mcp-personas?style=social" alt="GitHub Forks">
-<img src="https://img.shields.io/github/issues/toolprint/awesome-mcp-personas" alt="GitHub Issues">
-<img src="https://img.shields.io/github/license/toolprint/awesome-mcp-personas" alt="License">
+[![MCP Compatible](https://img.shields.io/badge/MCP-Compatible-green?style=flat-square)](https://modelcontextprotocol.io)
+[![Total Personas](https://img.shields.io/badge/Personas-16-blue?style=flat-square)](#-personas-catalog)
+[![MCP Servers](https://img.shields.io/badge/MCP%20Servers-33%2B-orange?style=flat-square)](#-personas-catalog)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Hypertool MCP](https://img.shields.io/badge/Powered%20by-Hypertool%20MCP-blue?style=flat-square)](https://github.com/toolprint/hypertool-mcp)
+[![Claude Compatible](https://img.shields.io/badge/Claude-Compatible-purple?style=flat-square)](https://claude.ai)
+[![Cursor Compatible](https://img.shields.io/badge/Cursor-Compatible-teal?style=flat-square)](https://cursor.sh)
 
 </div>
 
@@ -30,7 +33,7 @@ Instead of this tedious process:
 **Get this instant setup:**
 ```diff
 + ✅ Install one persona = get 5-15 perfectly configured MCP servers
-+ ✅ Professional-grade toolkits tested by experts in each field
++ ✅ Community-created toolkits using validated MCP servers from established registries
 + ✅ Zero compatibility issues, zero debugging
 + ✅ Works immediately in Claude Code, Cursor, Continue, etc.
 ```
@@ -43,20 +46,31 @@ Instead of this tedious process:
 | **DevOps Engineer** | Configure AWS CLI + CloudFormation + EKS + Docker + Postgres + DynamoDB separately | `"persona": "aws-cloud-engineer"` ✨ |
 | **Database Admin** | Set up Postgres + monitoring + charting + git + memory + time servers | `"persona": "postgresql-dba"` ✨ |
 
+**[👇 Browse All 16 Personas](#-personas-catalog)**
+
 ## ⚡ Two Ways to Get Started
 
 ### 🏃‍♂️ **Quick Start: Copy & Paste (30 seconds)**
 
-**Step 1:** Pick any persona from our catalog below (e.g., `intern` for beginners)  
-**Step 2:** Copy the `mcp.json` from `personas/intern/mcp.json` to your project  
-**Step 3:** Replace `<placeholder>` values with your actual paths/credentials
+Pick a persona from the [catalog below](#-personas-catalog) or browse the [`personas/`](personas/) directory. Start with [`intern`](personas/intern/) if you're new!
 
+#### 🤖 **Claude Code**
 ```bash
-# Example: Copy intern persona
+cp personas/intern/mcp.json ./.mcp.json
+```
+
+#### ⚡ **Cursor**
+```bash
 cp personas/intern/mcp.json ~/.cursor/mcp.json
 ```
 
-> ⚠️ **Note**: This gives you the MCP servers only. For full persona features (toolsets, workflows, etc.), use the hypertool method below.
+#### 🔧 **Other Applications**
+```bash
+# Copy to your application's mcp.json location
+cp personas/intern/mcp.json <your-app-config-path>/mcp.json
+```
+
+> ⚠️ **Note**: Replace any `<placeholder>` values with your actual credentials.
 
 ### 🚀 **Full Features: Hypertool Setup (2 minutes)**
 
@@ -72,61 +86,58 @@ npm install -g @toolprint/hypertool-mcp@latest
 # Step 3: Add a persona (example: intern)
 hypertool-mcp persona add ./awesome-mcp-personas/personas/intern
 
-# Step 4: Update your mcp.json
+# Step 4: Update your application or project's mcp.json
 ```
-
-Then add this to your `mcp.json`:
 ```json
 {
   "mcpServers": {
     "hypertool": {
       "command": "npx",
-      "args": ["-y", "@toolprint/hypertool-mcp", "--persona", "intern"]
+      "args": ["-y", "@toolprint/hypertool-mcp@latest", "mcp", "run", "--persona", "intern"]
     }
   }
 }
 ```
 
-> ✨ **Hypertool Benefits**: Organized toolsets, compound workflows, persona updates, and professional-grade configurations tested by domain experts.
+> ✨ **Hypertool Benefits**: Organized toolsets, compound workflows, persona updates, and community-contributed configurations using MCP servers from established registries. Learn more at [hypertool-mcp](https://github.com/toolprint/hypertool-mcp).
 
-## 🛠️ Application-Specific Installation
+#### How Hypertool Works (Loader Pattern)
 
-### Claude Code
-```bash
-cp personas/intern/mcp.json <your_project_path>/.mcp.json
+```
+Standard MCP:                         With Hypertool:
+┌─────────────┐                      ┌─────────────┐
+│ Claude/     │                      │ Claude/     │
+│ Cursor      │                      │ Cursor      │  
+└──────┬──────┘                      └──────┬──────┘
+       │                                     │
+       ▼                                     ▼
+┌─────────────┐                      ┌─────────────┐
+│ mcp.json    │                      │ mcp.json    │
+│ (10 servers)│                      │ (1 loader)  │
+└──────┬──────┘                      └──────┬──────┘
+       │                                     │
+       ▼                                     ▼
+  10 connections                     ┌─────────────┐
+  10 configs                         │  Hypertool  │
+  10 updates                         │   Persona   │
+       │                             └──────┬──────┘
+       ▼                                     │
+┌─────────────┐                             ▼
+│ 100+ tools  │                      ┌─────────────┐
+│ ALL loaded  │                      │  Smart      │
+│ 😵 Confusion│                      │  Toolsets   │
+└─────────────┘                      │  🎯 5 tools │
+                                     │  per task   │
+                                     └─────────────┘
+                                            │
+                                            ▼
+                                     Context compression:
+                                     "coding" → 5 tools
+                                     "writing" → 3 tools
+                                     "testing" → 4 tools
 ```
 
-### Cursor
-```bash
-cp personas/intern/mcp.json ~/.cursor/mcp.json
-```
-
-### Continue (VS Code)
-```bash
-cp personas/intern/mcp.json ~/.continue/mcp.json
-```
-
-> **📍 Quick Reference**: Replace `intern` with any persona name from the catalog below
-
-## 📋 Table of Contents
-
-- [⚡ Two Ways to Get Started](#-two-ways-to-get-started)
-- [🛠️ Application-Specific Installation](#️-application-specific-installation)
-- [👥 Personas](#-personas)
-  - [💻 Software Engineering](#-software-engineering)  
-  - [📊 Data Science & Analytics](#-data-science--analytics)
-  - [☁️ DevOps & Infrastructure](#️-devops--infrastructure)
-  - [✍️ Content & Documentation](#️-content--documentation)
-  - [🛡️ Security & Compliance](#️-security--compliance)
-  - [🔬 Research & Analysis](#-research--analysis)
-  - [📋 Project Management](#-project-management)
-  - [🧪 Quality Assurance](#-quality-assurance)
-- [📝 Creating a Persona](#-creating-a-persona)
-- [🤝 Contributing](#-contributing)
-- [📚 Resources](#-resources)
-
-
-## 👥 Personas
+## 👥 Personas Catalog
 
 ### 🏷️ Legend
 
@@ -139,8 +150,6 @@ cp personas/intern/mcp.json ~/.continue/mcp.json
 | 🚀 | **Zero Setup** | Works immediately without any configuration |
 | 📦 | **External Dependencies** | Requires additional tools or services to be installed |
 | 🏢 | **Enterprise** | Designed for production/enterprise environments |
-
-## 👥 Personas
 
 ### 💻 Software Engineering
 
@@ -257,19 +266,27 @@ We welcome contributions! Here's how you can help:
 
 ### Submission Guidelines
 - Ensure your persona has a clear, specific use case
+- Use only validated MCP servers from established registries (see Resources section)
 - Test the configuration before submitting  
 - Include comprehensive documentation
 - Follow the established directory structure
 - Add your persona to the appropriate category in this README
+- Community review helps ensure quality and compatibility
 
 Please see our [GitHub Issues](https://github.com/toolprint/awesome-mcp-personas/issues) for bug reports and [GitHub Discussions](https://github.com/toolprint/awesome-mcp-personas/discussions) for questions.
 
 ## 📚 Resources
 
+### MCP Server Registries
+All personas in this repository are community-created with best effort made to ensure that only validated MCP servers from the following established registries are used:
+
+- [Awesome MCP Servers](https://github.com/punkpeye/awesome-mcp-servers) - Comprehensive community-maintained list of MCP servers
+- [Model Context Protocol](https://modelcontextprotocol.io/) - Official MCP documentation and server registry
+- [Smithery Registry](https://smithery.ai/servers) - Curated registry of MCP servers
+- [NPM Registry](https://www.npmjs.com/search?q=mcp%20server) - Published MCP server packages
+
 ### Related Projects
-- [Awesome MCP Servers](https://github.com/punkpeye/awesome-mcp-servers) - Comprehensive list of MCP servers
-- [Model Context Protocol](https://modelcontextprotocol.io/) - Official MCP documentation
-- [Hypertool MCP](https://github.com/toolprint/hypertool-mcp) - Persona installation tool
+- [Hypertool MCP](https://github.com/toolprint/hypertool-mcp) - Persona installation and management tool
 
 ### Community
 - [GitHub Issues](https://github.com/toolprint/awesome-mcp-personas/issues) - Report bugs or request features
@@ -277,17 +294,17 @@ Please see our [GitHub Issues](https://github.com/toolprint/awesome-mcp-personas
 
 ## 📊 Statistics
 
-![GitHub stars](https://img.shields.io/github/stars/toolprint/awesome-mcp-personas?style=social)
-![GitHub forks](https://img.shields.io/github/forks/toolprint/awesome-mcp-personas?style=social)
 ![Total Personas](https://img.shields.io/badge/Total%20Personas-16-blue)
 ![MCP Servers](https://img.shields.io/badge/MCP%20Servers-33%2B-green)
+![Categories](https://img.shields.io/badge/Categories-8-purple)
+![Open Source](https://img.shields.io/badge/Open%20Source-100%25-brightgreen)
 
 ---
 
 <div align="center">
   <p><em>"Built by developers who got tired of watching AI pick the wrong tools 🎯"</em></p>
   
-  <img src="https://raw.githubusercontent.com/toolprint/hypertool-mcp/main/assets/toolprint-logo.png" alt="Toolprint Logo" width="120">
+  <img src="https://raw.githubusercontent.com/toolprint/hypertool-mcp/main/assets/toolprint.png" alt="Toolprint Logo" width="120">
   
   <p><strong>Built with ❤️ by <a href="https://github.com/toolprint">Toolprint</a></strong><br>
   © 2025 OneGrep, Inc.</p>

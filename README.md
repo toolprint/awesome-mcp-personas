@@ -99,7 +99,43 @@ Then add this to your `mcp.json`:
 }
 ```
 
-> ✨ **Hypertool Benefits**: Organized toolsets, compound workflows, persona updates, and community-contributed configurations using MCP servers from established registries.
+> ✨ **Hypertool Benefits**: Organized toolsets, compound workflows, persona updates, and community-contributed configurations using MCP servers from established registries. Learn more at [hypertool-mcp](https://github.com/toolprint/hypertool-mcp).
+
+#### How Hypertool Works (Loader Pattern)
+
+```
+Standard MCP:                         With Hypertool:
+┌─────────────┐                      ┌─────────────┐
+│ Claude/     │                      │ Claude/     │
+│ Cursor      │                      │ Cursor      │  
+└──────┬──────┘                      └──────┬──────┘
+       │                                     │
+       ▼                                     ▼
+┌─────────────┐                      ┌─────────────┐
+│ mcp.json    │                      │ mcp.json    │
+│ (10 servers)│                      │ (1 loader)  │
+└──────┬──────┘                      └──────┬──────┘
+       │                                     │
+       ▼                                     ▼
+  10 connections                     ┌─────────────┐
+  10 configs                         │  Hypertool  │
+  10 updates                         │   Persona   │
+       │                             └──────┬──────┘
+       ▼                                     │
+┌─────────────┐                             ▼
+│ 100+ tools  │                      ┌─────────────┐
+│ ALL loaded  │                      │  Smart      │
+│ 😵 Confusion│                      │  Toolsets   │
+└─────────────┘                      │  🎯 5 tools │
+                                     │  per task   │
+                                     └─────────────┘
+                                            │
+                                            ▼
+                                     Context compression:
+                                     "coding" → 5 tools
+                                     "writing" → 3 tools
+                                     "testing" → 4 tools
+```
 
 ## 🛠️ Application-Specific Installation
 

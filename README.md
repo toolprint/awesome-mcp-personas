@@ -46,6 +46,8 @@ Instead of this tedious process:
 | **DevOps Engineer** | Configure AWS CLI + CloudFormation + EKS + Docker + Postgres + DynamoDB separately | `"persona": "aws-cloud-engineer"` ✨ |
 | **Database Admin** | Set up Postgres + monitoring + charting + git + memory + time servers | `"persona": "postgresql-dba"` ✨ |
 
+**[👇 Browse All 16 Personas](#-personas-catalog)**
+
 ## ⚡ Two Ways to Get Started
 
 ### 🏃‍♂️ **Quick Start: Copy & Paste (30 seconds)**
@@ -136,23 +138,6 @@ Standard MCP:                         With Hypertool:
                                      "writing" → 3 tools
                                      "testing" → 4 tools
 ```
-
-## 📋 Table of Contents
-
-- [⚡ Two Ways to Get Started](#-two-ways-to-get-started)
-- [👥 Personas Catalog](#-personas-catalog)
-  - [💻 Software Engineering](#-software-engineering)  
-  - [📊 Data Science & Analytics](#-data-science--analytics)
-  - [☁️ DevOps & Infrastructure](#️-devops--infrastructure)
-  - [✍️ Content & Documentation](#️-content--documentation)
-  - [🛡️ Security & Compliance](#️-security--compliance)
-  - [🔬 Research & Analysis](#-research--analysis)
-  - [📋 Project Management](#-project-management)
-  - [🧪 Quality Assurance](#-quality-assurance)
-- [📝 Creating a Persona](#-creating-a-persona)
-- [🤝 Contributing](#-contributing)
-- [📚 Resources](#-resources)
-
 
 ## 👥 Personas Catalog
 

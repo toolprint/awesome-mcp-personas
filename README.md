@@ -54,7 +54,7 @@ Pick a persona from the [catalog below](#-personas-catalog) or browse the [`pers
 
 #### 🤖 **Claude Code**
 ```bash
-cp personas/intern/mcp.json ~/.config/claude-code/mcp.json
+cp personas/intern/mcp.json ./.mcp.json
 ```
 
 #### ⚡ **Cursor**
@@ -105,7 +105,8 @@ Then add this to your `mcp.json`:
 
 ### Claude Code
 ```bash
-cp personas/intern/mcp.json <your_project_path>/.mcp.json
+# Copy to your project folder
+cp personas/intern/mcp.json ./.mcp.json
 ```
 
 ### Cursor

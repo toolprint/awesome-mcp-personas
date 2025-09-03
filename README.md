@@ -5,10 +5,13 @@
 
 ### 🚀 Stop juggling individual MCP servers — Get a complete AI toolkit for your role in seconds
 
-<img src="https://img.shields.io/github/stars/toolprint/awesome-mcp-personas?style=social" alt="GitHub Stars">
-<img src="https://img.shields.io/github/forks/toolprint/awesome-mcp-personas?style=social" alt="GitHub Forks">
-<img src="https://img.shields.io/github/issues/toolprint/awesome-mcp-personas" alt="GitHub Issues">
-<img src="https://img.shields.io/github/license/toolprint/awesome-mcp-personas" alt="License">
+[![MCP Compatible](https://img.shields.io/badge/MCP-Compatible-green?style=flat-square)](https://modelcontextprotocol.io)
+[![Total Personas](https://img.shields.io/badge/Personas-16-blue?style=flat-square)](#-personas-catalog)
+[![MCP Servers](https://img.shields.io/badge/MCP%20Servers-33%2B-orange?style=flat-square)](#-personas-catalog)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Hypertool MCP](https://img.shields.io/badge/Powered%20by-Hypertool%20MCP-blue?style=flat-square)](https://github.com/toolprint/hypertool-mcp)
+[![Claude Compatible](https://img.shields.io/badge/Claude-Compatible-purple?style=flat-square)](https://claude.ai)
+[![Cursor Compatible](https://img.shields.io/badge/Cursor-Compatible-teal?style=flat-square)](https://cursor.sh)
 
 </div>
 
@@ -277,17 +280,17 @@ Please see our [GitHub Issues](https://github.com/toolprint/awesome-mcp-personas
 
 ## 📊 Statistics
 
-![GitHub stars](https://img.shields.io/github/stars/toolprint/awesome-mcp-personas?style=social)
-![GitHub forks](https://img.shields.io/github/forks/toolprint/awesome-mcp-personas?style=social)
 ![Total Personas](https://img.shields.io/badge/Total%20Personas-16-blue)
 ![MCP Servers](https://img.shields.io/badge/MCP%20Servers-33%2B-green)
+![Categories](https://img.shields.io/badge/Categories-8-purple)
+![Open Source](https://img.shields.io/badge/Open%20Source-100%25-brightgreen)
 
 ---
 
 <div align="center">
   <p><em>"Built by developers who got tired of watching AI pick the wrong tools 🎯"</em></p>
   
-  <img src="https://raw.githubusercontent.com/toolprint/hypertool-mcp/main/assets/toolprint-logo.png" alt="Toolprint Logo" width="120">
+  <img src="https://raw.githubusercontent.com/toolprint/hypertool-mcp/main/assets/toolprint.png" alt="Toolprint Logo" width="120">
   
   <p><strong>Built with ❤️ by <a href="https://github.com/toolprint">Toolprint</a></strong><br>
   © 2025 OneGrep, Inc.</p>

@@ -86,16 +86,14 @@ npm install -g @toolprint/hypertool-mcp@latest
 # Step 3: Add a persona (example: intern)
 hypertool-mcp persona add ./awesome-mcp-personas/personas/intern
 
-# Step 4: Update your mcp.json
+# Step 4: Update your application or project's mcp.json
 ```
-
-Then add this to your `mcp.json`:
 ```json
 {
   "mcpServers": {
     "hypertool": {
-      "command": "mcp",
-      "args": ["run", "npx", "-y", "@toolprint/hypertool-mcp@latest", "--persona", "intern"]
+      "command": "npx",
+      "args": ["-y", "@toolprint/hypertool-mcp@latest", "mcp", "run", "--persona", "intern"]
     }
   }
 }

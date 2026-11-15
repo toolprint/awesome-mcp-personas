@@ -287,6 +287,7 @@ All personas in this repository are community-created with best effort made to e
 
 ### Related Projects
 - [Hypertool MCP](https://github.com/toolprint/hypertool-mcp) - Persona installation and management tool
+- [No Stairs Please MCP](https://nostairsplease.com/mcp) - Remote Streamable HTTP MCP server for live-music venue discovery, tour routing, and touring act search across the US and Canada
 
 ### Community
 - [GitHub Issues](https://github.com/toolprint/awesome-mcp-personas/issues) - Report bugs or request features
